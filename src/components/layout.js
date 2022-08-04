@@ -1,23 +1,26 @@
 import * as React from 'react'
-import { Link } from 'gatsby'
+import Header from './Header';
+import Footer from './Footer';
+import styled from 'styled-components';
 
 
-const Layout = ({ pageTitle, children }) => {
+const LayoutStyles = styled.div`
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+`;
+
+
+export default function Layout({ pageTitle, children }) {
   return (
-        <div>
-            <title>{pageTitle}</title>
-            <nav>
-                <ul>
-                <li><Link to="/">Home</Link></li>
-                <li><Link to="/services">Our Services</Link></li>
-                </ul>
-            </nav>
+        <LayoutStyles>
+            <Header />
+            {/* <title>{pageTitle}</title> */}
             <main>
                 <h1>{pageTitle}</h1>
                 {children}
             </main>
-        </div>
+            <Footer />
+        </LayoutStyles>
   )
 }
-
-export default Layout;

@@ -1,6 +1,6 @@
 import React from "react"
-import Layout from "./src/components/layout"
-import Theme from "./src/components/theme"
+import Layout from "./src/components/Layout"
+import Theme from "./src/components/Theme"
 
 export function wrapPageElement({ element, props }) {
   // props provide same data to Layout as Page element will get

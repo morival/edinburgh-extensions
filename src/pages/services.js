@@ -1,9 +1,7 @@
 import React from 'react'
 
-function Services() {
+export default function Services() {
     return ( 
-            <p>Some Text...</p>
+            <h1>Our Services</h1>
     )
 }
-
-export default Services;

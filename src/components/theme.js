@@ -5,13 +5,14 @@ import { Normalize } from 'styled-normalize'
 const theme = {
     color: {
         background: 'white',
-        text: 'orange',
+        text: 'black',
     }
 };
 
 const GlobalStyle = createGlobalStyle`
     body {
         background: ${({ theme }) => theme.color.background};
+        color: ${({ theme }) => theme.color.text};
     }
 `;
 

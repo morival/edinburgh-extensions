@@ -2,16 +2,15 @@ import * as React from "react"
 import styled from "styled-components"
 
 
-const StyledP = styled.p`
+const StyledP = styled.h1`
   color: ${({ theme }) => theme.color.text};
 `
 
 
-const IndexPage = () => {
+
+export default function IndexPage() {
 
   return (
-        <StyledP>Some Text...</StyledP>
-)
+    <StyledP>Home Page</StyledP>
+  )
 }
-
-export default IndexPage;
