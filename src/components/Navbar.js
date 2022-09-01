@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { graphql, Link, useStaticQuery } from 'gatsby';
 import styled from 'styled-components';
 import { FaTimes, FaBars } from 'react-icons/fa';
@@ -8,6 +8,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 const NavbarStyles = styled.nav`
     display: flex;
     justify-content: space-between;
+    background-color: gainsboro;
     @media screen and (max-width: 768px) {
         justify-content: center;
     }
@@ -18,15 +19,8 @@ const NavbarStyles = styled.nav`
             width: 100%;
         }
     }
-    ul li a {
-        display: inline-block;
-        padding: 1rem;
-        font-size: 1.5rem;
-        text-decoration: none;
-        color: ${({ theme }) => theme.color.text};
-    }
 `;
-const MenuLinks = styled.ul`
+const MenuLinksStyles = styled.ul`
     display: flex;
     align-items: center;
     margin: 0;
@@ -39,37 +33,50 @@ const MenuLinks = styled.ul`
         width: 100%;
         height: 100vh;
         position: absolute;
-        /* padding-top: 80px; */
         top: ${({ click }) => (click ? '0' : '-2000px')};
         opacity: 1;
         transition: all 0.2s ease;
-        background: red;
+        background: mediumblue;
     }
 `
-    
-
-const MenuIcon = styled.div`
+const NavLogoStyles = styled(Link)`
+    z-index: 999;
+`
+const NavLinkStyles = styled(Link)`
+    display: inline-block;
+    padding: 1rem;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: ${({ theme }) => theme.color.text};
+    @media screen and (max-width: 768px) {
+        width: 100%;
+        padding: 1rem 0;
+        max-width: 350px;
+        font-size: 2rem;
+        color: orange;
+        &:hover {
+            color: lightgoldenrodyellow;
+            background-color: darkblue;
+        }
+    }
+    /* @media screen and (max-width: 576px) {
+        width: 80%;
+    } */
+`
+const MenuIconStyles = styled.div`
     display: none;
     @media screen and (max-width: 768px) {
+        z-index: 999;
         display: block;
         position: absolute;
         top: 0;
         right: 0;
         transform: translate(-100%, 60%);
         font-size: 2rem;
+        color: ${({ click }) => (click ? 'white' : 'black')};
         cursor: pointer;
     }
 `
-const NavLogo = styled(Link)`
-    z-index: 999;
-    @media screen and (max-width: 768px) {
-
-    }
-`
-const NavLink = styled(Link)`
-
-`
-
 
 export default function Navbar() {
 
@@ -77,7 +84,7 @@ export default function Navbar() {
     query Logo {
         file(name: {eq: "project_04"}) {
           childImageSharp {
-            gatsbyImageData(height: 120)
+            gatsbyImageData(height: 80)
           }
         }
     }
@@ -85,37 +92,38 @@ export default function Navbar() {
     const image = getImage(data.file)
 
     const [click, setClick] = useState(false)
-    const [scroll, setScroll] = useState(false)
+    // const [scroll, setScroll] = useState(false)
 
     const handleClick = () => setClick(!click)
     const closeMobileMenu = () => setClick(false)
-
-    const changeNav = () => {
-        if (window.scrollY >= 80) {
-            setScroll(true)
-        } else {
-            setScroll(false)
-        }
-    }
+ 
     // console.log(image)
-
-    useEffect(() => {
-        changeNav();
-        window.addEventListener('scroll', changeNav)
-    }, [])
+   
+    // const changeNav = () => {
+    //     if (window.scrollY >= 80) {
+    //         setScroll(true)
+    //     } else {
+    //         setScroll(false)
+    //     }
+    // }
+    
+    // useEffect(() => {
+    //     changeNav();
+    //     window.addEventListener('scroll', changeNav)
+    // }, [])
 
     return (
         <NavbarStyles>
-            <NavLogo to="/" onClick={closeMobileMenu}><GatsbyImage image={image} alt="logo" /></NavLogo>
-            <MenuIcon click={click} onClick={handleClick}>
+            <NavLogoStyles to="/" onClick={closeMobileMenu}><GatsbyImage image={image} alt="logo" /></NavLogoStyles>
+            <MenuIconStyles click={click} onClick={handleClick}>
                 {click ? <FaTimes /> : <FaBars />}
-            </MenuIcon>
-            <MenuLinks click={click} onClick={handleClick}>
-                <li><Link to="/services">Our Services</Link></li>
-                <li><Link to="/projects">Our Projects</Link></li>
-                <li><Link to="/about">About Us</Link></li>
-                <li><Link to="/contact">Contact Us</Link></li>
-            </MenuLinks>
+            </MenuIconStyles>
+            <MenuLinksStyles click={click} onClick={handleClick}>
+                <li><NavLinkStyles to="/services">Our Services</NavLinkStyles></li>
+                <li><NavLinkStyles to="/projects">Our Projects</NavLinkStyles></li>
+                <li><NavLinkStyles to="/about">About Us</NavLinkStyles></li>
+                <li><NavLinkStyles to="/contact">Contact Us</NavLinkStyles></li>
+            </MenuLinksStyles>
         </NavbarStyles>
     )
 };
