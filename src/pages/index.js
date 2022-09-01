@@ -1,7 +1,7 @@
 import * as React from "react"
 import styled from "styled-components"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faFacebookSquare, faInstagramSquare } from "@fortawesome/free-brands-svg-icons"
+import { FaFacebookSquare, FaInstagramSquare } from 'react-icons/fa';
+// import { graphql } from "gatsby";
 
 
 const HomePageStyles = styled.div`
@@ -19,15 +19,30 @@ const HomePageStyles = styled.div`
 
 
 
-export default function IndexPage() {
+export default function IndexPage({ data }) {
+
+  // const { siteUrl, description, title } = data.site.siteMetadata;
+  // console.log(title)
 
   return (
     <HomePageStyles>
       <h1>Home Page</h1>
       <div className="icons">
-        <FontAwesomeIcon icon={faFacebookSquare} />
-        <FontAwesomeIcon icon={faInstagramSquare} />
+        <FaFacebookSquare />
+        <FaInstagramSquare />
       </div>
     </HomePageStyles>
   )
 }
+
+// export const query = graphql`
+//   query SiteInfo {
+//     site {
+//       siteMetadata {
+//         siteUrl
+//         description
+//         title
+//       }
+//     }
+//   }
+// `;

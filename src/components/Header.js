@@ -1,40 +1,55 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
 import styled from 'styled-components'
+import Navbar from './Navbar';
 
 
 const HeaderStyles = styled.header`
-    nav ul {
+
+`;
+
+const TopHeaderStyles = styled.div`
         margin: 0;
-        padding: 0;
+        padding: 0 20px;
         list-style-type: none;
-        display: grid;
-        grid-template-columns: repeat(4, auto);
-        justify-content: space-between;
-        @media (min-width: 768px) {
-            grid-template-columns: 1fr repeat(3, auto);
+        display: flex;
+        justify-content: flex-end;
+        gap: 10px;
+        @media (max-width: 768px) {
+            display: none;
         }
-    }
-    nav ul li a {
-        display: inline-block;
-        padding: 1rem;
-        text-decoration: none;
-        color: ${({ theme }) => theme.color.text};
+    div {
+        padding: 5px;
     }
 `;
 
 
 export default function Header(params) {
+
+    const data = useStaticQuery(graphql`
+        query MyQuery {
+            site {
+                siteMetadata {
+                    contact {
+                        email
+                        phone_1
+                        phone_2
+                    }
+                }
+            }
+        }
+    `);
+
+    const { email, phone_1, phone_2 } = data.site.siteMetadata.contact;
+
     return (
         <HeaderStyles>
-            <nav>
-                <ul>
-                    <li><Link to="/">Home</Link></li>
-                    <li><Link to="/services">Our Services</Link></li>
-                    <li><Link to="/projects">Our Projects</Link></li>
-                    <li><Link to="/contact">Contact Us</Link></li>
-                </ul>
-            </nav>
+            <TopHeaderStyles>
+                    <div>{phone_1}</div>
+                    <div>{phone_2}</div>
+                    <div>{email}</div>
+            </TopHeaderStyles>
+            <Navbar/>
         </HeaderStyles>
     )
 };

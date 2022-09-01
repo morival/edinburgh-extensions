@@ -1,6 +1,20 @@
 module.exports = {
   siteMetadata: {
     siteUrl: `https://www.edinburgh-extensions.co.uk`,
+    title: `Edinburgh Extensions`,
+    description: `New builds, Extensions, Renovations, Bathrooms, Finishing Joinery, Masonry`,
+    contact: {
+      phone_1: `phone number 1`,
+      phone_2: `phone number 2`,
+      email: `email address`,
+    },
+    social: {
+      facebook: `https://facebook.com`,
+      instagram: `https://instagram.com`,
+    },
+    images: {
+      logo: `gatsby-icon.png`,
+    }
   },
   plugins: [
     `gatsby-plugin-image`,
@@ -16,8 +30,21 @@ module.exports = {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [`Montserrat:300,400`, `source sans pro\:300,400,400i,700`],
-        display: 'swap'
+        display: `swap`
       }
+    },
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        icon: 'src/images/gatsby-icon.png',
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/images/`,
+      },
     },
   ],
 }
