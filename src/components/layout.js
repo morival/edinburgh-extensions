@@ -12,13 +12,12 @@ const LayoutStyles = styled.div`
 `;
 
 
-export default function Layout({ pageTitle, children }) {
+export default function Layout({ children }) {
   return (
         <LayoutStyles>
             <Header />
             {/* <title>{pageTitle}</title> */}
             <main>
-                <h1>{pageTitle}</h1>
                 {children}
             </main>
             <Footer />

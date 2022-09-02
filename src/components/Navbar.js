@@ -8,25 +8,13 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 const NavbarStyles = styled.nav`
     display: flex;
     justify-content: space-between;
+    padding: 0 20px;
     background-color: gainsboro;
     @media screen and (max-width: 768px) {
         justify-content: center;
     }
-    
-    ul li {
-        height: 80px;
-        @media screen and (max-width: 768px) {
-            width: 100%;
-        }
-    }
 `;
-const MenuLinksStyles = styled.ul`
-    display: flex;
-    align-items: center;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    text-align: center;
+const NavList = styled.ul`
     @media screen and (max-width: 768px) {
         flex-direction: column;
         justify-content: center;
@@ -37,17 +25,24 @@ const MenuLinksStyles = styled.ul`
         opacity: 1;
         transition: all 0.2s ease;
         background: mediumblue;
+        z-index: 1;
     }
-`
-const NavLogoStyles = styled(Link)`
+`;
+const  NavListItem = styled.li`
+    display: flex;
+    align-items: center;
+    height: 80px;
+    @media screen and (max-width: 768px) {
+        width: 100%;
+        justify-content: center;
+    }
+`;
+const NavLogo = styled(Link)`
     z-index: 999;
-`
-const NavLinkStyles = styled(Link)`
-    display: inline-block;
+`;
+const NavLink = styled(Link)`
     padding: 1rem;
     font-size: 1.5rem;
-    text-decoration: none;
-    color: ${({ theme }) => theme.color.text};
     @media screen and (max-width: 768px) {
         width: 100%;
         padding: 1rem 0;
@@ -59,11 +54,8 @@ const NavLinkStyles = styled(Link)`
             background-color: darkblue;
         }
     }
-    /* @media screen and (max-width: 576px) {
-        width: 80%;
-    } */
-`
-const MenuIconStyles = styled.div`
+`;
+const MenuIcon = styled.div`
     display: none;
     @media screen and (max-width: 768px) {
         z-index: 999;
@@ -76,7 +68,7 @@ const MenuIconStyles = styled.div`
         color: ${({ click }) => (click ? 'white' : 'black')};
         cursor: pointer;
     }
-`
+`;
 
 export default function Navbar() {
 
@@ -114,16 +106,16 @@ export default function Navbar() {
 
     return (
         <NavbarStyles>
-            <NavLogoStyles to="/" onClick={closeMobileMenu}><GatsbyImage image={image} alt="logo" /></NavLogoStyles>
-            <MenuIconStyles click={click} onClick={handleClick}>
+            <NavLogo to="/" onClick={closeMobileMenu}><GatsbyImage image={image} alt="logo" /></NavLogo>
+            <MenuIcon click={click} onClick={handleClick}>
                 {click ? <FaTimes /> : <FaBars />}
-            </MenuIconStyles>
-            <MenuLinksStyles click={click} onClick={handleClick}>
-                <li><NavLinkStyles to="/services">Our Services</NavLinkStyles></li>
-                <li><NavLinkStyles to="/projects">Our Projects</NavLinkStyles></li>
-                <li><NavLinkStyles to="/about">About Us</NavLinkStyles></li>
-                <li><NavLinkStyles to="/contact">Contact Us</NavLinkStyles></li>
-            </MenuLinksStyles>
+            </MenuIcon>
+            <NavList click={click} onClick={handleClick}>
+                <NavListItem><NavLink to="/services">Our Services</NavLink></NavListItem>
+                <NavListItem><NavLink to="/projects">Our Projects</NavLink></NavListItem>
+                <NavListItem><NavLink to="/about">About Us</NavLink></NavListItem>
+                <NavListItem><NavLink to="/contact">Contact Us</NavLink></NavListItem>
+            </NavList>
         </NavbarStyles>
     )
 };

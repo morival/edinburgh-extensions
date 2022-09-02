@@ -23,6 +23,18 @@ const GlobalStyle = createGlobalStyle`
     h1, h2, h3 {
         font-family: ${({ theme }) => theme.fonts.header}, sans-serif;
     }
+    ul {
+        display: flex;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        text-align: center;
+    }
+    a {
+        text-decoration: none;
+        color: ${({ theme }) => theme.color.text};
+    }
 `;
 
 const Theme = ({ children }) => {

@@ -3,7 +3,14 @@ module.exports = {
     siteUrl: `https://www.edinburgh-extensions.co.uk`,
     title: `Edinburgh Extensions`,
     description: `New builds, Extensions, Renovations, Bathrooms, Finishing Joinery, Masonry`,
+    links: {
+      link_1: `Our Services`,
+      link_2: `Our Projects`,
+      link_3: `About Us`,
+      link_4: `Contact Us`,
+    },
     contact: {
+      address: `address details`,
       phone_1: `phone number 1`,
       phone_2: `phone number 2`,
       email: `email address`,
@@ -13,7 +20,7 @@ module.exports = {
       instagram: `https://instagram.com`,
     },
     images: {
-      logo: `gatsby-icon.png`,
+      
     }
   },
   plugins: [
