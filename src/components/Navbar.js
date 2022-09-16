@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { graphql, Link, useStaticQuery } from 'gatsby';
 import styled from 'styled-components';
+import media from "styled-media-query";
 import { FaTimes, FaBars } from 'react-icons/fa';
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
@@ -10,12 +11,12 @@ const NavbarStyles = styled.nav`
     justify-content: space-between;
     padding: 0 20px;
     background-color: gainsboro;
-    @media ${({ theme }) => theme.breakpoints.mobile} {
+    ${media.lessThan('medium')`
         justify-content: center;
-    }
+    `}
 `;
 const NavList = styled.ul`
-    @media ${({ theme }) => theme.breakpoints.mobile} {
+    ${media.lessThan('medium')`
         flex-direction: column;
         justify-content: center;
         width: 100%;
@@ -26,16 +27,16 @@ const NavList = styled.ul`
         transition: all 0.2s ease;
         background: mediumblue;
         z-index: 1;
-    }
+    `}
 `;
 const  NavListItem = styled.li`
     display: flex;
     align-items: center;
     height: 80px;
-    @media ${({ theme }) => theme.breakpoints.mobile} {
+    ${media.lessThan('medium')`
         width: 100%;
         justify-content: center;
-    }
+    `}
 `;
 const NavLogo = styled(Link)`
     z-index: 999;
@@ -43,7 +44,7 @@ const NavLogo = styled(Link)`
 const NavLink = styled(Link)`
     padding: 1rem;
     font-size: 1.5rem;
-    @media ${({ theme }) => theme.breakpoints.mobile} {
+    ${media.lessThan('medium')`
         width: 100%;
         padding: 1rem 0;
         max-width: 350px;
@@ -53,11 +54,11 @@ const NavLink = styled(Link)`
             color: lightgoldenrodyellow;
             background-color: darkblue;
         }
-    }
+    `}
 `;
 const MenuIcon = styled.div`
     display: none;
-    @media ${({ theme }) => theme.breakpoints.mobile} {
+    ${media.lessThan('medium')`
         z-index: 999;
         display: block;
         position: absolute;
@@ -67,7 +68,7 @@ const MenuIcon = styled.div`
         font-size: 2rem;
         color: ${({ click }) => (click ? 'white' : 'black')};
         cursor: pointer;
-    }
+    `}
 `;
 
 export const Navbar = () => {

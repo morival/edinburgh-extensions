@@ -2,6 +2,7 @@ import React from 'react'
 import { Navbar } from './';
 import { graphql, useStaticQuery } from 'gatsby'
 import styled from 'styled-components';
+import media from "styled-media-query";
 import { MdPhoneIphone, MdOutlineEmail } from 'react-icons/md';
 
 
@@ -16,9 +17,9 @@ const TopHeader = styled.div`
     display: flex;
     justify-content: flex-end;
     gap: 10px;
-    @media ${({ theme }) => theme.breakpoints.mobile} {
+    ${media.lessThan('medium')`
         display: none;
-    }
+    `}
 `;
 const TopHeaderItem = styled.div`
     display: flex;
