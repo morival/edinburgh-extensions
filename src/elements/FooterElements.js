@@ -1,20 +1,30 @@
 import { Link } from "gatsby";
 import styled from "styled-components";
+import media from "styled-media-query";
 
 export const FooterWrapper = styled.div`
     padding: 1rem;
     color: white;
     background-color: #191970;
 ` 
-export const MainFooter = styled.div`
+export const MainContainer = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    ${media.lessThan('medium')`
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    `}
 `;
 export const Contact = styled.div`
-
+    ${media.lessThan('medium')`
+        order: 1;
+    `}
 `;
 export const Logo = styled(Link)`
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
 `;
 export const ContactDetails = styled.div`
 

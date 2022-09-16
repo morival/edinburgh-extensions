@@ -14,24 +14,24 @@ export const theme = {
 };
 
 export const GlobalStyle = createGlobalStyle`
-body {
-    background: ${({ theme }) => theme.color.background};
-    color: ${({ theme }) => theme.color.text};
-    font-family: ${({ theme }) => theme.fonts.copy}, sans-serif;
-}
-h1, h2, h3 {
-    font-family: ${({ theme }) => theme.fonts.header}, sans-serif;
-}
-ul {
-    display: flex;
-    align-items: center;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    text-align: center;
-}
-a {
-    text-decoration: none;
-    color: ${({ theme }) => theme.color.text};
-}
+    body {
+        background: ${({ theme }) => theme.color.background};
+        color: ${({ theme }) => theme.color.text};
+        font-family: ${({ theme }) => theme.fonts.copy}, sans-serif;
+    }
+    h1, h2, h3 {
+        font-family: ${({ theme }) => theme.fonts.header}, sans-serif;
+    }
+    ul {
+        display: flex;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        text-align: center;
+    }
+    a {
+        text-decoration: none;
+        color: ${({ theme }) => theme.color.text};
+    }
 `;

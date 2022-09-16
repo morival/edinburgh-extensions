@@ -1,5 +1,5 @@
 import React from 'react'
-import { Contact, ContactDetails, CopyRights, FooterWrapper, Logo, MainFooter, SiteLink, SiteMap, SocialMedia } from '../elements';
+import { Contact, ContactDetails, CopyRights, FooterWrapper, Logo, MainContainer, SiteLink, SiteMap, SocialMedia } from '../elements';
 import { graphql, useStaticQuery } from 'gatsby';
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { FaFacebookSquare, FaInstagramSquare } from 'react-icons/fa';
@@ -46,7 +46,7 @@ export const Footer = () => {
     // console.log(image)
     return (
         <FooterWrapper>
-            <MainFooter>
+            <MainContainer>
                 <Logo to='/'><GatsbyImage image={image} alt="logo" /></Logo>
                 <Contact>
                     <ContactDetails>
@@ -67,7 +67,7 @@ export const Footer = () => {
                     <div><SiteLink to="/about">{link_3}</SiteLink></div>
                     <div><SiteLink to="/contact">{link_4}</SiteLink></div>
                 </SiteMap>
-            </MainFooter>
+            </MainContainer>
             <CopyRights>Copy Rights {new Date().getFullYear()}</CopyRights>
         </FooterWrapper>
     )
