@@ -1,47 +1,8 @@
 import React from 'react'
-import styled from 'styled-components'
-import { graphql, Link, useStaticQuery } from 'gatsby';
+import { Contact, ContactDetails, CopyRights, FooterWrapper, Logo, MainFooter, SiteLink, SiteMap, SocialMedia } from '../elements';
+import { graphql, useStaticQuery } from 'gatsby';
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { FaFacebookSquare, FaInstagramSquare } from 'react-icons/fa';
-
-
-const FooterStyles = styled.footer`
-    padding: 1rem;
-    color: white;
-    background-color: #191970;
-`;
-const MainFooter = styled.div`
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-`;
-const Contact = styled.div`
-
-`;
-const Logo = styled(Link)`
-
-`;
-const ContactDetails = styled.div`
-
-`;
-const SocialMedia = styled.div`
-    display: inline-grid;
-    grid-template-columns: repeat(2, auto);
-    grid-gap: 10px;
-    svg {
-        width: 30px;
-        height: 30px;
-        color: ${({ theme }) => theme.color.social_icons}
-    }
-`;
-const SiteMap = styled.div`
-
-`;
-const SiteLink = styled(Link)`
-    color: white;
-`;
-const CopyRights = styled.div`
-    text-align: center;
-`;
 
 
 export const Footer = () => {
@@ -84,7 +45,7 @@ export const Footer = () => {
 
     // console.log(image)
     return (
-        <FooterStyles>
+        <FooterWrapper>
             <MainFooter>
                 <Logo to='/'><GatsbyImage image={image} alt="logo" /></Logo>
                 <Contact>
@@ -108,6 +69,6 @@ export const Footer = () => {
                 </SiteMap>
             </MainFooter>
             <CopyRights>Copy Rights {new Date().getFullYear()}</CopyRights>
-        </FooterStyles>
+        </FooterWrapper>
     )
 };

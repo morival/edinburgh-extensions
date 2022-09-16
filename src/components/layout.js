@@ -1,21 +1,14 @@
 import * as React from 'react';
 import { Header, Footer } from './';
-import styled from 'styled-components';
-
-
-const LayoutStyles = styled.div`
-    min-height: 100vh;
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-`;
+import { LayoutWrapper } from '../elements';
 
 
 export const Layout = ({ children }) => {
   return (
-        <LayoutStyles>
+        <LayoutWrapper>
             <Header />
             {children}
             <Footer />
-        </LayoutStyles>
+        </LayoutWrapper>
   )
 }
