@@ -82,7 +82,7 @@ export default function Footer() {
     const { address, phone_1, phone_2, email } = data.site.siteMetadata.contact
     const { facebook, instagram } = data.site.siteMetadata.social
 
-    console.log(image)
+    // console.log(image)
     return (
         <FooterStyles>
             <MainFooter>
@@ -95,8 +95,8 @@ export default function Footer() {
                         <div>{email}</div>
                     </ContactDetails>
                     <SocialMedia>
-                        <Link to={facebook}><FaFacebookSquare /></Link>
-                        <Link to={instagram}><FaInstagramSquare /></Link>
+                        <a href={facebook} aria-label='Facebook'><FaFacebookSquare /></a>
+                        <a href={instagram} aria-label='Instagram'><FaInstagramSquare /></a>
                     </SocialMedia>
                 </Contact>
                 <SiteMap>
