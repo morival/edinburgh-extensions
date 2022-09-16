@@ -1,11 +1,12 @@
-import * as React from "react"
-import styled from "styled-components"
+import * as React from "react";
+import { Container } from '../components';
+// import styled from "styled-components"
 // import { graphql } from "gatsby";
 
 
-const HomePageStyles = styled.div`
+// const Container = styled.div`
 
-`;
+// `;
 
 
 
@@ -15,9 +16,9 @@ export default function IndexPage({ data }) {
   // console.log(title)
 
   return (
-    <HomePageStyles>
+    <Container>
       <h1>Home Page</h1>
-    </HomePageStyles>
+    </Container>
   )
 }
 

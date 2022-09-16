@@ -10,12 +10,12 @@ const NavbarStyles = styled.nav`
     justify-content: space-between;
     padding: 0 20px;
     background-color: gainsboro;
-    @media screen and (max-width: 768px) {
+    @media ${({ theme }) => theme.breakpoints.mobile} {
         justify-content: center;
     }
 `;
 const NavList = styled.ul`
-    @media screen and (max-width: 768px) {
+    @media ${({ theme }) => theme.breakpoints.mobile} {
         flex-direction: column;
         justify-content: center;
         width: 100%;
@@ -32,7 +32,7 @@ const  NavListItem = styled.li`
     display: flex;
     align-items: center;
     height: 80px;
-    @media screen and (max-width: 768px) {
+    @media ${({ theme }) => theme.breakpoints.mobile} {
         width: 100%;
         justify-content: center;
     }
@@ -43,7 +43,7 @@ const NavLogo = styled(Link)`
 const NavLink = styled(Link)`
     padding: 1rem;
     font-size: 1.5rem;
-    @media screen and (max-width: 768px) {
+    @media ${({ theme }) => theme.breakpoints.mobile} {
         width: 100%;
         padding: 1rem 0;
         max-width: 350px;
@@ -57,7 +57,7 @@ const NavLink = styled(Link)`
 `;
 const MenuIcon = styled.div`
     display: none;
-    @media screen and (max-width: 768px) {
+    @media ${({ theme }) => theme.breakpoints.mobile} {
         z-index: 999;
         display: block;
         position: absolute;
@@ -70,7 +70,7 @@ const MenuIcon = styled.div`
     }
 `;
 
-export default function Navbar() {
+export const Navbar = () => {
 
     const data = useStaticQuery(graphql`
     query Logo {

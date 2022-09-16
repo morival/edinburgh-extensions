@@ -44,7 +44,7 @@ const CopyRights = styled.div`
 `;
 
 
-export default function Footer() {
+export const Footer = () => {
 
     const data = useStaticQuery(graphql`
         query FootLogo {

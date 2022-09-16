@@ -3,6 +3,10 @@ import { ThemeProvider, createGlobalStyle } from 'styled-components'
 import { Normalize } from 'styled-normalize'
 
 const theme = {
+    breakpoints: {
+        mobile: 'only screen and (max-width: 50rem)',
+        tablet: 'only screen and (max-width: 65rem)',
+    },
     color: {
         background: 'white',
         text: 'black',
@@ -37,7 +41,7 @@ const GlobalStyle = createGlobalStyle`
     }
 `;
 
-const Theme = ({ children }) => {
+export const Theme = ({ children }) => {
   return (
     <ThemeProvider theme={theme}>
         <GlobalStyle />
@@ -46,5 +50,3 @@ const Theme = ({ children }) => {
     </ThemeProvider>
   )
 }
-
-export default Theme;

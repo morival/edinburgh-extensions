@@ -1,7 +1,5 @@
 import * as React from 'react';
-
-import Header from './Header';
-import Footer from './Footer';
+import { Header, Footer } from './';
 import styled from 'styled-components';
 
 
@@ -12,14 +10,11 @@ const LayoutStyles = styled.div`
 `;
 
 
-export default function Layout({ children }) {
+export const Layout = ({ children }) => {
   return (
         <LayoutStyles>
             <Header />
-            {/* <title>{pageTitle}</title> */}
-            <main>
-                {children}
-            </main>
+            {children}
             <Footer />
         </LayoutStyles>
   )

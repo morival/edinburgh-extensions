@@ -1,8 +1,8 @@
 import React from 'react'
+import { Navbar } from './';
 import { graphql, useStaticQuery } from 'gatsby'
 import styled from 'styled-components';
 import { MdPhoneIphone, MdOutlineEmail } from 'react-icons/md';
-import Navbar from './Navbar';
 
 
 const HeaderStyles = styled.header`
@@ -16,7 +16,7 @@ const TopHeader = styled.div`
     display: flex;
     justify-content: flex-end;
     gap: 10px;
-    @media (max-width: 768px) {
+    @media ${({ theme }) => theme.breakpoints.mobile} {
         display: none;
     }
 `;
@@ -32,7 +32,7 @@ const TopHeaderItem = styled.div`
 `
 
 
-export default function Header(params) {
+export const Header = () => {
 
     const data = useStaticQuery(graphql`
         query MyQuery {
