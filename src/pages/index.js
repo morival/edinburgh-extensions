@@ -6,6 +6,11 @@ export default function IndexPage({ data }) {
   return (
     <Container>
       <h1>Home Page</h1>
+      <section></section>
+      <section></section>
+      <section></section>
+      <section></section>
+      <section></section>
     </Container>
   )
 }

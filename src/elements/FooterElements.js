@@ -9,7 +9,7 @@ export const AddressDetails = styled.div`
 export const Contact = styled.div`
     display: flex;
     flex-direction: column;
-    row-gap: 1rem;
+    row-gap: 8px;
     ${media.lessThan('medium')`
     /* order: 1; */
     `}
@@ -25,7 +25,13 @@ export const CopyRights = styled.div`
 export const Follow = styled.div`
     display: flex;
     flex-direction: column;
-    row-gap: 1rem;
+    row-gap: 8px;
+    ${media.lessThan('medium')`
+        grid-column: 2;
+    `}
+    ${media.lessThan('small')`
+        grid-column: 1;
+    `}
 `;
 export const FooterWrapper = styled.div`
     color: white;
@@ -36,20 +42,32 @@ export const Logo = styled(Link)`
     display: flex;
     align-items: center;
     justify-content: center;
+    ${media.lessThan('small')`
+        display: none;
+    `}
 `;
 export const MainFooter = styled.div`
+    display: grid;
+    grid-template-columns: 240px 1fr 1fr 1fr;
+    gap: 12px;
+    /* display: flex;
+    justify-content: space-around; */
     padding: 1rem;
-    display: flex;
-    justify-content: space-around;
+    ${media.lessThan('medium')`
+        grid-template-columns: 120px 1fr 1fr;
+        padding: 0.5rem;
+    `}
     ${media.lessThan('small')`
-        flex-direction: column;
-        align-items: center;
+        /* display: flex;
+        flex-direction: column; */
+        grid-template-columns: 1fr;
+        padding: 1rem 2rem;
     `}
 `;
 export const Menu = styled.div`
     display: flex;
     flex-direction: column;
-    row-gap: 1rem;  
+    row-gap: 8px;  
 `;
 export const SiteLink = styled(Link)`
     color: white;
@@ -57,13 +75,15 @@ export const SiteLink = styled(Link)`
 export const SiteMap = styled.div`
 `;
 export const SocialMediaList = styled.div`
-    display: inline-grid;
+    /* display: inline-grid;
     grid-template-columns: repeat(2, auto);
-    grid-gap: 10px;
+    grid-gap: 10px; */
+    display: flex;
+    column-gap: 10px;
     svg {
         width: 30px;
         height: 30px;
-        color: ${({ theme }) => theme.color.social_icons}
+        color: ${({ theme }) => theme.color.social_icons}    
     }
 `;
 export const Title = styled.div`

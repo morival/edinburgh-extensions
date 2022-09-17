@@ -12,7 +12,7 @@ module.exports = {
     },
     contact: {
       street: `street`,
-      city: `city`,
+      city: `Edinburgh`,
       postcode: `postcode`,
       phone_1: `phone number 1`,
       phone_2: `phone number 2`,

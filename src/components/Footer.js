@@ -51,36 +51,37 @@ export const Footer = () => {
         <FooterWrapper>
             <MainFooter>
                 <Logo to='/'><GatsbyImage image={image} alt="logo" /></Logo>
-                    <Contact>
-                        <Title>contact us</Title>
-                        <AddressDetails>
-                            <div>{street}</div>
-                            <div>{city}</div>
-                            <div>{postcode}</div>
-                        </AddressDetails>
-                        <ContactDetails>
-                            <div>{phone_1}</div>
-                            <div>{phone_2}</div>
-                            <div>{email}</div>
-                        </ContactDetails>
-                    </Contact>
-                    <Menu>
-                        <Title>menu</Title>
-                        <SiteMap>
-                            <div><SiteLink to="/">{link_1}</SiteLink></div>
-                            <div><SiteLink to="/services">{link_2}</SiteLink></div>
-                            <div><SiteLink to="/projects">{link_3}</SiteLink></div>
-                            <div><SiteLink to="/about">{link_4}</SiteLink></div>
-                            <div><SiteLink to="/contact">{link_5}</SiteLink></div>
-                        </SiteMap>
-                    </Menu>
-                    <Follow>
-                        <Title>follow us</Title>
-                        <SocialMediaList>
-                            <a href={facebook} aria-label='Facebook'><FaFacebookSquare /></a>
-                            <a href={instagram} aria-label='Instagram'><FaInstagramSquare /></a>
-                        </SocialMediaList>
-                    </Follow>
+                <Contact>
+                    <Title>contact us</Title>
+                    <AddressDetails>
+                        <div>{title}</div>
+                        <div>{street}</div>
+                        <div>{city}</div>
+                        <div>{postcode}</div>
+                    </AddressDetails>
+                    <ContactDetails>
+                        <div>{phone_1}</div>
+                        <div>{phone_2}</div>
+                        <div>{email}</div>
+                    </ContactDetails>
+                </Contact>
+                <Menu>
+                    <Title>menu</Title>
+                    <SiteMap>
+                        <div><SiteLink to="/">{link_1}</SiteLink></div>
+                        <div><SiteLink to="/services">{link_2}</SiteLink></div>
+                        <div><SiteLink to="/projects">{link_3}</SiteLink></div>
+                        <div><SiteLink to="/about">{link_4}</SiteLink></div>
+                        <div><SiteLink to="/contact">{link_5}</SiteLink></div>
+                    </SiteMap>
+                </Menu>
+                <Follow>
+                    <Title>follow us</Title>
+                    <SocialMediaList>
+                        <a href={facebook} aria-label='Facebook'><FaFacebookSquare /></a>
+                        <a href={instagram} aria-label='Instagram'><FaInstagramSquare /></a>
+                    </SocialMediaList>
+                </Follow>
             </MainFooter>
             <CopyRights>© {new Date().getFullYear()} {title}. All Rights Reserved.</CopyRights>
         </FooterWrapper>
