@@ -8,17 +8,17 @@ import { MdPhoneIphone, MdOutlineEmail } from 'react-icons/md';
 export const Header = () => {
 
     const data = useStaticQuery(graphql`
-        query MyQuery {
-            site {
-                siteMetadata {
-                    contact {
-                        email
-                        phone_1
-                        phone_2
-                    }
-                }
+    query HeaderQuery {
+        site {
+          siteMetadata {
+            contact {
+              phone_1
+              phone_2
+              email
             }
+          }
         }
+      }
     `);
 
     const { email, phone_1, phone_2 } = data.site.siteMetadata.contact;

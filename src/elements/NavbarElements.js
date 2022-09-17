@@ -40,6 +40,7 @@ export const NavLogo = styled(Link)`
 export const NavLink = styled(Link)`
     padding: 1rem;
     font-size: 1.5rem;
+    text-transform: capitalize;
     ${media.lessThan('medium')`
         width: 100%;
         padding: 1rem 0;

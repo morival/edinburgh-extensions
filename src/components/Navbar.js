@@ -8,15 +8,27 @@ import { MenuIcon, NavbarWrapper, NavLink, NavList, NavListItem, NavLogo } from 
 export const Navbar = () => {
 
     const data = useStaticQuery(graphql`
-    query Logo {
-        file(name: {eq: "project_04"}) {
-          childImageSharp {
-            gatsbyImageData(height: 80)
-          }
-        }
-    }
-    `)
+        query NavQuery {
+            file(name: {eq: "project_04"}) {
+                childImageSharp {
+                  gatsbyImageData(height: 80)
+                }
+              }
+              site {
+                siteMetadata {
+                  links {
+                    link_2
+                    link_3
+                    link_4
+                    link_5
+                  }
+                }
+              }
+            }
+    `);
+
     const image = getImage(data.file)
+    const { link_2, link_3, link_4, link_5 } = data.site.siteMetadata.links;
 
     const [click, setClick] = useState(false)
     // const [scroll, setScroll] = useState(false)
@@ -46,10 +58,10 @@ export const Navbar = () => {
                 {click ? <FaTimes /> : <FaBars />}
             </MenuIcon>
             <NavList click={click} onClick={handleClick}>
-                <NavListItem><NavLink to="/services">Our Services</NavLink></NavListItem>
-                <NavListItem><NavLink to="/projects">Our Projects</NavLink></NavListItem>
-                <NavListItem><NavLink to="/about">About Us</NavLink></NavListItem>
-                <NavListItem><NavLink to="/contact">Contact Us</NavLink></NavListItem>
+                <NavListItem><NavLink to="/services">{link_2}</NavLink></NavListItem>
+                <NavListItem><NavLink to="/projects">{link_3}</NavLink></NavListItem>
+                <NavListItem><NavLink to="/about">{link_4}</NavLink></NavListItem>
+                <NavListItem><NavLink to="/contact">{link_5}</NavLink></NavListItem>
             </NavList>
         </NavbarWrapper>
     )
