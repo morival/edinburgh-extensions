@@ -2,14 +2,7 @@ module.exports = {
   siteMetadata: {
     siteUrl: `https://www.edinburgh-extensions.co.uk`,
     title: `Edinburgh Extensions`,
-    description: `New builds, Extensions, Renovations, Bathrooms, Finishing Joinery, Masonry`,
-    links: {
-      link_1: `home`,
-      link_2: `our services`,
-      link_3: `our projects`,
-      link_4: `about us`,
-      link_5: `contact us`,
-    },
+    description: `New builds, Extensions, Renovations, Bathrooms, Finishing Joinery, Masonry (Some Description...)`,
     contact: {
       street: `street`,
       city: `Edinburgh`,
@@ -18,13 +11,29 @@ module.exports = {
       phone_2: `phone number 2`,
       email: `email address`,
     },
+    images: {
+      
+    },
+    links: {
+      link_1: `home`,
+      link_2: `our services`,
+      link_3: `our projects`,
+      link_4: `about us`,
+      link_5: `contact us`,
+    },
+    slogans: {
+      slogan_home_1: `Catchy Slogan (building trust)`,
+      slogan_home_2: `Catchy Slogan (encouraging visitor for action)`,
+      slogan_home_3: `Catchy Slogan (another one building trust)`,
+      slogan_services: `Catchy Slogan (encouraging visitor to do action)`,
+      slogan_projects: `Catchy Slogan (assuring professionality and efficiency)`,
+      slogan_about: `Catchy Slogan (ethos, manifesto)`,
+      slogan_contact: `Catchy Slogan (encouraging to get in touch)`,
+    },
     social: {
       facebook: `https://facebook.com`,
       instagram: `https://instagram.com`,
     },
-    images: {
-      
-    }
   },
   plugins: [
     `gatsby-plugin-image`,

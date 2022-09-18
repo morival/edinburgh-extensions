@@ -54,8 +54,8 @@ export const MainFooter = styled.div`
     justify-content: space-around; */
     padding: 1rem;
     ${media.lessThan('medium')`
-        grid-template-columns: 120px 1fr 1fr;
-        padding: 0.5rem;
+        grid-template-columns: 120px 3fr 2fr;
+        /* padding: 0.5rem; */
     `}
     ${media.lessThan('small')`
         /* display: flex;
