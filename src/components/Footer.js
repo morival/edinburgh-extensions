@@ -1,8 +1,8 @@
 import React from 'react'
-import { AddressDetails, Contact, ContactDetails, CopyRights, Follow, FooterWrapper, Logo, MainFooter, Menu, SiteLink, SiteMap, SocialMediaList, Title } from '../elements';
+import { AddressDetails, Contact, ContactDetails, CopyRights, Follow, FooterWrapper, Logo, MainFooter, Menu, SiteLink, SiteMap, SocialMediaLink, SocialMediaList, Title } from '../elements';
 import { graphql, useStaticQuery } from 'gatsby';
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import { FaFacebookSquare, FaInstagramSquare } from 'react-icons/fa';
+import { FaFacebook, FaInstagram } from 'react-icons/fa';
 
 
 export const Footer = () => {
@@ -78,8 +78,8 @@ export const Footer = () => {
                 <Follow>
                     <Title>follow us</Title>
                     <SocialMediaList>
-                        <a href={facebook} aria-label='Facebook'><FaFacebookSquare /></a>
-                        <a href={instagram} aria-label='Instagram'><FaInstagramSquare /></a>
+                        <SocialMediaLink href={facebook} aria-label='Facebook' color='#3b5998'><FaFacebook /></SocialMediaLink>
+                        <SocialMediaLink href={instagram} aria-label='Instagram' color='#c32aa3'><FaInstagram /></SocialMediaLink>
                     </SocialMediaList>
                 </Follow>
             </MainFooter>

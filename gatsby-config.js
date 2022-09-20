@@ -21,6 +21,9 @@ module.exports = {
       link_4: `about us`,
       link_5: `contact us`,
     },
+    services: [
+      `construction`, `extensions`, `refurbishment`
+    ],
     slogans: {
       slogan_home_1: `Catchy Slogan (building trust)`,
       slogan_home_2: `Catchy Slogan (encouraging visitor for action)`,

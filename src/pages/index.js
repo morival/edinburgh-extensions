@@ -3,24 +3,9 @@ import * as React from "react";
 import { Container } from '../components';
 
 
-export const query = graphql`
-query HomeQuery {
-  site {
-    siteMetadata {
-      slogans {
-        slogan_home_1
-        slogan_home_2
-        slogan_home_3
-      }
-    }
-  }
-}
-`;
-
-
 export default function IndexPage({ data }) {
 
-  console.log(data)
+  console.log(data.site.siteMetadata.slogans)
   const { slogan_home_1, slogan_home_2, slogan_home_3 } = data.site.siteMetadata.slogans;
   return (
     <Container>
@@ -41,3 +26,18 @@ export default function IndexPage({ data }) {
     </Container>
   )
 }
+
+
+export const query = graphql`
+query HomeQuery {
+  site {
+    siteMetadata {
+      slogans {
+        slogan_home_1
+        slogan_home_2
+        slogan_home_3
+      }
+    }
+  }
+}
+`;

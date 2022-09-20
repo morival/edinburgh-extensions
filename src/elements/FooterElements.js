@@ -74,17 +74,27 @@ export const SiteLink = styled(Link)`
 `;
 export const SiteMap = styled.div`
 `;
+export const SocialMediaLink = styled.a`
+    svg {
+        width: 30px;
+        height: 30px;
+        padding: 3px;
+        color: ${({ theme }) => theme.color.social_icons};
+    }
+    svg {
+        :hover {
+            color: ${props => props.color};
+            /* background: #ffffff; */
+        }
+    }
+`;
 export const SocialMediaList = styled.div`
     /* display: inline-grid;
     grid-template-columns: repeat(2, auto);
     grid-gap: 10px; */
     display: flex;
     column-gap: 10px;
-    svg {
-        width: 30px;
-        height: 30px;
-        color: ${({ theme }) => theme.color.social_icons}    
-    }
+    
 `;
 export const Title = styled.div`
     text-transform: uppercase;
