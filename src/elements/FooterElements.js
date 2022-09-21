@@ -84,7 +84,6 @@ export const SocialMediaLink = styled.a`
     svg {
         :hover {
             color: ${props => props.color};
-            /* background: #ffffff; */
         }
     }
 `;
