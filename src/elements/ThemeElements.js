@@ -16,8 +16,11 @@ export const theme = {
 export const GlobalStyle = createGlobalStyle`
     body {
         background: ${({ theme }) => theme.color.background};
+        border: 0;
         color: ${({ theme }) => theme.color.text};
         font-family: ${({ theme }) => theme.fonts.copy}, sans-serif;
+        margin: 0;
+        padding: 0;
     }
     h1, h2, h3 {
         font-family: ${({ theme }) => theme.fonts.header}, sans-serif;

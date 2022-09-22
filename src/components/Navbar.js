@@ -8,23 +8,23 @@ import { MenuIcon, NavbarWrapper, NavLink, NavList, NavListItem, NavLogo } from 
 export const Navbar = () => {
 
     const data = useStaticQuery(graphql`
-        query NavQuery {
-            file(name: {eq: "project_04"}) {
-                childImageSharp {
-                  gatsbyImageData(height: 80)
-                }
+      query NavQuery {
+          file(name: {eq: "project_04"}) {
+              childImageSharp {
+                gatsbyImageData(height: 80)
               }
-              site {
-                siteMetadata {
-                  links {
-                    link_2
-                    link_3
-                    link_4
-                    link_5
-                  }
+            }
+            site {
+              siteMetadata {
+                links {
+                  link_2
+                  link_3
+                  link_4
+                  link_5
                 }
               }
             }
+          }
     `);
 
     const image = getImage(data.file)
@@ -53,7 +53,9 @@ export const Navbar = () => {
 
     return (
         <NavbarWrapper>
-            <NavLogo to="/" onClick={closeMobileMenu}><GatsbyImage image={image} alt="logo" /></NavLogo>
+            <NavLogo to="/" onClick={closeMobileMenu}>
+              <GatsbyImage image={image} alt="logo" />
+            </NavLogo>
             <MenuIcon click={click} onClick={handleClick}>
                 {click ? <FaTimes /> : <FaBars />}
             </MenuIcon>
