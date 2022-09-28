@@ -3,10 +3,7 @@ import React from 'react'
 import { Container, Project } from '../components'
 
 
-export default function Projects({ data }) {
-
-    const { nodes } = data.allMarkdownRemark;
-    const { slogan_projects } = data.site.siteMetadata.slogans;
+export default function Projects({ data: { allMarkdownRemark: { nodes }, site: { siteMetadata: { slogans: { slogan_projects }} }} }) {
 
     const projectComponents = () =>
     nodes.map(node => {

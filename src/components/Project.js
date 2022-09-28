@@ -1,17 +1,16 @@
 import React from 'react';
-import { ProjectDescription, ProjectInfo, ProjectTitle, ProjectWrapper } from '../elements';
+import { ProjectDescription, ProjectInfo, ProjectLocation, ProjectTitle, ProjectWrapper } from '../elements';
 
 
-export function Project({ project }) {
-
-    const { title } = project.frontmatter;
+export function Project({ project: { frontmatter: { title, location }, html } }) {
     
-    console.log(project)
+    // console.log(project)
     return (
         <ProjectWrapper>
             <ProjectInfo>
                 <ProjectTitle>{title}</ProjectTitle>
-                <ProjectDescription>{project.html}</ProjectDescription>
+                <ProjectLocation>{location}</ProjectLocation>
+                <ProjectDescription dangerouslySetInnerHTML={{ __html: html }}/>
             </ProjectInfo>
         </ProjectWrapper>
     )

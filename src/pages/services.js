@@ -3,11 +3,8 @@ import React from 'react'
 import { Container, Service } from '../components';
 
 
-export default function Services({ data }) {
+export default function Services({ data: { site: { siteMetadata: { services, slogans: { slogan_services }} }, allFile: { edges } } }) {
 
-    const { slogan_services } = data.site.siteMetadata.slogans;
-    const { services } = data.site.siteMetadata;
-    const { edges } = data.allFile
 
     // console.log(edges)
     // console.log(services)

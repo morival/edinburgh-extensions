@@ -7,6 +7,9 @@ export const ProjectDescription = styled.div`
 export const ProjectInfo = styled.div`
 
 `;
+export const ProjectLocation = styled.h5`
+
+`;
 export const ProjectTitle = styled.h3`
 
 `;
