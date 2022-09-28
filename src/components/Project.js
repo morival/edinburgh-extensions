@@ -1,16 +1,17 @@
 import React from 'react';
-import { ProjectDescription, ProjectInfo, ProjectLocation, ProjectTitle, ProjectWrapper } from '../elements';
+import { ProjectDescription, ProjectInfo, ProjectLink, ProjectLocation, ProjectTitle, ProjectWrapper } from '../elements';
 
 
-export function Project({ project: { frontmatter: { title, location }, html } }) {
+export function Project({ project: { frontmatter: { title, location, slug }, html } }) {
     
-    // console.log(project)
+    // console.log(slug)
     return (
         <ProjectWrapper>
             <ProjectInfo>
-                <ProjectTitle>{title}</ProjectTitle>
+                <ProjectLink to={'/projects/'+slug}><ProjectTitle>{title}</ProjectTitle></ProjectLink>
+                
                 <ProjectLocation>{location}</ProjectLocation>
-                <ProjectDescription dangerouslySetInnerHTML={{ __html: html }}/>
+                <ProjectDescription dangerouslySetInnerHTML={{ __html: html }} />
             </ProjectInfo>
         </ProjectWrapper>
     )
