@@ -1,8 +1,11 @@
+import BackgroundImage from "gatsby-background-image";
 import styled from "styled-components";
 
 
-export const BannerWrapper = styled.div`
-    width: 100%;
-    height: 100vh;
-    
+
+export const BannerImage = styled(BackgroundImage)`
+    background-attachment: fixed;
+`;
+export const BannerImageInner = styled.div`
+    height: 300px;
 `;

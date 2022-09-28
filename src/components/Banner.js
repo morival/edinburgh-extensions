@@ -1,14 +1,28 @@
 import React from 'react';
-import { StaticImage } from "gatsby-plugin-image"
-import { BannerWrapper } from '../elements';
+import { graphql, useStaticQuery } from 'gatsby';
+import { getImage } from 'gatsby-plugin-image';
+import { convertToBgImage } from 'gbimage-bridge';
+import { BannerImage, BannerImageInner } from '../elements';
 
 
 export function Banner(params) {
     
+    const { file } = useStaticQuery(graphql`
+    query BannerQuery {
+        file(name: {eq: "ext02"}) {
+          id
+          childImageSharp {
+            gatsbyImageData
+          }
+        }
+      }
+    `);
+    const image = getImage(file)
+    const bgImage = convertToBgImage(image)
 
     return (
-        <BannerWrapper>
-            <StaticImage style={{ backgroundSize: 'cover' }} src='../images/examples/ext03.png' alt='banner' layout='constrained' />
-        </BannerWrapper>
+        <BannerImage Tag='section' {...bgImage} preserveStackingContext>
+            <BannerImageInner />
+        </BannerImage>
     )
 };
