@@ -12,7 +12,7 @@ export function Banner(params) {
         file(name: {eq: "ext02"}) {
           id
           childImageSharp {
-            gatsbyImageData
+            gatsbyImageData(placeholder: BLURRED)
           }
         }
       }

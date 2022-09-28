@@ -9,7 +9,7 @@ export function Service({ service, edge, i }) {
     const image = getImage(edge.node)
 
     const even = i%2 === 0 ? 'row' : 'row-reverse'
-    // console.log(even)
+    // console.log(service)
     return (
         <ServiceWrapper even={even}>
             <ServiceImage>
