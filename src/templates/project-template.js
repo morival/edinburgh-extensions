@@ -5,10 +5,10 @@ import { Container } from '../components';
 
 export default function ProjectTemplate({ data: { markdownRemark: { frontmatter: { title }, html } } }) {
     
-    // console.log(frontmatter)    
+    // console.log(frontmatter)
     return (
         <Container>
-            <h1>{title}</h1>
+            <h3>{title}</h3>
             <div dangerouslySetInnerHTML={{ __html: html }} />
         </Container>
     )
@@ -21,8 +21,9 @@ query ProjectTemplateQuery($slug: String) {
     frontmatter {
       title
       slug
+      location
     }
     html
   }
 }
-  `;
+`;

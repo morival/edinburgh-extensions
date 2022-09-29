@@ -7,9 +7,9 @@ module.exports = {
       street: `street`,
       city: `Edinburgh`,
       postcode: `postcode`,
-      phone_1: `phone number 1`,
-      phone_2: `phone number 2`,
-      email: `email address`,
+      phone_1: `07841 581 119`,
+      phone_2: `07508 953 012`,
+      email: `edinburghextensions@yahoo.com`,
     },
     images: {
       

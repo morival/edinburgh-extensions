@@ -10,9 +10,9 @@ export default function Services({ data: { site: { siteMetadata: { services, slo
     // console.log(services)
     
     const serviceComponents = () => 
-    services.map((el, i) => {
-      const edge = edges.find(({node}) => node.relativePath === el.relativePath)
-      return <Service service={el} edge={edge} i={i} key={i} />
+    services.map((service, i) => {
+      const edge = edges.find(({node}) => node.relativePath === service.relativePath)
+      return <Service service={service} edge={edge} i={i} key={i} />
     })
 
     return ( 
@@ -39,7 +39,7 @@ query ServicesQuery {
       }
     }
   }
-  allFile(filter: {relativeDirectory: {eq: "services"}}) {
+  allFile(filter: {name: {glob: "*example"}}) {
     edges {
       node {
         relativePath

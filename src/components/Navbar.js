@@ -36,7 +36,7 @@ export const Navbar = () => {
     const handleClick = () => setClick(!click)
     const closeMobileMenu = () => setClick(false)
  
-    // console.log(image)
+    // console.log(data.file)
    
     // const changeNav = () => {
     //     if (window.scrollY >= 80) {

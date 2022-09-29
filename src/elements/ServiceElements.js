@@ -18,4 +18,5 @@ export const ServiceWrapper = styled.div`
     flex-direction: ${props => props.even};
     justify-content: center;
     align-items: center;
+    padding: 20px;
 `;

@@ -20,7 +20,7 @@ export default function IndexPage({ data }) {
       <section>
         <h3>{slogan_home_3}</h3>
       </section>
-      <section style={({height: '500px'})}>
+      <section style={({height: '300px'})}>
         <h3>{slogan_home_4}</h3>
       </section>
     </Container>
