@@ -17,6 +17,11 @@ export const ProjectLink = styled(Link)`
 export const ProjectLocation = styled.h5`
 
 `;
+export const ProjectServices = styled.div`
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+`;
 export const ProjectTitle = styled.h3`
 
 `;

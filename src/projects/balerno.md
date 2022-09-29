@@ -1,7 +1,7 @@
 ---
 title: Balerno (exptensions and renovation)
 location: Balerno
-services: extensions, renovation
+services: extensions renovation
 slug: balerno
 thumb: balerno-thumb
 ---
