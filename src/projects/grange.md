@@ -1,7 +1,7 @@
 ---
 title: Grange Bathroom (renovation)
 location: Grange
-services: renovation
+services: new builds
 slug: grange
 thumb: grange-thumb
 ---

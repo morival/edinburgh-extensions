@@ -1,7 +1,7 @@
 ---
 title: Roseburn (current project)
 location: Roseburn
-services: renovation
+services: new builds
 slug: roseburn
 thumb: roseburn-thumb
 ---

@@ -1,27 +1,48 @@
 import { graphql } from 'gatsby';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Container, Project } from '../components';
 
 
 export default function Projects({ data: { 
   allMarkdownRemark: { nodes }, 
-  site: { siteMetadata: { slogans: { slogan_projects }} },
+  site: { siteMetadata: { services, slogans: { slogan_projects }} },
   allFile: { edges }
 } }) {
 
-  const projectComponents = () =>
-    nodes.map((project, i) => {
+  const [category, setCategory] = useState(null)
+
+  const handleChange = (e) => {
+    setCategory(e.target.value)
+  }
+
+
+  const filterCategory = () => services.map(({ title }) => <button onClick={handleChange} value={title} key={title}>{title}</button>)
+
+  const projectComponents = () => {
+    const filterProjects = nodes.filter(project => project.frontmatter.services.split(', ').some(service => service === category))
+    const mapProjects = (category ? filterProjects : nodes).map((project, i) => {
       const edge = edges.find(({node}) => node.name === project.frontmatter.thumb)
       const node = edge ? edge.node : undefined;
-        // console.log(edge.node.childImageSharp.gatsbyImageData)
       return <Project project={project} node={node} i={i} key={project.id} />
     })
+    return mapProjects
+  }
+  
+    
+    useEffect(() => {
+      // console.log(category)
+    }, [category])
 
-  // console.log(edges)
+    const test = nodes.filter(project => {
+      return project.frontmatter.services.split(', ').some(service => service === category)
+    })
+    console.log(test)
+    
   return (
       <Container>
           <h1>Our Projects</h1>
           <h3>{slogan_projects}</h3>
+          <div>{filterCategory()}<button onClick={handleChange} value={null}>view all</button></div>
           {projectComponents()}
       </Container>
   )
@@ -47,6 +68,9 @@ query ProjectsQuery {
       siteMetadata {
         slogans {
           slogan_projects
+        }
+        services {
+          title
         }
       }
     }

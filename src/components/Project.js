@@ -8,7 +8,7 @@ export function Project({ project: { frontmatter: { title, location, services, s
     
     const image = getImage(node)
     const projectImage = () => (image ? <GatsbyImage image={image} alt={title} /> : null)
-    const listOfServices = () => (services.split(' ').map(service => <p key={service}>{service}</p>))
+    const listOfServices = () => (services.split(', ').map(service => <p key={service}>{service}</p>))
     // console.log(listOfServices)
     const even = i%2 === 0 ? 'row' : 'row-reverse'
     return (
