@@ -4,10 +4,6 @@ import { Container, Service } from '../components';
 
 
 export default function Services({ data: { site: { siteMetadata: { services, slogans: { slogan_services }} }, allFile: { edges } } }) {
-
-
-    // console.log(edges)
-    // console.log(services)
     
     const serviceComponents = () => 
     services.map((service, i) => {
