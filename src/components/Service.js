@@ -1,6 +1,8 @@
 import React from 'react';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import { ServiceDescription, ServiceImage, ServiceInfo, ServiceTitle, ServiceWrapper } from '../elements';
+import { Button } from './controls';
+import { Link } from 'gatsby';
 
 
 export function Service({ service: { title, description }, edge: { node }, i }) {
@@ -18,7 +20,9 @@ export function Service({ service: { title, description }, edge: { node }, i }) 
             <ServiceInfo>
                 <ServiceTitle>{title}</ServiceTitle>
                 <ServiceDescription>{description}</ServiceDescription>
-                <button>button</button>
+                <Link to='/projects' state={{ filter: title }}>
+                    <Button text={`check our ${title} projects`}/>
+                </Link>
             </ServiceInfo>
         </ServiceWrapper>
     )

@@ -1,7 +1,8 @@
+import { Link } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import { getImage } from 'gatsby-plugin-image';
 import React from 'react';
-import { ProjectDescription, ProjectImage, ProjectInfo, ProjectLink, ProjectLocation, ProjectServices, ProjectTitle, ProjectWrapper } from '../elements';
+import { ProjectDescription, ProjectImage, ProjectInfo, ProjectLocation, ProjectServices, ProjectTitle, ProjectWrapper } from '../elements';
 
 
 export function Project({ project: { frontmatter: { title, location, services, slug }, html }, node, i }) {
@@ -15,9 +16,9 @@ export function Project({ project: { frontmatter: { title, location, services, s
         <ProjectWrapper even={even}>
             <ProjectImage>{projectImage()}</ProjectImage>
             <ProjectInfo>
-                <ProjectLink to={'/projects/'+slug}>
+                <Link to={'/projects/'+slug}>
                     <ProjectTitle>{title}</ProjectTitle>
-                </ProjectLink>
+                </Link>
                 <ProjectLocation>{location}</ProjectLocation>
                 <ProjectServices>{listOfServices()}</ProjectServices>
                 <ProjectDescription dangerouslySetInnerHTML={{ __html: html }} />

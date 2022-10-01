@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { Container, Project } from '../components';
 
 
-export default function Projects({ data: { 
+export default function Projects({ location, data: { 
   allMarkdownRemark: { nodes }, 
   site: { siteMetadata: { services, slogans: { slogan_projects }} },
   allFile: { edges }
@@ -15,6 +15,7 @@ export default function Projects({ data: {
     setCategory(e.target.value)
   }
 
+  // console.log(location)
 
   const filterCategory = () => services.map(({ title }) => <button onClick={handleChange} value={title} key={title}>{title}</button>)
 
@@ -30,13 +31,13 @@ export default function Projects({ data: {
   
     
     useEffect(() => {
-      // console.log(category)
-    }, [category])
+      setCategory(location.state.filter)
+    }, [location.state])
 
-    const test = nodes.filter(project => {
-      return project.frontmatter.services.split(', ').some(service => service === category)
-    })
-    console.log(test)
+    // const test = nodes.filter(project => {
+    //   return project.frontmatter.services.split(', ').some(service => service === category)
+    // })
+    // console.log(test)
     
   return (
       <Container>

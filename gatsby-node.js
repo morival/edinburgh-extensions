@@ -3,15 +3,22 @@ const path = require('path')
 exports.createPages = async ({ graphql, actions }) => {
 
     const { data } = await graphql(`
-    query ProjectNodesQuery {
-        allMarkdownRemark {
-          nodes {
-            frontmatter {
-              slug
-            }
+    query NodesQuery {
+      allMarkdownRemark {
+        nodes {
+          frontmatter {
+            slug
           }
         }
       }
+      site {
+        siteMetadata {
+          services {
+            title
+          }
+        }
+      }
+    }
     `)
 
     data.allMarkdownRemark.nodes.forEach(node => {
@@ -21,11 +28,11 @@ exports.createPages = async ({ graphql, actions }) => {
             context: { slug: node.frontmatter.slug }
         })
     });
-    data.allMarkdownRemark.nodes.forEach(node => {
+    data.site.siteMetadata.services.forEach(node => {
         actions.createPage({
-            path: '/services/' + node.frontmatter.slug,
+            path: '/services/' + node.title,
             component: path.resolve('./src/templates/service-template.js'),
-            context: { slug: node.frontmatter.slug }
+            context: { slug: node.node.title }
         })
     });
 
