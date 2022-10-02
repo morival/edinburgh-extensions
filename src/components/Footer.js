@@ -9,7 +9,7 @@ export const Footer = () => {
 
     const data = useStaticQuery(graphql`
     query FooterQuery {
-        file(name: {eq: "project_04"}) {
+        file(name: {eq: "Transparent Logo"}) {
           childImageSharp {
             gatsbyImageData(height: 80)
           }

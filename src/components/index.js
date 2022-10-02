@@ -1,3 +1,4 @@
+export * from './About';
 export * from './Banner';
 export * from './Container';
 export * from './Footer';
@@ -5,5 +6,8 @@ export * from './Header';
 export * from './Layout';
 export * from './Navbar';
 export * from './Project';
+export * from './Projects';
 export * from './Service';
+export * from './Services';
+export * from './Testimonials';
 export * from './Theme';

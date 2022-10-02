@@ -9,9 +9,9 @@ export const Navbar = () => {
 
     const data = useStaticQuery(graphql`
       query NavQuery {
-          file(name: {eq: "project_04"}) {
+          file(name: {eq: "Logo"}) {
               childImageSharp {
-                gatsbyImageData(height: 80)
+                gatsbyImageData(height: 120)
               }
             }
             site {
