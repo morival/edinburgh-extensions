@@ -11,7 +11,7 @@ export const Contact = styled.div`
     flex-direction: column;
     row-gap: 8px;
     ${media.lessThan('medium')`
-    /* order: 1; */
+    order: 2;
     `}
 `;
 export const ContactDetails = styled.div`
@@ -28,6 +28,7 @@ export const Follow = styled.div`
     row-gap: 8px;
     ${media.lessThan('medium')`
         grid-column: 2;
+        order: 3;
     `}
     ${media.lessThan('small')`
         grid-column: 1;
@@ -42,6 +43,9 @@ export const Logo = styled(Link)`
     display: flex;
     align-items: center;
     justify-content: center;
+    ${media.lessThan('medium')`
+        justify-content: start;
+    `}
     ${media.lessThan('small')`
         display: none;
     `}
@@ -54,7 +58,7 @@ export const MainFooter = styled.div`
     justify-content: space-around; */
     padding: 1rem;
     ${media.lessThan('medium')`
-        grid-template-columns: 120px 3fr 2fr;
+        grid-template-columns: 3fr 2fr;
         /* padding: 0.5rem; */
     `}
     ${media.lessThan('small')`
@@ -67,7 +71,10 @@ export const MainFooter = styled.div`
 export const Menu = styled.div`
     display: flex;
     flex-direction: column;
-    row-gap: 8px;  
+    row-gap: 8px; 
+    ${media.lessThan('medium')`
+        order: 1;
+    `}
 `;
 export const SiteLink = styled(Link)`
     color: white;
