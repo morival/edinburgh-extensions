@@ -1,18 +1,20 @@
+import { Link } from 'gatsby';
 import React from 'react';
+import { AboutSection, AboutWrapper } from '../elements/AboutElements';
 import { Button } from './controls';
 
 export function About({ slogan }) {
     
     return (
-        <section>
+        <AboutSection>
             <h3>{slogan}</h3>
-            <div>
+            <AboutWrapper>
                 <div>About Us Image</div>
                 <div>
-                    <p>'Who we are and what do we do' description taking two or more lines.</p>
-                    <Button text='about us'/>
+                    <p>Who we are and what we do (description taking two or more lines.)</p>
+                    <Link to='/about'><Button text='about us'/></Link>
                 </div>
-            </div>
-        </section>
+            </AboutWrapper>
+        </AboutSection>
     )
 };

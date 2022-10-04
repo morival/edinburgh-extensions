@@ -15,6 +15,7 @@ exports.createPages = async ({ graphql, actions }) => {
         siteMetadata {
           services {
             title
+            relativePath
           }
         }
       }
@@ -28,12 +29,12 @@ exports.createPages = async ({ graphql, actions }) => {
             context: { slug: node.frontmatter.slug }
         })
     });
-    data.site.siteMetadata.services.forEach(node => {
-        actions.createPage({
-            path: '/services/' + node.title,
-            component: path.resolve('./src/templates/service-template.js'),
-            context: { slug: node.node.title }
-        })
-    });
+    // data.site.siteMetadata.services.forEach(service => {
+    //     actions.createPage({
+    //         path: '/services/' + service.relativePath,
+    //         component: path.resolve('./src/templates/service-template.js'),
+    //         context: { slug: service.relativePath }
+    //     })
+    // });
 
 }

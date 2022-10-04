@@ -1,3 +1,4 @@
+import { Link } from 'gatsby';
 import React from 'react';
 import { Button } from './controls';
 
@@ -10,7 +11,7 @@ export function Projects({ slogan }) {
             <div>
                 <div>
                     <p>'Our achievements' description taking two or more lines.</p>
-                    <Button text='our work'/>
+                    <Link to='projects'><Button text='our work'/></Link>
                 </div>
                 <div>Our Work Image</div>
             </div>

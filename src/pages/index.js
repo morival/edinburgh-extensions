@@ -6,12 +6,12 @@ import Testimonials from "../components/Testimonials";
 
 export default function IndexPage({ data: { site: { siteMetadata: {
   slogans: { slogan_home_1, slogan_home_2, slogan_home_3, slogan_home_4 },
-  services
-}}} }) {
+  services }},
+  file} }) {
 
   return (
     <Container>
-      <Banner />
+      <Banner file={file}/>
       <h1>Home Page</h1>
       <About slogan={slogan_home_1} />
       <Services slogan={slogan_home_2} services={services} />
@@ -36,6 +36,12 @@ query HomeQuery {
         title
         relativePath
       }
+    }
+  }
+  file(name: {eq: "ext02"}) {
+    id
+    childImageSharp {
+      gatsbyImageData(placeholder: BLURRED)
     }
   }
 }

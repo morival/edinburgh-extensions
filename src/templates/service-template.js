@@ -1,27 +1,27 @@
-import { graphql } from 'gatsby';
-import React from 'react';
-import { Container } from '../components';
+// import { graphql } from 'gatsby';
+// import React from 'react';
+// import { Container } from '../components';
 
 
-export default function ServiceTemplate({params}) {
+// export default function ServiceTemplate({params}) {
     
 
-    return (
-        <Container>
+//     return (
+//         <Container>
 
-        </Container>
-    )
-};
+//         </Container>
+//     )
+// };
 
-export const query = graphql`
-query ServiceTemplateQuery($slug: String) {
-    markdownRemark(frontmatter: {slug: {eq: $slug}}) {
-      frontmatter {
-        title
-        slug
-        location
-      }
-      html
-    }
-  }
-`;
+// export const query = graphql`
+// query ServiceTemplateQuery($slug: String) {
+//     markdownRemark(frontmatter: {slug: {eq: $slug}}) {
+//       frontmatter {
+//         title
+//         slug
+//         location
+//       }
+//       html
+//     }
+//   }
+// `;
