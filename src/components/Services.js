@@ -6,18 +6,18 @@ import { ServicesSection, ServicesWrapper } from '../elements/ServicesElements';
 export function Services({ slogan, services }) {
 
   const { allFile } = useStaticQuery(graphql`
-  query ServicesSection {
-    allFile(filter: {name: {glob: "*example"}}) {
-      edges {
-        node {
-          relativePath
-          childImageSharp {
-            gatsbyImageData(width: 400, height: 300, layout: CONSTRAINED, placeholder: BLURRED)
+    query ServicesSection {
+      allFile(filter: {name: {glob: "*example"}}) {
+        edges {
+          node {
+            relativePath
+            childImageSharp {
+              gatsbyImageData(width: 400, height: 300, layout: CONSTRAINED, placeholder: BLURRED)
+            }
           }
         }
       }
     }
-  }
   `)
   
   const servicesComponent = () => 

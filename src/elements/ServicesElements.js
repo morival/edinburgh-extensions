@@ -12,7 +12,7 @@ export const ServicesWrapper = styled.div`
     justify-content: center;
     gap: 40px;
     ${media.lessThan('large')`
-        gap: 30px;
+        gap: 20px;
     `}
     ${media.lessThan('medium')`
         gap: 10px;
