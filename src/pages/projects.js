@@ -1,6 +1,7 @@
 import { graphql } from 'gatsby';
 import React, { useEffect, useState } from 'react';
 import { Container, Project } from '../components';
+import { FilterButton } from '../elements';
 
 
 export default function Projects({ location, data: { 
@@ -9,15 +10,17 @@ export default function Projects({ location, data: {
   allFile: { edges }
 } }) {
 
-  const [category, setCategory] = useState(null)
+  const [category, setCategory] = useState('')
 
   const handleChange = (e) => {
     setCategory(e.target.value)
   }
 
-  // console.log(location)
+  console.log(location)
 
-  const filterCategory = () => services.map(({ title }) => <button onClick={handleChange} value={title} key={title}>{title}</button>)
+  const filterCategory = () => services.map(({ title }) => {
+    return <FilterButton onClick={handleChange} value={title} selected={title===category?'gray':'lightgray'} key={title}>{title}</FilterButton>
+  })
 
   const projectComponents = () => {
     const filterProjects = nodes.filter(project => project.frontmatter.services.split(', ').some(service => service === category))
@@ -31,8 +34,10 @@ export default function Projects({ location, data: {
   
     
     useEffect(() => {
-      setCategory(location.state.filter)
-    }, [location.state])
+      console.log(category)
+      // setCategory(location.state.filter)
+    // }, [location.state])
+    }, [category])
 
     // const test = nodes.filter(project => {
     //   return project.frontmatter.services.split(', ').some(service => service === category)
@@ -43,7 +48,7 @@ export default function Projects({ location, data: {
       <Container>
           <h1>Our Projects</h1>
           <h3>{slogan_projects}</h3>
-          <div>{filterCategory()}<button onClick={handleChange} value={null}>view all</button></div>
+          <div>{filterCategory()}<FilterButton onClick={handleChange} value={null} selected={category===''?'gray':'lightgray'}>view all</FilterButton></div>
           {projectComponents()}
       </Container>
   )

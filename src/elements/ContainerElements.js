@@ -6,4 +6,4 @@ export const ContainerWrapper = styled.div`
     gap: 30px;
     height: 100%;
     text-align: center;
-` 
+`;

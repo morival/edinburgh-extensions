@@ -17,7 +17,7 @@ export function About({ slogan }) {
       }
     `)
     const image = getImage(file)
-    console.log(image)
+    // console.log(image)
     
     return (
         <AboutSection>
