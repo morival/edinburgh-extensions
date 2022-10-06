@@ -1,7 +1,7 @@
-import { graphql, useStaticQuery } from 'gatsby';
+import { graphql, Link, useStaticQuery } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import React from 'react';
-import { ServiceContainer, ServiceImageCover, ServicesSection, ServicesWrapper } from '../elements/ServicesElements';
+import { ServiceContainer, ServiceImageCover, ServicesSection, ServicesWrapper } from '../elements';
 
 export function Services({ slogan, services }) {
 
@@ -26,12 +26,14 @@ export function Services({ slogan, services }) {
       const edge = allFile.edges.find(edge => edge.node.relativePath === service.relativePath)
       const image = getImage(edge.node)
       // console.log(i)
-      return <ServiceContainer key={i}>
-        <GatsbyImage image={image} alt={service.title} />
-        <ServiceImageCover>
-          <h2>{service.title}</h2>
-        </ServiceImageCover>
-      </ServiceContainer>
+      return <Link to={`/services#${service.title}`} key={i}>
+        <ServiceContainer>
+          <GatsbyImage image={image} alt={service.title} />
+          <ServiceImageCover>
+            <h2>{service.title}</h2>
+          </ServiceImageCover>
+        </ServiceContainer>
+      </Link>
     })
     
     return (

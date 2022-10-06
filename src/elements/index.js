@@ -6,4 +6,5 @@ export * from './LayoutElements';
 export * from './NavbarElements';
 export * from './ProjectElements';
 export * from './ServiceElements';
+export * from './ServicesElements';
 export * from './ThemeElements';

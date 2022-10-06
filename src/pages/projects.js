@@ -32,17 +32,10 @@ export default function Projects({ location, data: {
     return mapProjects
   }
   
-    
+    // Filter projects by category selected on Services page
     useEffect(() => {
-      console.log(category)
-      // setCategory(location.state.filter)
-    // }, [location.state])
-    }, [category])
-
-    // const test = nodes.filter(project => {
-    //   return project.frontmatter.services.split(', ').some(service => service === category)
-    // })
-    // console.log(test)
+      setCategory(location.state.filter)
+    }, [location.state])
     
   return (
       <Container>

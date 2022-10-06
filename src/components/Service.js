@@ -1,6 +1,6 @@
 import React from 'react';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
-import { ServiceDescription, ServiceImage, ServiceInfo, ServiceTitle, ServiceWrapper } from '../elements';
+import { ServiceDescription, ServiceImage, ServiceInfo, ServiceSection, ServiceTitle } from '../elements';
 import { Button } from './controls';
 import { Link } from 'gatsby';
 
@@ -11,9 +11,9 @@ export function Service({ service: { title, description }, edge: { node }, i }) 
     const image = getImage(node)
 
     const even = i%2 === 0 ? 'row' : 'row-reverse'
-    // console.log(service)
+    // console.log(title)
     return (
-        <ServiceWrapper even={even}>
+        <ServiceSection even={even} id={title}>
             <ServiceImage>
                 <GatsbyImage image={image} alt={title} />
             </ServiceImage>
@@ -24,6 +24,6 @@ export function Service({ service: { title, description }, edge: { node }, i }) 
                     <Button text={`check our ${title} projects`}/>
                 </Link>
             </ServiceInfo>
-        </ServiceWrapper>
+        </ServiceSection>
     )
 };
