@@ -1,7 +1,6 @@
 import * as React from "react";
 import { graphql } from "gatsby";
-import { About, Banner, Container, Projects, Services } from '../components';
-import Testimonials from "../components/Testimonials";
+import { About, Banner, Container, Projects, Services, Testimonials } from '../components';
 
 
 export default function IndexPage({ data: { site: { siteMetadata: {

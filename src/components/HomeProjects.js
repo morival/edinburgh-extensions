@@ -1,12 +1,13 @@
 import { Link } from 'gatsby';
 import React from 'react';
+import { ProjectsSection } from '../elements';
 import { Button } from './controls';
 
 
 export function Projects({ slogan }) {
     
     return(
-        <section>
+        <ProjectsSection>
             <h3>{slogan}</h3>
             <div>
                 <div>
@@ -15,6 +16,6 @@ export function Projects({ slogan }) {
                 </div>
                 <div>Our Work Image</div>
             </div>
-        </section>
+        </ProjectsSection>
     )
 };

@@ -16,7 +16,7 @@ export default function Projects({ location, data: {
     setCategory(e.target.value)
   }
 
-  console.log(location)
+  // console.log(location)
 
   const filterCategory = () => services.map(({ title }) => {
     return <FilterButton onClick={handleChange} value={title} selected={title===category?'gray':'lightgray'} key={title}>{title}</FilterButton>
@@ -34,7 +34,8 @@ export default function Projects({ location, data: {
   
     // Filter projects by category selected on Services page
     useEffect(() => {
-      setCategory(location.state.filter)
+      setCategory(location.state.filter || '')
+      console.log(location.state.filter)
     }, [location.state])
     
   return (
