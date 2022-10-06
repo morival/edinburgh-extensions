@@ -22,6 +22,9 @@ export const ServiceImageCover = styled.div`
     }
 `;
 export const ServicesSection = styled.section`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin: 20px;
     ${media.lessThan('small')`
         margin: 30px;
@@ -35,9 +38,10 @@ export const ServicesWrapper = styled.div`
         gap: 20px;
     `}
     ${media.lessThan('medium')`
-        gap: 10px;
+        gap: 40px;
+        flex-direction: column;
+        max-width: 400px;
     `}
     ${media.lessThan('small')`
-        flex-direction: column;
     `}
 `;
