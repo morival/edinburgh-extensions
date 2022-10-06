@@ -11,7 +11,7 @@ export default function IndexPage({ data: { site: { siteMetadata: {
   return (
     <Container>
       <Banner file={file}/>
-      <h1>Home Page</h1>
+      {/* <h1>Home Page</h1> */}
       <About slogan={slogan_home_1} />
       <Services slogan={slogan_home_2} services={services} />
       <Projects slogan={slogan_home_3} />

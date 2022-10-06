@@ -24,6 +24,7 @@ export default function Projects({ location, data: {
 
   const projectComponents = () => {
     const filterProjects = nodes.filter(project => project.frontmatter.services.split(', ').some(service => service === category))
+    // console.log(filterProjects)
     const mapProjects = (category ? filterProjects : nodes).map((project, i) => {
       const edge = edges.find(({node}) => node.name === project.frontmatter.thumb)
       const node = edge ? edge.node : undefined;
@@ -35,7 +36,7 @@ export default function Projects({ location, data: {
     // Filter projects by category selected on Services page
     useEffect(() => {
       setCategory(location.state.filter || '')
-      console.log(location.state.filter)
+      // console.log(location.state.filter)
     }, [location.state])
     
   return (
@@ -51,38 +52,38 @@ export default function Projects({ location, data: {
 
 export const query = graphql`
 query ProjectsQuery {
-    allMarkdownRemark {
-      nodes {
-        html
-        frontmatter {
-          title
-          location
-          services
-          slug
-          thumb
-        }
-        id
+  allMarkdownRemark(filter: {frontmatter: {title: {ne: ""}}}) {
+    nodes {
+      html
+      frontmatter {
+        title
+        location
+        services
+        slug
+        thumb
+      }
+      id
+    }
+  }
+  site {
+    siteMetadata {
+      slogans {
+        slogan_projects
+      }
+      services {
+        title
       }
     }
-    site {
-      siteMetadata {
-        slogans {
-          slogan_projects
-        }
-        services {
-          title
-        }
-      }
-    }
-    allFile(filter: {name: {glob: "*thumb"}}) {
-      edges {
-        node {
-          name
-          childImageSharp {
-            gatsbyImageData
-          }
+  }
+  allFile(filter: {name: {glob: "*thumb"}}) {
+    edges {
+      node {
+        name
+        childImageSharp {
+          gatsbyImageData
         }
       }
     }
   }
+}
   `;
