@@ -31,25 +31,9 @@ export const Navbar = () => {
     const { link_2, link_3, link_4, link_5 } = data.site.siteMetadata.links;
 
     const [click, setClick] = useState(false)
-    // const [scroll, setScroll] = useState(false)
 
     const handleClick = () => setClick(!click)
     const closeMobileMenu = () => setClick(false)
- 
-    // console.log(data.file)
-   
-    // const changeNav = () => {
-    //     if (window.scrollY >= 80) {
-    //         setScroll(true)
-    //     } else {
-    //         setScroll(false)
-    //     }
-    // }
-    
-    // useEffect(() => {
-    //     changeNav();
-    //     window.addEventListener('scroll', changeNav)
-    // }, [])
 
     return (
         <NavbarWrapper>

@@ -1,7 +1,7 @@
 import { graphql, useStaticQuery } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import React from 'react';
-import { ServicesSection, ServicesWrapper } from '../elements/ServicesElements';
+import { ServiceContainer, ServiceImageCover, ServicesSection, ServicesWrapper } from '../elements/ServicesElements';
 
 export function Services({ slogan, services }) {
 
@@ -19,15 +19,19 @@ export function Services({ slogan, services }) {
       }
     }
   `)
+
   
   const servicesComponent = () => 
     services.map((service, i) => {
-      const edge = allFile.edges.find((edge, i) => edge.node.relativePath === service.relativePath)
+      const edge = allFile.edges.find(edge => edge.node.relativePath === service.relativePath)
       const image = getImage(edge.node)
-      return <div key={i}>
-        <div><GatsbyImage image={image} alt={service.title} /></div>
-        <h3>{service.title}</h3>
-      </div>
+      // console.log(i)
+      return <ServiceContainer key={i}>
+        <GatsbyImage image={image} alt={service.title} />
+        <ServiceImageCover>
+          <h2>{service.title}</h2>
+        </ServiceImageCover>
+      </ServiceContainer>
     })
     
     return (
