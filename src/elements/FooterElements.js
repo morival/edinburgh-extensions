@@ -56,7 +56,7 @@ export const MainFooter = styled.div`
     gap: 12px;
     /* display: flex;
     justify-content: space-around; */
-    padding: 1rem;
+    padding: 50px 1rem;
     ${media.lessThan('medium')`
         grid-template-columns: 3fr 2fr;
         /* padding: 0.5rem; */

@@ -26,12 +26,16 @@ export const GlobalStyle = createGlobalStyle`
         font-family: ${({ theme }) => theme.fonts.header}, sans-serif;
     }
     ul {
+        background: #284389;
         display: flex;
         align-items: center;
         margin: 0;
         padding: 0;
         list-style: none;
         text-align: center;
+    }
+    li a {
+        color: #FC832B;
     }
     a {
         text-decoration: none;

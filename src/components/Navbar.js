@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import { FaTimes, FaBars } from 'react-icons/fa';
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
@@ -11,7 +11,7 @@ export const Navbar = () => {
       query NavQuery {
           file(name: {eq: "Logo"}) {
               childImageSharp {
-                gatsbyImageData(height: 120)
+                gatsbyImageData(height: 200)
               }
             }
             site {
@@ -34,6 +34,11 @@ export const Navbar = () => {
 
     const handleClick = () => setClick(!click)
     const closeMobileMenu = () => setClick(false)
+
+    // Block page scrolling when nav menu is open
+    useEffect(() => {
+      click ? document.body.style.overflow = 'hidden' : document.body.style.overflow = 'initial'
+    },[click])
 
     return (
         <NavbarWrapper>

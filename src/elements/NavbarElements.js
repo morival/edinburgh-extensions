@@ -5,8 +5,11 @@ import media from "styled-media-query";
 export const NavbarWrapper = styled.nav`
     display: flex;
     justify-content: space-between;
-    padding: 0 20px;
-    background-color: gainsboro;
+    height: 200px;
+    background-color: #274289;
+    ${media.lessThan('large')`
+        padding: 0;
+    `}
     ${media.lessThan('medium')`
         justify-content: center;
     `}
@@ -21,7 +24,6 @@ export const NavList = styled.ul`
         top: ${({ click }) => (click ? '0' : '-2000px')};
         opacity: 1;
         transition: all 0.2s ease;
-        background: mediumblue;
         z-index: 1;
     `}
 `;
@@ -36,21 +38,24 @@ export const  NavListItem = styled.li`
 `;
 export const NavLogo = styled(Link)`
     z-index: 999;
+    flex-shrink: 2030;
+    align-self: center;
 `;
 export const NavLink = styled(Link)`
     padding: 1rem;
-    font-size: 1.5rem;
+    font-size: 2rem;
     text-transform: capitalize;
+        &:hover {
+            color: lightgoldenrodyellow;
+        }
+    ${media.lessThan('large')`
+        font-size: 1.3rem;
+    `}
     ${media.lessThan('medium')`
         width: 100%;
         padding: 1rem 0;
         max-width: 350px;
         font-size: 2rem;
-        color: orange;
-        &:hover {
-            color: lightgoldenrodyellow;
-            background-color: darkblue;
-        }
     `}
 `;
 export const MenuIcon = styled.div`
@@ -59,11 +64,11 @@ export const MenuIcon = styled.div`
         z-index: 999;
         display: block;
         position: absolute;
-        top: 0;
+        top: 40px;
         right: 0;
         transform: translate(-100%, 60%);
         font-size: 2rem;
-        color: ${({ click }) => (click ? 'white' : 'black')};
+        color: #FC832B;
         cursor: pointer;
     `}
 `;
