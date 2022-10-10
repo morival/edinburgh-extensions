@@ -3,19 +3,23 @@ import styled from "styled-components";
 import media from "styled-media-query";
 
 
-export const AddressDetails = styled.div`
-
-`;
 export const Contact = styled.div`
     display: flex;
-    flex-direction: column;
-    row-gap: 8px;
+    column-gap: 40px;
+    ${media.lessThan('large')`
+        flex-direction: column;
+        align-items: center;
+    `}
     ${media.lessThan('medium')`
-    order: 2;
+    `}
+    ${media.lessThan('small')`
+        padding-block: 30px;
     `}
 `;
 export const ContactDetails = styled.div`
-
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 `;
 export const CopyRights = styled.div`
     padding: 0.6rem;
@@ -24,62 +28,47 @@ export const CopyRights = styled.div`
 `;
 export const Follow = styled.div`
     display: flex;
-    flex-direction: column;
+    justify-content: end;
     row-gap: 8px;
-    ${media.lessThan('medium')`
-        grid-column: 2;
-        order: 3;
-    `}
-    ${media.lessThan('small')`
-        grid-column: 1;
-    `}
+    padding: 10px;
 `;
 export const FooterWrapper = styled.div`
     color: white;
     background-color: #3e3e49;
-    /* background-color: #191970; */
 `;
 export const Logo = styled(Link)`
     display: flex;
     align-items: center;
     justify-content: center;
-    ${media.lessThan('medium')`
+    ${media.between('small', 'medium')`
         justify-content: start;
-    `}
-    ${media.lessThan('small')`
-        display: none;
     `}
 `;
 export const MainFooter = styled.div`
-    display: grid;
-    grid-template-columns: 240px 1fr 1fr 1fr;
-    gap: 12px;
-    /* display: flex;
-    justify-content: space-around; */
+    display: flex;
+    justify-content: space-evenly;
     padding: 50px 1rem;
-    ${media.lessThan('medium')`
-        grid-template-columns: 3fr 2fr;
-        /* padding: 0.5rem; */
-    `}
     ${media.lessThan('small')`
-        /* display: flex;
-        flex-direction: column; */
-        grid-template-columns: 1fr;
-        padding: 1rem 2rem;
+        flex-direction: column;
+        padding: 0;
     `}
 `;
 export const Menu = styled.div`
     display: flex;
     flex-direction: column;
+    justify-content: center;
     row-gap: 8px; 
-    ${media.lessThan('medium')`
-        order: 1;
+    padding: 10px;
+    min-width: 100px;
+    ${media.lessThan('small')`
+        align-items: center;
     `}
 `;
 export const SiteLink = styled(Link)`
     color: white;
 `;
 export const SiteMap = styled.div`
+
 `;
 export const SocialMediaLink = styled.a`
     svg {
@@ -95,9 +84,6 @@ export const SocialMediaLink = styled.a`
     }
 `;
 export const SocialMediaList = styled.div`
-    /* display: inline-grid;
-    grid-template-columns: repeat(2, auto);
-    grid-gap: 10px; */
     display: flex;
     column-gap: 10px;
     
