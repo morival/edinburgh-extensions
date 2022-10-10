@@ -48,7 +48,7 @@ export const Navbar = () => {
             <MenuIcon click={click} onClick={handleClick}>
                 {click ? <FaTimes /> : <FaBars />}
             </MenuIcon>
-            <NavList click={click} onClick={handleClick}>
+            <NavList click={click} onClick={closeMobileMenu}>
                 <NavListItem><NavLink to="/services">{link_2}</NavLink></NavListItem>
                 <NavListItem><NavLink to="/projects">{link_3}</NavLink></NavListItem>
                 <NavListItem><NavLink to="/about">{link_4}</NavLink></NavListItem>

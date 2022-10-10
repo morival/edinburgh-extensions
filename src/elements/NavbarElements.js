@@ -45,9 +45,9 @@ export const NavLink = styled(Link)`
     padding: 1rem;
     font-size: 2rem;
     text-transform: capitalize;
-        &:hover {
-            color: lightgoldenrodyellow;
-        }
+    &:hover {
+        color: lightgoldenrodyellow;
+    }
     ${media.lessThan('large')`
         font-size: 1.3rem;
     `}
@@ -70,5 +70,8 @@ export const MenuIcon = styled.div`
         font-size: 2rem;
         color: #FC832B;
         cursor: pointer;
+        &:hover {
+            color: lightgoldenrodyellow;
+        }
     `}
 `;
