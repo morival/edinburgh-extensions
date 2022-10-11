@@ -7,5 +7,5 @@ export const BannerImage = styled(BackgroundImage)`
     background-attachment: fixed;
 `;
 export const BannerImageInner = styled.div`
-    height: 400px;
+    height: 80vh;
 `;

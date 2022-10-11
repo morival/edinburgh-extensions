@@ -29,8 +29,8 @@ export const CopyRights = styled.div`
 export const Follow = styled.div`
     display: flex;
     justify-content: end;
-    row-gap: 8px;
-    padding: 10px;
+    gap: 10px;
+    padding: 20px;
 `;
 export const FooterWrapper = styled.div`
     color: white;
@@ -47,7 +47,7 @@ export const Logo = styled(Link)`
 export const MainFooter = styled.div`
     display: flex;
     justify-content: space-evenly;
-    padding: 50px 1rem;
+    padding: 40px 1rem;
     ${media.lessThan('small')`
         flex-direction: column;
         padding: 0;
@@ -57,7 +57,7 @@ export const Menu = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    row-gap: 8px; 
+    gap: 8px; 
     padding: 10px;
     min-width: 100px;
     ${media.lessThan('small')`
@@ -83,11 +83,7 @@ export const SocialMediaLink = styled.a`
         }
     }
 `;
-export const SocialMediaList = styled.div`
-    display: flex;
-    column-gap: 10px;
-    
-`;
+
 export const Title = styled.div`
     text-transform: uppercase;
 `;

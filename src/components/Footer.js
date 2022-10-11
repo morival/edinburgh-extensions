@@ -1,5 +1,5 @@
 import React from 'react'
-import { Contact, ContactDetails, CopyRights, Follow, FooterWrapper, Logo, MainFooter, Menu, SiteLink, SiteMap, SocialMediaLink, SocialMediaList, Title } from '../elements';
+import { Contact, ContactDetails, CopyRights, Follow, FooterWrapper, Logo, MainFooter, Menu, SiteLink, SiteMap, SocialMediaLink, Title } from '../elements';
 import { graphql, useStaticQuery } from 'gatsby';
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { FaFacebook, FaInstagram } from 'react-icons/fa';
@@ -48,12 +48,12 @@ export const Footer = () => {
         <FooterWrapper>
             <MainFooter>
                 <Contact>
-                  <Logo to='/'><GatsbyImage image={image} alt="logo" /></Logo>
-                  <ContactDetails>
-                      <div>{phone_1}</div>
-                      <div>{phone_2}</div>
-                      <div>{email}</div>
-                  </ContactDetails>
+                    <Logo to='/'><GatsbyImage image={image} alt="logo" /></Logo>
+                    <ContactDetails>
+                        <div>Bartek - {phone_1}</div>
+                        <div>Stan - {phone_2}</div>
+                        <div>{email}</div>
+                    </ContactDetails>
                 </Contact>
                 <Menu>
                     <Title>menu</Title>
@@ -66,13 +66,10 @@ export const Footer = () => {
                     </SiteMap>
                 </Menu>
             </MainFooter>
-                <Follow>
-                    {/* <Title>follow us</Title> */}
-                    <SocialMediaList>
-                        <SocialMediaLink href={facebook} aria-label='Facebook' color='#3b5998'><FaFacebook /></SocialMediaLink>
-                        <SocialMediaLink href={instagram} aria-label='Instagram' color='#c32aa3'><FaInstagram /></SocialMediaLink>
-                    </SocialMediaList>
-                </Follow>
+            <Follow>
+                <SocialMediaLink href={facebook} aria-label='Facebook' color='#3b5998'><FaFacebook /></SocialMediaLink>
+                <SocialMediaLink href={instagram} aria-label='Instagram' color='#c32aa3'><FaInstagram /></SocialMediaLink>
+            </Follow>
             <CopyRights>© {new Date().getFullYear()} {title}. All Rights Reserved.</CopyRights>
         </FooterWrapper>
     )

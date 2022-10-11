@@ -25,9 +25,14 @@ export const ServicesSection = styled.section`
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 20px;
+    padding-inline: 40px;
+    padding-block: 40px;
+    background-color: lightgray;
+    ${media.lessThan('large')`
+        padding-inline: 20px;
+    `}
     ${media.lessThan('small')`
-        margin: 30px;
+        
     `}
 `;
 export const ServicesWrapper = styled.div`
@@ -40,8 +45,8 @@ export const ServicesWrapper = styled.div`
     ${media.lessThan('medium')`
         gap: 40px;
         flex-direction: column;
-        max-width: 400px;
     `}
     ${media.lessThan('small')`
+        gap: 20px;
     `}
 `;
