@@ -1,11 +1,12 @@
 import React from 'react';
 
 
-export function Button({ text, onClick }) {
+export function Button({ text, onClick, ...other }) {
 
     return (
         <button
-        onClick={onClick}>
+        onClick={onClick}
+        {...other}>
             {text}
         </button>
     )

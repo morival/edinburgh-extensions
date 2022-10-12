@@ -39,9 +39,9 @@ module.exports = {
     slogans: {
       slogan_home_1: `Build your Dreams with us`,
       slogan_home_2: `The roof is our limit`,
-      slogan_home_3: `Catchy Slogan (another one building trust)`,
+      slogan_home_3: `We nailed it!`,
       slogan_home_4: `What Our Clients Have To Say`,
-      slogan_services: `Catchy Slogan (encouraging visitor to do action)`,
+      slogan_services: `Creating dreams with beams`,
       slogan_projects: `Catchy Slogan (assuring professionality and efficiency)`,
       slogan_about: `Catchy Slogan (ethos, manifesto)`,
       slogan_contact: `Catchy Slogan (encouraging to get in touch)`,

@@ -1,6 +1,10 @@
 import styled from "styled-components";
 import media from "styled-media-query";
+import { Button } from "../components/controls";
 
+export const ServiceButton = styled(Button)`
+    
+`;
 export const ServiceContainer = styled.div`
     position: relative;
 `;
@@ -20,6 +24,9 @@ export const ServiceImageCover = styled.div`
     :hover {
         opacity: 0.8;
     }
+`;
+export const ServicesDescription = styled.p`
+
 `;
 export const ServicesSection = styled.section`
     display: flex;

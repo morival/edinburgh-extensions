@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import media from "styled-media-query";
+import { Button } from "../components/controls";
 
-export const FilterButton = styled.button`
+export const FilterButton = styled(Button)`
     background-color: ${props => props.selected};
 `;
 export const ProjectDescription = styled.div`

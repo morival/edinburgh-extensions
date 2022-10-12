@@ -19,7 +19,7 @@ export default function Projects({ location, data: {
   // console.log(location)
 
   const filterCategory = () => services.map(({ title }) => {
-    return <FilterButton onClick={handleChange} value={title} selected={title===category?'gray':'lightgray'} key={title}>{title}</FilterButton>
+    return <FilterButton text={title} onClick={handleChange} value={title} selected={title===category?'gray':'lightgray'} key={title} />
   })
 
   const projectComponents = () => {
@@ -43,7 +43,7 @@ export default function Projects({ location, data: {
       <Container>
           <h1>Our Projects</h1>
           <h3>{slogan_projects}</h3>
-          <div>{filterCategory()}<FilterButton onClick={handleChange} value={null} selected={category===''?'gray':'lightgray'}>view all</FilterButton></div>
+          <div>{filterCategory()}<FilterButton text="view all" onClick={handleChange} value={null} selected={category===''?'gray':'lightgray'} /></div>
           {projectComponents()}
       </Container>
   )
