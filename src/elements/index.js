@@ -5,7 +5,7 @@ export * from './HomeAboutElements';
 export * from './HomeBannerElements';
 export * from './HomeServicesElements';
 export * from './HomeProjectsElements';
-export * from './HomeTestimonials';
+export * from './HomeTestimonialsElements';
 export * from './LayoutElements';
 export * from './NavbarElements';
 export * from './ProjectElements';
