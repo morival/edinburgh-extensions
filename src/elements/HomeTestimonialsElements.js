@@ -1,4 +1,5 @@
 import { Carousel } from "react-bootstrap";
+import { Paper } from '@mui/material';
 import styled from "styled-components";
 import media from "styled-media-query";
 
@@ -49,4 +50,17 @@ export const TestimonialsComment = styled.p`
     ${media.lessThan('small')`
         font-size: 0.9rem;
     `}
+`;
+export const TestimonialsPaper = styled(Paper)`
+    ${media.greaterThan('medium')`
+        max-width: 600px;
+        border-radius: 10px;
+    `}
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    position: static;
+    padding-inline: 20px;
+    font-style: italic;
+    background-color: #b7b7b7;
 `;

@@ -57,6 +57,15 @@ module.exports = {
     `gatsby-transformer-remark`,
     `gatsby-transformer-sharp`, // Needed for dynamic images
     {
+      resolve: `gatsby-plugin-material-ui`,
+      options: {
+        stylesProvider: {
+          injectFirst: true,
+          // pathToEmotionCacheProps: `src/emotion-cache-props`,
+        },
+      },
+    },
+    {
       resolve: `gatsby-plugin-styled-components`,
       options: {
         // Add any options here

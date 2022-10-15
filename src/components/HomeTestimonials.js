@@ -1,7 +1,8 @@
 import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
-import { TestimonialsCarousel, TestimonialsCarouselCaption, TestimonialsCarouselItem, TestimonialsCarouselName, TestimonialsCarouselText, TestimonialsComment, TestimonialsSection } from '../elements';
-
+import { TestimonialsCarousel, TestimonialsCarouselCaption, TestimonialsCarouselItem, TestimonialsCarouselName, TestimonialsCarouselText, TestimonialsComment, TestimonialsPaper, TestimonialsSection } from '../elements';
+import { Typography } from '@mui/material';
+import Carousel from 'react-material-ui-carousel';
 
 export function Testimonials({ slogan }) {
     
@@ -32,6 +33,17 @@ export function Testimonials({ slogan }) {
         </TestimonialsCarouselItem>)
     }
     // console.log(allMarkdownRemark.nodes)
+    const TestCarousel = () => {
+        return (
+            <Carousel interval={12000}>
+                {allMarkdownRemark.nodes.map(node =>
+                    <TestimonialsPaper key={node.frontmatter.name}>
+                        <Typography dangerouslySetInnerHTML={{ __html: node.html }} />
+                        <Typography>{node.frontmatter.name}</Typography>
+                    </TestimonialsPaper>)}
+            </Carousel>
+        )
+    }
 
     return (
         <TestimonialsSection>
@@ -39,6 +51,7 @@ export function Testimonials({ slogan }) {
             <TestimonialsCarousel variant="dark" controls={false} interval='12000'>
                 {testimonialComponents()}
             </TestimonialsCarousel>
+            {TestCarousel()}
         </TestimonialsSection>
     )
 };
