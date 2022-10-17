@@ -6,7 +6,6 @@ export const NavbarWrapper = styled.nav`
     display: flex;
     justify-content: space-between;
     height: 200px;
-    background-color: #274289;
     ${media.lessThan('large')`
         padding: 0;
     `}
@@ -45,9 +44,6 @@ export const NavLink = styled(Link)`
     padding: 1rem;
     font-size: 2rem;
     text-transform: capitalize;
-    &:hover {
-        color: lightgoldenrodyellow;
-    }
     ${media.lessThan('large')`
         font-size: 1.3rem;
     `}
@@ -64,14 +60,14 @@ export const MenuIcon = styled.div`
         z-index: 999;
         display: block;
         position: absolute;
-        top: 40px;
+        top: 20px;
         right: 0;
         transform: translate(-100%, 60%);
         font-size: 2rem;
-        color: #FC832B;
+        color: ${({ theme }) => theme.color.orange};
         cursor: pointer;
         &:hover {
-            color: lightgoldenrodyellow;
+            color: ${({ theme }) => theme.color.hover};
         }
     `}
 `;

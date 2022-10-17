@@ -8,7 +8,9 @@ export default function ProjectTemplate({ data: { markdownRemark: { frontmatter:
     // console.log(frontmatter)
     return (
         <Container>
-            <h3>{title}</h3>
+            <div>
+                <h3>{title}</h3>
+            </div>
             <div dangerouslySetInnerHTML={{ __html: html }} />
         </Container>
     )

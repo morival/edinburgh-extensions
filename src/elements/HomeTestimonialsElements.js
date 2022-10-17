@@ -4,15 +4,11 @@ import media from "styled-media-query";
 
 export const TestimonialsSection = styled.section`
     padding-block: 40px;
-    background-color: lightgray;
+    background-color: ${({ theme }) => theme.color.lightgray};
 `;
 export const TestimonialsCarousel = styled(Carousel)`
-    /* padding-block: 20px; */
+    
 `;
-// export const TestimonialsCarouselBackground = styled.img`
-//     display: block;
-//     width: 100%;
-// `;
 export const TestimonialsCarouselCaption = styled(Carousel.Caption)`
     ${media.greaterThan('medium')`
         max-width: 600px;
@@ -24,7 +20,7 @@ export const TestimonialsCarouselCaption = styled(Carousel.Caption)`
     position: static;
     padding-inline: 20px;
     font-style: italic;
-    background-color: #b7b7b7;
+    background-color: ${({ theme }) => theme.color.gray};
 `;
 export const TestimonialsCarouselItem = styled(Carousel.Item)`
     
@@ -39,7 +35,6 @@ export const TestimonialsCarouselText = styled.div`
     display: flex;
     justify-content: center;
     position: relative;
-    /* bottom: 1.25rem; */
     padding-block: 50px;
 `;
 export const TestimonialsComment = styled.p`

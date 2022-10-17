@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import media from "styled-media-query";
 
 export const HeaderWrapper = styled.header`
-    background-color: #000000;
+    
 `;
 
 export const TopHeader = styled.div`
@@ -12,6 +12,7 @@ export const TopHeader = styled.div`
     display: flex;
     justify-content: flex-end;
     gap: 10px;
+    background-color: ${({ theme }) => theme.color.black};
     ${media.lessThan('medium')`
         display: none;
     `}
@@ -21,7 +22,7 @@ export const TopHeaderItem = styled.div`
     align-items: center;
     padding: 6px;
     font-size: 1rem;
-    color: #ffffff;
+    color: ${({ theme }) => theme.color.white};
     svg {
         margin: 0 5px;
     }

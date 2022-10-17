@@ -10,16 +10,21 @@ export default function Projects({ location, data: {
   allFile: { edges }
 } }) {
 
-  const [category, setCategory] = useState('')
+  const [category, setCategory] = useState('');
 
   const handleChange = (e) => {
     setCategory(e.target.value)
   }
 
-  // console.log(location)
-
   const filterCategory = () => services.map(({ title }) => {
-    return <FilterButton text={title} onClick={handleChange} value={title} selected={title===category?'gray':'lightgray'} key={title} />
+    return (
+      <FilterButton 
+      text={title} 
+      onClick={handleChange} 
+      value={title} 
+      selected={title===category} 
+      key={title} />
+    )
   })
 
   const projectComponents = () => {
@@ -43,7 +48,7 @@ export default function Projects({ location, data: {
       <Container>
           <h1>Our Projects</h1>
           <h3>{slogan_projects}</h3>
-          <div>{filterCategory()}<FilterButton text="view all" onClick={handleChange} value={null} selected={category===''?'gray':'lightgray'} /></div>
+          <div>{filterCategory()}<FilterButton text="view all" onClick={handleChange} value={null} selected={category===''} /></div>
           {projectComponents()}
       </Container>
   )

@@ -3,8 +3,7 @@ import media from "styled-media-query";
 import { Button } from "../components/controls";
 
 export const AboutButton = styled(Button)`
-    background-color: #FC832B;
-    
+
 `;
 export const AboutDescription = styled.div`
     display: flex;

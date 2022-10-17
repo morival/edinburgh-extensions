@@ -25,7 +25,9 @@ export function About({ slogan }) {
                 <div><GatsbyImage image={image} alt={file.id} /></div>
                 <AboutDescription>
                     <p>Who we are and what we do (description taking two or more lines.)</p>
-                    <Link to='/about'><AboutButton text='about us'/></Link>
+                    <div>
+                        <Link to='/about'><AboutButton text='about us'/></Link>
+                    </div>
                 </AboutDescription>
             </AboutWrapper>
         </AboutSection>

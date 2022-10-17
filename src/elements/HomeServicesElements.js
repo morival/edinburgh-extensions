@@ -13,8 +13,8 @@ export const ServiceImageCover = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
-    background-color: gray;
+    color: ${({ theme }) => theme.color.white};
+    background-color: ${({ theme }) => theme.color.gray};
     text-transform: capitalize;
     opacity: 0.3;
     top: 0;
@@ -34,7 +34,7 @@ export const ServicesSection = styled.section`
     align-items: center;
     padding-inline: 40px;
     padding-block: 40px;
-    background-color: lightgray;
+    background-color: ${({ theme }) => theme.color.lightgray};
     ${media.lessThan('large')`
         padding-inline: 20px;
     `}

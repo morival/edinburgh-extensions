@@ -1,9 +1,20 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import media from "styled-media-query";
 import { Button } from "../components/controls";
 
 export const FilterButton = styled(Button)`
-    background-color: ${props => props.selected};
+    ${(props) => {
+        switch (props.selected) {
+            case true:
+                return css`
+                    background-color: ${({ theme }) => theme.color.gray};
+                `;
+            default:
+                return css`
+                    background-color: ${({ theme }) => theme.color.lightgray};
+                `;
+        }
+    }}
 `;
 export const ProjectDescription = styled.div`
 
@@ -17,7 +28,7 @@ export const ProjectImage = styled.div`
         justify-content: center;
     `}
     ${media.lessThan('medium')`
-        /* padding: 20px; */
+        
     `}
 `;
 export const ProjectInfo = styled.div`
@@ -40,7 +51,7 @@ export const ProjectWrapper = styled.div`
     padding: 20px;
     gap: 40px;
     ${media.lessThan('large')`
-        /* gap: 20px; */
+        
     `}
     ${media.lessThan('medium')`
         flex-direction: column;

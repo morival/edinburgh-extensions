@@ -42,7 +42,7 @@ module.exports = {
       slogan_home_3: `We nailed it!`,
       slogan_home_4: `What Our Clients Have To Say`,
       slogan_services: `Creating dreams with beams`,
-      slogan_projects: `Catchy Slogan (assuring professionality and efficiency)`,
+      slogan_projects: `Adding Quality in every project`,
       slogan_about: `Catchy Slogan (ethos, manifesto)`,
       slogan_contact: `Catchy Slogan (encouraging to get in touch)`,
     },

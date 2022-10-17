@@ -24,7 +24,7 @@ export const ContactDetails = styled.div`
 export const CopyRights = styled.div`
     padding: 0.6rem;
     text-align: center;
-    background-color: #1d1d21;
+    background-color: ${({ theme }) => theme.color.black};
 `;
 export const Follow = styled.div`
     display: flex;
@@ -33,8 +33,8 @@ export const Follow = styled.div`
     padding: 20px;
 `;
 export const FooterWrapper = styled.div`
-    color: white;
-    background-color: #3e3e49;
+    color: ${({ theme }) => theme.color.white};
+    background-color: ${({ theme }) => theme.color.dark_gray};
 `;
 export const Logo = styled(Link)`
     display: flex;
@@ -65,7 +65,7 @@ export const Menu = styled.div`
     `}
 `;
 export const SiteLink = styled(Link)`
-    color: white;
+    color: ${({ theme }) => theme.color.white};
 `;
 export const SiteMap = styled.div`
 
