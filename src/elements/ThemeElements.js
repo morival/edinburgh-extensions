@@ -34,6 +34,9 @@ export const GlobalStyle = createGlobalStyle`
     }
     h1, h2, h3 {
         font-family: ${({ theme }) => theme.fonts.header}, sans-serif;
+        a &:hover {
+            color: ${({ theme }) => theme.color.brownish_orange};
+        }
     }
     ul {
         background: ${({ theme }) => theme.color.dark_blue};
