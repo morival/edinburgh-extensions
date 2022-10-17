@@ -35,9 +35,9 @@ export function Testimonials({ slogan }) {
     // console.log(allMarkdownRemark.nodes)
     const TestCarousel = () => {
         return (
-            <Carousel interval={12000}>
+            <Carousel sx={{ width: '100%' }} interval={12000}>
                 {allMarkdownRemark.nodes.map(node =>
-                    <TestimonialsPaper key={node.frontmatter.name}>
+                    <TestimonialsPaper sx={{backgroundColor: '#b7b7b7' }} key={node.frontmatter.name}>
                         <Typography dangerouslySetInnerHTML={{ __html: node.html }} />
                         <Typography>{node.frontmatter.name}</Typography>
                     </TestimonialsPaper>)}

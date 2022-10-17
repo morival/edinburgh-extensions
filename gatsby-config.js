@@ -61,7 +61,7 @@ module.exports = {
       options: {
         stylesProvider: {
           injectFirst: true,
-          // pathToEmotionCacheProps: `src/emotion-cache-props`,
+          pathToEmotionCacheProps: `src/emotion-cache-props`,
         },
       },
     },

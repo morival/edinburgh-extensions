@@ -1,3 +1,4 @@
+import React from 'react';
 import { Carousel } from "react-bootstrap";
 import { Paper } from '@mui/material';
 import styled from "styled-components";
@@ -6,6 +7,10 @@ import media from "styled-media-query";
 export const TestimonialsSection = styled.section`
     padding-block: 40px;
     background-color: lightgray;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
 `;
 export const TestimonialsCarousel = styled(Carousel)`
     /* padding-block: 20px; */
@@ -51,11 +56,27 @@ export const TestimonialsComment = styled.p`
         font-size: 0.9rem;
     `}
 `;
+// export const TestimonialsPaper = (props) => (
+//     <Paper sx={{
+//         width: '100%',
+//         display: 'flex',
+//         flexDirection: 'column',
+//         justifyContent: 'space-evenly',
+//         position: 'static',
+//         paddingInline: 2,
+//         fontStyle: 'italic',
+//         backgroundColor: '#b7b7b7',
+//     }}
+//     >
+//         {props.children}
+//     </Paper>
+// );
 export const TestimonialsPaper = styled(Paper)`
     ${media.greaterThan('medium')`
         max-width: 600px;
         border-radius: 10px;
     `}
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
