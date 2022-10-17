@@ -20,6 +20,7 @@ export const ServiceSection = styled.section`
     flex-direction: ${props => props.even};
     justify-content: center;
     align-items: center;
+    padding-block: 10px;
     gap: 40px;
     ${media.lessThan('large')`
         gap: 20px;

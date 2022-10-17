@@ -16,6 +16,14 @@ export const FilterButton = styled(Button)`
         }
     }}
 `;
+export const FilterProjects = styled.div`
+    display: flex;
+    justify-content: center;
+    ${media.lessThan('medium')`
+        flex-direction: column;
+        padding-inline: 20px;
+    `}
+`;
 export const ProjectDescription = styled.div`
 
 `;

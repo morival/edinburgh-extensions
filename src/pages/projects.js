@@ -1,7 +1,7 @@
 import { graphql } from 'gatsby';
 import React, { useEffect, useState } from 'react';
 import { Container, Project } from '../components';
-import { FilterButton } from '../elements';
+import { FilterButton, FilterProjects } from '../elements';
 
 
 export default function Projects({ location, data: { 
@@ -29,7 +29,6 @@ export default function Projects({ location, data: {
 
   const projectComponents = () => {
     const filterProjects = nodes.filter(project => project.frontmatter.services.split(', ').some(service => service === category))
-    // console.log(filterProjects)
     const mapProjects = (category ? filterProjects : nodes).map((project, i) => {
       const edge = edges.find(({node}) => node.name === project.frontmatter.thumb)
       const node = edge ? edge.node : undefined;
@@ -48,7 +47,9 @@ export default function Projects({ location, data: {
       <Container>
           <h1>Our Projects</h1>
           <h3>{slogan_projects}</h3>
-          <div>{filterCategory()}<FilterButton text="view all" onClick={handleChange} value={null} selected={category===''} /></div>
+          <FilterProjects>
+            {filterCategory()}<FilterButton text="view all" onClick={handleChange} value={null} selected={category===''} />
+          </FilterProjects>
           {projectComponents()}
       </Container>
   )

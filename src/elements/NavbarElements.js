@@ -60,7 +60,7 @@ export const MenuIcon = styled.div`
         z-index: 999;
         display: block;
         position: absolute;
-        top: 20px;
+        /* top: 20px; */
         right: 0;
         transform: translate(-100%, 60%);
         font-size: 2rem;
