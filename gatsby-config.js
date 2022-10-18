@@ -85,15 +85,22 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        name: `metadata`,
+        path: `${__dirname}/src/markdown/metadata/`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         name: `projects`,
-        path: `${__dirname}/src/projects/`,
+        path: `${__dirname}/src/markdown/projects/`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `testimonials`,
-        path: `${__dirname}/src/testimonials/`,
+        path: `${__dirname}/src/markdown/testimonials/`,
       },
     },
   ],

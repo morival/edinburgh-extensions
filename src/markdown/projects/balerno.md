@@ -1,4 +1,5 @@
 ---
+markdown: project
 title: Balerno (extensions and renovation)
 location: Balerno
 services: extensions, new builds

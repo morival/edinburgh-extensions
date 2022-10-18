@@ -1,4 +1,5 @@
 ---
+markdown: project
 title: Danderhall (construction)
 location: Danderhall
 services: construction

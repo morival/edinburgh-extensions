@@ -1,3 +1,4 @@
+import { Link } from "gatsby";
 import styled, { css } from "styled-components";
 import media from "styled-media-query";
 import { Button } from "../components/controls";
@@ -39,8 +40,45 @@ export const ProjectImage = styled.div`
         
     `}
 `;
+export const ProjectImageContainer = styled.div`
+    position: relative;
+`;
+export const ProjectImageCover = styled.div`
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: ${({ theme }) => theme.color.white};
+    background-color: ${({ theme }) => theme.color.gray};
+    text-transform: capitalize;
+    opacity: 0.3;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    max-width: 500px;
+    transition: .5s ease;
+    :hover {
+        opacity: 0.8;
+    }
+`;
 export const ProjectInfo = styled.div`
-
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-inline: 50px;
+    width: 100%;
+    ${media.between('medium', 'large')`
+        padding-inline: 30px;
+    `}
+    ${media.lessThan('small')`
+        padding-inline: 20px;
+    `}
+`;
+export const ProjectLink = styled(Link)`
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 100%;
 `;
 export const ProjectLocation = styled.h5`
 
@@ -50,14 +88,12 @@ export const ProjectServices = styled.div`
     justify-content: center;
     gap: 20px;
 `;
-export const ProjectTitle = styled.h3`
-
-`;
 export const ProjectWrapper = styled.div`
     display: flex;
     flex-direction: ${props => props.even};
-    padding: 20px;
+    justify-content: center;
     gap: 40px;
+    background-color: ${({ theme }) => theme.color.lightgray};
     ${media.lessThan('large')`
         
     `}

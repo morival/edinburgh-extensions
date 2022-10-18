@@ -21,7 +21,8 @@ export default function Projects({ location, data: {
       <FilterButton 
       text={title} 
       onClick={handleChange} 
-      value={title} 
+      value={title}
+      // check if this category is selected
       selected={title===category} 
       key={title} />
     )
@@ -57,39 +58,39 @@ export default function Projects({ location, data: {
 
 
 export const query = graphql`
-query ProjectsQuery {
-  allMarkdownRemark(filter: {frontmatter: {title: {ne: ""}}}) {
-    nodes {
-      html
-      frontmatter {
-        title
-        location
-        services
-        slug
-        thumb
-      }
-      id
-    }
-  }
-  site {
-    siteMetadata {
-      slogans {
-        slogan_projects
-      }
-      services {
-        title
+  query ProjectsQuery {
+    allMarkdownRemark(filter: {frontmatter: {markdown: {eq: "project"}}}) {
+      nodes {
+        html
+        frontmatter {
+          title
+          location
+          services
+          slug
+          thumb
+        }
+        id
       }
     }
-  }
-  allFile(filter: {name: {glob: "*thumb"}}) {
-    edges {
-      node {
-        name
-        childImageSharp {
-          gatsbyImageData
+    site {
+      siteMetadata {
+        slogans {
+          slogan_projects
+        }
+        services {
+          title
+        }
+      }
+    }
+    allFile {
+      edges {
+        node {
+          name
+          childImageSharp {
+            gatsbyImageData(width: 500, layout: CONSTRAINED, placeholder: BLURRED)
+          }
         }
       }
     }
   }
-}
-  `;
+`;

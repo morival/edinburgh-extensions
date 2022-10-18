@@ -1,4 +1,5 @@
 ---
+markdown: project
 title: Gullane (Construction Work)
 location: Gullane
 services: construction

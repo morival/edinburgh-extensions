@@ -1,4 +1,5 @@
 ---
+markdown: project
 title: Grange Bathroom (renovation)
 location: Grange
 services: new builds

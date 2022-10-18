@@ -6,18 +6,18 @@ import { TestimonialsCarousel, TestimonialsCarouselCaption, TestimonialsCarousel
 export function Testimonials({ slogan }) {
     
     const { allMarkdownRemark } = useStaticQuery(graphql`
-    query TestimonialsQuery {
-        allMarkdownRemark(filter: {frontmatter: {name: {ne: null}}}) {
-          nodes {
-            frontmatter {
-              name
-              project
-              date
+        query TestimonialsQuery {
+            allMarkdownRemark(filter: {frontmatter: {markdown: {eq: "testimonial"}}}) {
+                nodes {
+                    frontmatter {
+                    name
+                    project
+                    date
+                    }
+                    html
+                }
             }
-            html
-          }
         }
-      }
     `)
 
     const testimonialComponents = () => {

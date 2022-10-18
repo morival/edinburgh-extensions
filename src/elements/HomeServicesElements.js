@@ -5,9 +5,6 @@ import { Button } from "../components/controls";
 export const ServiceButton = styled(Button)`
     
 `;
-export const ServiceContainer = styled.div`
-    position: relative;
-`;
 export const ServiceImageCover = styled.div`
     position: absolute;
     display: flex;
@@ -24,6 +21,9 @@ export const ServiceImageCover = styled.div`
     :hover {
         opacity: 0.8;
     }
+`;
+export const ServiceImageContainer = styled.div`
+    position: relative;
 `;
 export const ServicesDescription = styled.p`
 
