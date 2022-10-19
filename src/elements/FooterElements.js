@@ -61,7 +61,7 @@ export const Menu = styled.div`
     padding: 10px;
     min-width: 100px;
     ${media.lessThan('small')`
-        align-items: center;
+        margin: auto;
     `}
 `;
 export const SiteLink = styled(Link)`

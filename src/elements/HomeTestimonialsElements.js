@@ -2,10 +2,6 @@ import { Carousel } from "react-bootstrap";
 import styled from "styled-components";
 import media from "styled-media-query";
 
-export const TestimonialsSection = styled.section`
-    padding-block: 40px;
-    background-color: ${({ theme }) => theme.color.lightgray};
-`;
 export const TestimonialsCarousel = styled(Carousel)`
     
 `;
@@ -17,10 +13,10 @@ export const TestimonialsCarouselCaption = styled(Carousel.Caption)`
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    position: static;
-    padding-inline: 20px;
+    position: sticky;
+    /* padding-inline: 20px; */
     font-style: italic;
-    background-color: ${({ theme }) => theme.color.gray};
+    background-color: ${({ theme }) => theme.color.white};
 `;
 export const TestimonialsCarouselItem = styled(Carousel.Item)`
     
@@ -37,11 +33,39 @@ export const TestimonialsCarouselText = styled.div`
     position: relative;
     padding-block: 50px;
 `;
-export const TestimonialsComment = styled.p`
-    ${media.lessThan('medium')`
-        font-size: 0.95rem;
-    `}
+export const TestimonialsComment = styled.div`
+    p {
+        ${media.lessThan('medium')`
+            font-size: 0.95rem;
+        `}
+        ${media.lessThan('small')`
+            font-size: 0.9rem;
+        `}
+    }
+`;
+export const TestimonialsQuote = styled.div`
+    position: relative;
+    padding: 40px;
+`;
+export const QuotationMark = styled.div`
+    position: absolute;
+    top: 0;
+    left: 20px;
     ${media.lessThan('small')`
-        font-size: 0.9rem;
+        left: 15px;
     `}
+    & ~ & {
+        top: auto;
+        left: auto;
+        right: 20px;
+        bottom: 0;
+        ${media.lessThan('small')`
+            right: 15px;
+        `}
+    }
+    font-size: 3rem;
+`;
+export const TestimonialsSection = styled.section`
+    padding-block: 60px;
+    background-color: ${({ theme }) => theme.color.lightgray};
 `;

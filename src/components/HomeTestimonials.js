@@ -1,6 +1,6 @@
 import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
-import { TestimonialsCarousel, TestimonialsCarouselCaption, TestimonialsCarouselItem, TestimonialsCarouselName, TestimonialsCarouselText, TestimonialsComment, TestimonialsSection } from '../elements';
+import { QuotationMark, TestimonialsCarousel, TestimonialsCarouselCaption, TestimonialsCarouselItem, TestimonialsCarouselName, TestimonialsCarouselText, TestimonialsComment, TestimonialsQuote, TestimonialsSection } from '../elements';
 
 
 export function Testimonials({ slogan }) {
@@ -25,7 +25,11 @@ export function Testimonials({ slogan }) {
         .map(node => <TestimonialsCarouselItem key={node.frontmatter.name}>
             <TestimonialsCarouselText>
                 <TestimonialsCarouselCaption>
-                    <TestimonialsComment dangerouslySetInnerHTML={{ __html: node.html }} />
+                    <TestimonialsQuote>
+                        <QuotationMark>“</QuotationMark>
+                        <TestimonialsComment dangerouslySetInnerHTML={{ __html: node.html }} />
+                        <QuotationMark>”</QuotationMark>
+                    </TestimonialsQuote>
                     <TestimonialsCarouselName>{node.frontmatter.name}</TestimonialsCarouselName>
                 </TestimonialsCarouselCaption>
             </TestimonialsCarouselText>
