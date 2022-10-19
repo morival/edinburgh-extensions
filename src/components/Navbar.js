@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import { FaTimes, FaBars } from 'react-icons/fa';
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import { MenuIcon, NavbarWrapper, NavLink, NavList, NavListItem, NavLogo } from '../elements';
+import { MenuIcon, NavbarWrapper, NavLink, NavList, NavListItem, NavListItemSpan, NavLogo } from '../elements';
 
 
 export const Navbar = () => {
@@ -49,10 +49,10 @@ export const Navbar = () => {
                 {click ? <FaTimes /> : <FaBars />}
             </MenuIcon>
             <NavList click={click} onClick={closeMobileMenu}>
-                <NavListItem><NavLink to="/services">{link_2}</NavLink></NavListItem>
-                <NavListItem><NavLink to="/projects">{link_3}</NavLink></NavListItem>
-                <NavListItem><NavLink to="/about">{link_4}</NavLink></NavListItem>
-                <NavListItem><NavLink to="/contact">{link_5}</NavLink></NavListItem>
+                <NavListItem><NavLink to="/services">{link_2}</NavLink><NavListItemSpan /></NavListItem>
+                <NavListItem><NavLink to="/projects">{link_3}</NavLink><NavListItemSpan /></NavListItem>
+                <NavListItem><NavLink to="/about">{link_4}</NavLink><NavListItemSpan /></NavListItem>
+                <NavListItem><NavLink to="/contact">{link_5}</NavLink><NavListItemSpan /></NavListItem>
             </NavList>
         </NavbarWrapper>
     )

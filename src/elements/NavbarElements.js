@@ -22,17 +22,34 @@ export const NavList = styled.ul`
         position: absolute;
         top: ${({ click }) => (click ? '0' : '-2000px')};
         opacity: 1;
-        transition: all 0.2s ease;
+        transition: all 0.3s ease;
         z-index: 1;
     `}
 `;
 export const  NavListItem = styled.li`
     display: flex;
-    align-items: center;
-    height: 80px;
+    height: 100%;
+    position: relative;
     ${media.lessThan('medium')`
-        width: 100%;
-        justify-content: center;
+        height: 80px;
+    `}
+`;
+export const NavListItemSpan = styled.span`
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-style: solid;
+    border-color: ${({ theme }) => theme.color.hover};
+    border-top-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
+    border-right-width: 0;
+    bottom: 0;
+    transition: .5s ease;
+    ${media.greaterThan('medium')`
+        li:hover & {
+            border-bottom-width: 10px;
+        }
     `}
 `;
 export const NavLogo = styled(Link)`
@@ -41,9 +58,14 @@ export const NavLogo = styled(Link)`
     align-self: center;
 `;
 export const NavLink = styled(Link)`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
     padding: 1rem;
-    font-size: 2rem;
+    font-size: 1.8rem;
     text-transform: capitalize;
+    z-index: 1;
     ${media.lessThan('large')`
         font-size: 1.3rem;
     `}
