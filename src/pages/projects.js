@@ -6,7 +6,7 @@ import { FilterButton, FilterProjects } from '../elements';
 
 export default function Projects({ location, data: { 
   allMarkdownRemark: { nodes }, 
-  site: { siteMetadata: { services, slogans: { slogan_projects }} },
+  site: { siteMetadata: { links: { link_3 }, services, slogans: { slogan_projects }} },
   allFile: { edges }
 } }) {
 
@@ -46,7 +46,7 @@ export default function Projects({ location, data: {
     
   return (
       <Container>
-          <h1>Our Projects</h1>
+          <h1>{link_3}</h1>
           <h3>{slogan_projects}</h3>
           <FilterProjects>
             {filterCategory()}<FilterButton text="view all" onClick={handleChange} value={null} selected={category===''} />
@@ -58,39 +58,42 @@ export default function Projects({ location, data: {
 
 
 export const query = graphql`
-  query ProjectsQuery {
-    allMarkdownRemark(filter: {frontmatter: {markdown: {eq: "project"}}}) {
-      nodes {
-        html
-        frontmatter {
-          title
-          location
-          services
-          slug
-          thumb
-        }
-        id
+query ProjectsQuery {
+  allMarkdownRemark(filter: {frontmatter: {markdown: {eq: "project"}}}) {
+    nodes {
+      html
+      frontmatter {
+        title
+        location
+        services
+        slug
+        thumb
+      }
+      id
+    }
+  }
+  site {
+    siteMetadata {
+      slogans {
+        slogan_projects
+      }
+      services {
+        title
+      }
+      links {
+        link_3
       }
     }
-    site {
-      siteMetadata {
-        slogans {
-          slogan_projects
-        }
-        services {
-          title
-        }
-      }
-    }
-    allFile {
-      edges {
-        node {
-          name
-          childImageSharp {
-            gatsbyImageData(width: 500, layout: CONSTRAINED, placeholder: BLURRED)
-          }
+  }
+  allFile {
+    edges {
+      node {
+        name
+        childImageSharp {
+          gatsbyImageData(width: 500, layout: CONSTRAINED, placeholder: BLURRED)
         }
       }
     }
   }
+}
 `;

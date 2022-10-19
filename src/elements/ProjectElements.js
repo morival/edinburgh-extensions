@@ -40,9 +40,6 @@ export const ProjectImage = styled.div`
         
     `}
 `;
-export const ProjectImageContainer = styled.div`
-    position: relative;
-`;
 export const ProjectImageCover = styled.div`
     position: absolute;
     display: flex;

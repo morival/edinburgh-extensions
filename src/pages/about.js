@@ -2,10 +2,10 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { Container } from '../components'
 
-export default function About({ data: { site: { siteMetadata: { slogans: { slogan_about } } } } }) {
+export default function About({ data: { site: { siteMetadata: { links: { link_4 }, slogans: { slogan_about } } } } }) {
     return (
         <Container>
-            <h1>About Us</h1>
+            <h1>{link_4}</h1>
             <h3>{slogan_about}</h3>
             <div>
               <h6>image</h6>
@@ -18,12 +18,15 @@ export default function About({ data: { site: { siteMetadata: { slogans: { sloga
 
 export const query = graphql`
 query AboutQuery {
-    site {
-      siteMetadata {
-        slogans {
-          slogan_about
-        }
+  site {
+    siteMetadata {
+      slogans {
+        slogan_about
+      }
+      links {
+        link_4
       }
     }
   }
+}
   `;

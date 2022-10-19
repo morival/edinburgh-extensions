@@ -16,8 +16,8 @@ module.exports = {
     },
     links: {
       link_1: `home`,
-      link_2: `our services`,
-      link_3: `our projects`,
+      link_2: `services`,
+      link_3: `our work`,
       link_4: `about us`,
       link_5: `contact us`,
     },

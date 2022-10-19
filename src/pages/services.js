@@ -3,7 +3,11 @@ import React from 'react'
 import { Container, Service } from '../components';
 
 
-export default function Services({ data: { site: { siteMetadata: { services, slogans: { slogan_services }} }, allFile: { edges } } }) {
+export default function Services({ data: { site: { siteMetadata: { 
+    services, 
+    slogans: { slogan_services },
+    links: { link_2 }} },
+  allFile: { edges } } }) {
     
     const serviceComponents = () => 
     services.map((service, i) => {
@@ -13,7 +17,7 @@ export default function Services({ data: { site: { siteMetadata: { services, slo
 
     return ( 
         <Container>
-            <h1>Our Services</h1>
+            <h1>{link_2}</h1>
             <h3>{slogan_services}</h3>
             {serviceComponents()}
         </Container>
@@ -32,6 +36,9 @@ query ServicesQuery {
         description
         title
         relativePath
+      }
+      links {
+        link_2
       }
     }
   }
