@@ -87,7 +87,10 @@ export const ProjectServices = styled.div`
 `;
 export const ProjectWrapper = styled.div`
     display: flex;
-    flex-direction: ${props => props.even};
+    /* apply to every second ProjectWrapper */
+    &:nth-of-type(2n)  {
+        flex-direction: row-reverse;
+    }
     justify-content: center;
     gap: 40px;
     background-color: ${({ theme }) => theme.color.lightgray};

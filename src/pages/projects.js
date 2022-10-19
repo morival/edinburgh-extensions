@@ -33,7 +33,7 @@ export default function Projects({ location, data: {
     const mapProjects = (category ? filterProjects : nodes).map((project, i) => {
       const edge = edges.find(({node}) => node.name === project.frontmatter.thumb)
       const node = edge ? edge.node : undefined;
-      return <Project project={project} node={node} i={i} key={project.id} />
+      return <Project project={project} node={node} key={project.id} />
     })
     return mapProjects
   }

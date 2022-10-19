@@ -17,7 +17,10 @@ export const ServiceTitle = styled.h3`
 `;
 export const ServiceSection = styled.section`
     display: flex;
-    flex-direction: ${props => props.even};
+    /* apply to every second Service Section */
+    &:nth-of-type(2n) {
+        flex-direction: row-reverse;
+    }
     justify-content: center;
     align-items: center;
     padding-block: 10px;

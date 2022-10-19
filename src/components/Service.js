@@ -4,15 +4,13 @@ import { ServiceButton, ServiceDescription, ServiceImage, ServiceInfo, ServiceSe
 import { Link } from 'gatsby';
 
 
-export function Service({ service: { title, description }, edge: { node }, i }) {
+export function Service({ service: { title, description }, edge: { node } }) {
     
     // const { title, description } = service;
     const image = getImage(node)
 
-    const even = i%2 === 0 ? 'row' : 'row-reverse'
-    // console.log(title)
     return (
-        <ServiceSection even={even} id={title}>
+        <ServiceSection id={title}>
             <ServiceImage>
                 <GatsbyImage image={image} alt={title} />
             </ServiceImage>

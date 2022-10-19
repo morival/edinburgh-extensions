@@ -12,7 +12,7 @@ export default function Services({ data: { site: { siteMetadata: {
     const serviceComponents = () => 
     services.map((service, i) => {
       const edge = edges.find(({node}) => node.relativePath === service.relativePath)
-      return <Service service={service} edge={edge} i={i} key={i} />
+      return <Service service={service} edge={edge} key={i} />
     })
 
     return ( 
