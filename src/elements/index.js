@@ -1,3 +1,5 @@
+export * from './ContactDetailsElements';
+export * from './ContactFormElements';
 export * from './ContainerElements';
 export * from './FooterElements';
 export * from './HeaderElements';

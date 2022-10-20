@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import media from 'styled-media-query';
+import { Section } from './ThemeElements';
 
 
 export const ServiceDescription = styled.div`
@@ -15,7 +16,7 @@ export const ServiceInfo = styled.div`
 export const ServiceTitle = styled.h3`
     text-transform: capitalize;
 `;
-export const ServiceSection = styled.section`
+export const ServiceSection = styled(Section)`
     display: flex;
     /* apply to every second Service Section */
     &:nth-of-type(2n) {

@@ -30,7 +30,7 @@ export function Testimonials({ slogan }) {
                         <TestimonialsComment dangerouslySetInnerHTML={{ __html: node.html }} />
                         <QuotationMark>”</QuotationMark>
                     </TestimonialsQuote>
-                    <TestimonialsCarouselName>{node.frontmatter.name}</TestimonialsCarouselName>
+                    <TestimonialsCarouselName>- {node.frontmatter.name}</TestimonialsCarouselName>
                 </TestimonialsCarouselCaption>
             </TestimonialsCarouselText>
         </TestimonialsCarouselItem>)

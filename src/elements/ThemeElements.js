@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 
 
 export const theme = {
@@ -19,6 +19,9 @@ export const theme = {
         copy: 'Source Sans Pro',
     },
 };
+export const Section = styled.section`
+    width: 100%;
+`;
 
 export const GlobalStyle = createGlobalStyle`
     body {

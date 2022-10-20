@@ -1,6 +1,7 @@
 import { Carousel } from "react-bootstrap";
 import styled from "styled-components";
 import media from "styled-media-query";
+import { Section } from "./ThemeElements";
 
 export const TestimonialsCarousel = styled(Carousel)`
     
@@ -65,7 +66,7 @@ export const QuotationMark = styled.div`
     }
     font-size: 3rem;
 `;
-export const TestimonialsSection = styled.section`
-    padding-block: 60px;
+export const TestimonialsSection = styled(Section)`
     background-color: ${({ theme }) => theme.color.lightgray};
+    padding-block: 60px;
 `;

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import media from "styled-media-query";
 import { Button } from "../components/controls";
+import { Section } from "./ThemeElements";
 
 export const AboutButton = styled(Button)`
 
@@ -10,8 +11,8 @@ export const AboutDescription = styled.div`
     flex-direction: column;
     justify-content: center;
 `;
-export const AboutSection = styled.section`
-
+export const AboutSection = styled(Section)`
+    
 `;
 export const AboutWrapper = styled.div`
     display: flex;

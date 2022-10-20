@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import { Section } from "./ThemeElements";
 
-export const ProjectsSection = styled.section`
+export const ProjectsSection = styled(Section)`
 
 `;
 export const ProjectsWrapper = styled.div`

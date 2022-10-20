@@ -32,7 +32,7 @@ export const Follow = styled.div`
     gap: 10px;
     padding: 20px;
 `;
-export const FooterWrapper = styled.div`
+export const FooterWrapper = styled.footer`
     color: ${({ theme }) => theme.color.white};
     background-color: ${({ theme }) => theme.color.dark_gray};
 `;
