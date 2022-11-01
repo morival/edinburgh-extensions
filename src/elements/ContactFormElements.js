@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import media from "styled-media-query";
+import { Button } from "../components/controls";
 
 
 export const ContactFormInput = styled.input`
@@ -18,11 +19,14 @@ export const ContactFormWrapper = styled.div`
     flex-direction: column;
     justify-items: center;
     padding-block: 20px;
-    width: 50%;
-    ${media.lessThan('medium')`
-        width: 100%;
+    width: 100%;
+    ${media.greaterThan('medium')`
+        width: 50%;
     `}
 `;
 export const ContactFormTextArea = styled.textarea`
+    width: 100%;
+`;
+export const SubmitButton = styled(Button)`
     width: 100%;
 `;

@@ -4,19 +4,19 @@ import { About, Banner, Container, Projects, Services, Testimonials } from '../c
 
 
 export default function IndexPage({ data: { site: { siteMetadata: {
-  slogans: { slogan_home_1, slogan_home_2, slogan_home_3, slogan_home_4 },
+  links: { link_1 },
   services,
-  links: { link_1 } }},
+  quotes: { quote_home_about, quote_home_services, quote_home_projects, quote_home_testimonials } }},
   file} }) {
 
   return (
     <Container>
       <Banner file={file}/>
       <h1>{link_1}</h1>
-      <About slogan={slogan_home_1} />
-      <Services slogan={slogan_home_2} services={services} />
-      <Projects slogan={slogan_home_3} />
-      <Testimonials slogan={slogan_home_4} />
+      <About slogan={quote_home_about} />
+      <Services slogan={quote_home_services} services={services} />
+      <Projects slogan={quote_home_projects} />
+      <Testimonials slogan={quote_home_testimonials} />
     </Container>
   )
 }
@@ -26,18 +26,18 @@ export const query = graphql`
 query HomeQuery {
   site {
     siteMetadata {
-      slogans {
-        slogan_home_1
-        slogan_home_2
-        slogan_home_3
-        slogan_home_4
+      links {
+        link_1
       }
       services {
         title
         relativePath
       }
-      links {
-        link_1
+      quotes {
+        quote_home_about
+        quote_home_services
+        quote_home_projects
+        quote_home_testimonials
       }
     }
   }

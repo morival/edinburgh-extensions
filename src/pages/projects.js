@@ -6,7 +6,7 @@ import { FilterButton, FilterProjects } from '../elements';
 
 export default function Projects({ location, data: { 
   allMarkdownRemark: { nodes }, 
-  site: { siteMetadata: { links: { link_3 }, services, slogans: { slogan_projects }} },
+  site: { siteMetadata: { links: { link_3 }, services, quotes: { quote_projects }} },
   allFile: { edges }
 } }) {
 
@@ -47,7 +47,7 @@ export default function Projects({ location, data: {
   return (
       <Container>
           <h1>{link_3}</h1>
-          <h3>{slogan_projects}</h3>
+          <h3>{quote_projects}</h3>
           <FilterProjects>
             {filterCategory()}<FilterButton text="view all" onClick={handleChange} value={null} selected={category===''} />
           </FilterProjects>
@@ -74,14 +74,14 @@ query ProjectsQuery {
   }
   site {
     siteMetadata {
-      slogans {
-        slogan_projects
+      links {
+        link_3
       }
       services {
         title
       }
-      links {
-        link_3
+      quotes {
+        quote_projects
       }
     }
   }

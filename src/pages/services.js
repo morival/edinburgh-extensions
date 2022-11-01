@@ -5,7 +5,7 @@ import { Container, Service } from '../components';
 
 export default function Services({ data: { site: { siteMetadata: { 
     services, 
-    slogans: { slogan_services },
+    quotes: { quote_services },
     links: { link_2 }} },
   allFile: { edges } } }) {
     
@@ -18,7 +18,7 @@ export default function Services({ data: { site: { siteMetadata: {
     return ( 
         <Container>
             <h1>{link_2}</h1>
-            <h3>{slogan_services}</h3>
+            <h3>{quote_services}</h3>
             {serviceComponents()}
         </Container>
     )
@@ -29,9 +29,6 @@ export const query = graphql`
 query ServicesQuery {
   site {
     siteMetadata {
-      slogans {
-        slogan_services
-      }
       services {
         description
         title
@@ -39,6 +36,9 @@ query ServicesQuery {
       }
       links {
         link_2
+      }
+      quotes {
+        quote_services
       }
     }
   }

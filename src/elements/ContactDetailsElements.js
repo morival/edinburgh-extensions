@@ -7,8 +7,8 @@ export const ContactDetailsWrapper = styled.div`
     flex-direction: column;
     justify-items: center;
     padding-block: 20px;
-    width: 50%;
-    ${media.lessThan('medium')`
-        width: 100%;
+    width: 100%;
+    ${media.greaterThan('medium')`
+        width: 50%;
     `}
 `;
