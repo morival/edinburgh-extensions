@@ -8,13 +8,16 @@ export const TestimonialsCarousel = styled(Carousel)`
 `;
 export const TestimonialsCarouselCaption = styled(Carousel.Caption)`
     ${media.greaterThan('medium')`
-        max-width: 600px;
-        border-radius: 10px;
+    max-width: 700px;
+    /* border-radius: 10px; */
+    `}
+    ${media.greaterThan('large')`
+        max-width: 800px;
     `}
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    position: sticky;
+    position: initial;
     /* padding-inline: 20px; */
     font-style: italic;
     background-color: ${({ theme }) => theme.color.white};
@@ -68,5 +71,13 @@ export const QuotationMark = styled.div`
 `;
 export const TestimonialsSection = styled(Section)`
     background-color: ${({ theme }) => theme.color.lightgray};
-    padding-block: 60px;
+    padding-inline: 40px;
+    padding-block: 40px;
+    /* background-color: ${({ theme }) => theme.color.lightgray}; */
+    ${media.lessThan('large')`
+        padding-inline: 20px;
+    `}
+    ${media.lessThan('small')`
+        
+    `}
 `;

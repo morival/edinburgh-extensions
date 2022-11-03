@@ -35,7 +35,7 @@ export const ServicesSection = styled(Section)`
     align-items: center;
     padding-inline: 40px;
     padding-block: 40px;
-    background-color: ${({ theme }) => theme.color.lightgray};
+    /* background-color: ${({ theme }) => theme.color.lightgray}; */
     ${media.lessThan('large')`
         padding-inline: 20px;
     `}

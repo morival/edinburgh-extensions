@@ -10,9 +10,27 @@ export const AboutDescription = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
+    width: 50%;
+    ${media.lessThan('medium')`
+        width: 100%;
+    `}
+`;
+export const AboutImage = styled.div`
+    width: 50%;
+    ${media.lessThan('medium')`
+        width: 100%;
+    `}
 `;
 export const AboutSection = styled(Section)`
-    
+    padding-inline: 40px;
+    padding-block: 40px;
+    background-color: ${({ theme }) => theme.color.lightgray};
+    ${media.lessThan('large')`
+        padding-inline: 20px;
+    `}
+    ${media.lessThan('small')`
+        
+    `}
 `;
 export const AboutWrapper = styled.div`
     display: flex;
@@ -23,6 +41,7 @@ export const AboutWrapper = styled.div`
         gap: 20px;
     `}
     ${media.lessThan('medium')`
+        flex-wrap: wrap;
         gap: 10px;
     `}
     ${media.lessThan('small')`

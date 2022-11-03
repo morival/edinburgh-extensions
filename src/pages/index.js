@@ -4,7 +4,7 @@ import { About, Banner, Container, Projects, Services, Testimonials } from '../c
 
 
 export default function IndexPage({ data: { site: { siteMetadata: {
-  links: { link_1 },
+  title,
   services,
   quotes: { quote_home_about, quote_home_services, quote_home_projects, quote_home_testimonials } }},
   file} }) {
@@ -12,9 +12,9 @@ export default function IndexPage({ data: { site: { siteMetadata: {
   return (
     <Container>
       <Banner file={file}/>
-      <h1>{link_1}</h1>
-      <About slogan={quote_home_about} />
+      {/* <h1>Welcome to {title}</h1> */}
       <Services slogan={quote_home_services} services={services} />
+      <About slogan={quote_home_about} />
       <Projects slogan={quote_home_projects} />
       <Testimonials slogan={quote_home_testimonials} />
     </Container>
@@ -26,9 +26,7 @@ export const query = graphql`
 query HomeQuery {
   site {
     siteMetadata {
-      links {
-        link_1
-      }
+      title
       services {
         title
         relativePath

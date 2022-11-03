@@ -40,7 +40,7 @@ export function Testimonials({ slogan }) {
     return (
         <TestimonialsSection>
             <h3>{slogan}</h3>
-            <TestimonialsCarousel variant="dark" controls={false} interval='12000'>
+            <TestimonialsCarousel variant="dark" controls={false} interval='120000'>
                 {testimonialComponents()}
             </TestimonialsCarousel>
         </TestimonialsSection>

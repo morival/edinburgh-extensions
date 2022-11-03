@@ -1,7 +1,7 @@
 import { graphql, Link, useStaticQuery } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import React from 'react';
-import { AboutButton, AboutDescription, AboutSection, AboutWrapper } from '../elements';
+import { AboutButton, AboutDescription, AboutImage, AboutSection, AboutWrapper } from '../elements';
 
 export function About({ slogan }) {
 
@@ -22,9 +22,10 @@ export function About({ slogan }) {
         <AboutSection>
             <h3>{slogan}</h3>
             <AboutWrapper>
-                <div><GatsbyImage image={image} alt={file.id} /></div>
+                <AboutImage><GatsbyImage image={image} alt={file.id} /></AboutImage>
                 <AboutDescription>
-                    <p>Who we are and what we do (description taking two or more lines.)</p>
+                    <p>We are a Family run home extension and renovation business with over 30 years of experience in the industry.</p> 
+                    <p>Driven by a constant commitment to excel in every project, we deliver the best results at an affordable price.</p>
                     <div>
                         <Link to='/about'><AboutButton text='about us'/></Link>
                     </div>
