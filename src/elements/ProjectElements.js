@@ -90,6 +90,9 @@ export const ProjectWrapper = styled.div`
     /* apply to every second ProjectWrapper */
     &:nth-of-type(2n)  {
         flex-direction: row-reverse;
+        ${media.lessThan('medium')`
+            flex-direction: column;
+        `}
     }
     justify-content: center;
     gap: 40px;

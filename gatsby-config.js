@@ -23,15 +23,19 @@ module.exports = {
     },
     services: [
       {
-        title: `construction`,
-        description: `Steel fitting is not an alien task for us. With multiple beams fitted across the city, we make structures stable and safe. We can alternate or take down any wall in your house no matter what its function is. No matter what weight or size the beam is, we can fit it.`,
-        relativePath: `services/con-example.jpg`,
-      }, {
         title: `extensions`,
         description: `If you are looking to expand your space for more freedom, you are in the right place. We can help you to take the first steps. We will run your dream project from day one to day finish. Providing high quality work across all the stages. We minimise the use of outside contractors to maintain a high level of detail and quality.`,
         relativePath: `services/ext-example.jpg`,
       }, {
+        title: `renovations`,
+        description: `Steel fitting is not an alien task for us. With multiple beams fitted across the city, we make structures stable and safe. We can alternate or take down any wall in your house no matter what its function is. No matter what weight or size the beam is, we can fit it.`,
+        relativePath: `services/con-example.jpg`,
+      }, {
         title: `new builds`,
+        description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`,
+        relativePath: `services/ref-example.jpg`,
+      }, {
+        title: `conversions`,
         description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`,
         relativePath: `services/ref-example.jpg`,
       },

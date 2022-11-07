@@ -21,7 +21,7 @@ export function Services({ slogan, services }) {
   `)
   
   
-  const servicesComponent = () => (
+  const servicesComponents = () => (
     services.map((service, i) => {
       const edge = allFile.edges.find(edge => edge.node.relativePath === service.relativePath)
       const image = getImage(edge.node)
@@ -31,7 +31,8 @@ export function Services({ slogan, services }) {
           <ServiceImageContainer>
             {serviceImage()}
             <ServiceImageCover>
-              <h2>{service.title}</h2>
+              {service.title}
+              {/* <h2>{service.title}</h2> */}
             </ServiceImageCover>
           </ServiceImageContainer>
         </Link>
@@ -46,7 +47,7 @@ export function Services({ slogan, services }) {
               Our portfolio includes a variety of projects from ... to ...
             </ServicesDescription>
             <ServicesWrapper>
-                {servicesComponent()}
+                {servicesComponents()}
             </ServicesWrapper>
         </ServicesSection>
     )

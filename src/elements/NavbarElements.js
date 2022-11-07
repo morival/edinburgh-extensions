@@ -24,6 +24,12 @@ export const NavList = styled.ul`
         opacity: 1;
         transition: all 0.3s ease;
         z-index: 1;
+        @media (max-height: 662px) {
+            justify-content: end;
+        }
+        ${media.lessThan('small')`
+            /* justify-content: end; */
+        `}
     `}
 `;
 export const  NavListItem = styled.li`

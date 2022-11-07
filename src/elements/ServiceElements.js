@@ -18,14 +18,18 @@ export const ServiceTitle = styled.h3`
 `;
 export const ServiceSection = styled(Section)`
     display: flex;
-    /* apply to every second Service Section */
-    &:nth-of-type(2n) {
-        flex-direction: row-reverse;
-    }
     justify-content: center;
     align-items: center;
     padding-block: 10px;
     gap: 40px;
+    /* apply to every second Service Section */
+    &:nth-of-type(2n) {
+        flex-direction: row-reverse;
+        background-color: #d3d3d3;
+        ${media.lessThan('medium')`
+            flex-direction: column;
+        `}
+    }
     ${media.lessThan('large')`
         gap: 20px;
     `}
