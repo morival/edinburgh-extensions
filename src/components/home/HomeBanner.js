@@ -1,7 +1,7 @@
 import React from 'react';
 import { getImage } from 'gatsby-plugin-image';
 import { convertToBgImage } from 'gbimage-bridge';
-import { BannerImage, BannerImageInner, BannerTextContainer, BannerTextWrapper } from '../elements';
+import { BannerImage, BannerImageInner, BannerTextContainer, BannerTextWrapper } from '../../elements';
 
 
 export function Banner({ file, title }) {

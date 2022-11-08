@@ -1,7 +1,7 @@
 import { graphql, Link, useStaticQuery } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import React from 'react';
-import { ServiceImageContainer, ServiceImageCover, ServicesDescription, ServicesSection, ServicesWrapper } from '../elements';
+import { ServiceImageContainer, ServiceImageCover, ServicesDescription, ServicesSection, ServicesWrapper } from '../../elements';
 
 export function Services({ slogan, services }) {
 

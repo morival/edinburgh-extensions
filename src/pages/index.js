@@ -1,6 +1,7 @@
 import * as React from "react";
 import { graphql } from "gatsby";
-import { About, Banner, Container, Projects, Services, Testimonials } from '../components';
+import { Container } from '../components';
+import { About, Banner, Intro, Projects, Services, Testimonials } from '../components/home';
 
 
 export default function IndexPage({ data: { site: { siteMetadata: {
@@ -12,7 +13,7 @@ export default function IndexPage({ data: { site: { siteMetadata: {
   return (
     <Container>
       <Banner file={file} title={title}/>
-      {/* <h1>Welcome to {title}</h1> */}
+      <Intro />
       <Services slogan={quote_home_services} services={services} />
       <About slogan={quote_home_about} />
       <Projects slogan={quote_home_projects} />

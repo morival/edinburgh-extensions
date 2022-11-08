@@ -31,17 +31,21 @@ export const BannerTextContainer = styled.div`
     `}
 `;
 const largeWrapperAnim = keyframes`
-    100% { width: 560px; }
+    0% { border: solid wheat; }
+    100% { width: 560px; border: solid wheat; }
 `;
 const mediumWrapperAnim = keyframes`
-    100% { width: 400px; }
+    0% { border: solid wheat; }
+    100% { width: 400px; border: solid wheat; }
 `;
 const smallWrapperAnim = keyframes`
-    100% { width: 280px; }
+    0% { border: solid wheat; }
+    100% { width: 280px; border: solid wheat; }
 `;
 export const BannerTextWrapper = styled.div`
     width: 0;
     height: 150px;
+    
     animation: ${largeWrapperAnim} 2s 1s forwards;
     ${media.lessThan('medium')`
         height: 105px;

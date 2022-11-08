@@ -1,7 +1,7 @@
 import { graphql, Link, useStaticQuery } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import React from 'react';
-import { AboutButton, AboutDescription, AboutImage, AboutSection, AboutWrapper } from '../elements';
+import { AboutButton, AboutDescription, AboutImage, AboutSection, AboutWrapper } from '../../elements';
 
 export function About({ slogan }) {
 

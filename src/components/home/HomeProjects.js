@@ -1,7 +1,7 @@
 import { Link } from 'gatsby';
 import React from 'react';
-import { ProjectsSection, ProjectsWrapper } from '../elements';
-import { Button } from './controls';
+import { ProjectsSection, ProjectsWrapper } from '../../elements';
+import { Button } from '../controls';
 
 
 export function Projects({ slogan }) {
