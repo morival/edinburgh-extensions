@@ -1,15 +1,13 @@
 import { Carousel } from "react-bootstrap";
 import styled from "styled-components";
 import media from "styled-media-query";
-import { Section } from "./ThemeElements";
 
 export const TestimonialsCarousel = styled(Carousel)`
     
 `;
 export const TestimonialsCarouselCaption = styled(Carousel.Caption)`
     ${media.greaterThan('medium')`
-    max-width: 700px;
-    /* border-radius: 10px; */
+        max-width: 700px;
     `}
     ${media.greaterThan('large')`
         max-width: 800px;
@@ -18,7 +16,6 @@ export const TestimonialsCarouselCaption = styled(Carousel.Caption)`
     flex-direction: column;
     justify-content: space-evenly;
     position: initial;
-    /* padding-inline: 20px; */
     font-style: italic;
     background-color: ${({ theme }) => theme.color.white};
 `;
@@ -69,11 +66,9 @@ export const QuotationMark = styled.div`
     }
     font-size: 3rem;
 `;
-export const TestimonialsSection = styled(Section)`
+export const TestimonialsSection = styled.section`
     background-color: ${({ theme }) => theme.color.lightgray};
     padding-inline: 40px;
-    padding-block: 40px;
-    /* background-color: ${({ theme }) => theme.color.lightgray}; */
     ${media.lessThan('large')`
         padding-inline: 20px;
     `}

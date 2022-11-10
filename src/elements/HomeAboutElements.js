@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import media from "styled-media-query";
 import { Button } from "../components/controls";
-import { Section } from "./ThemeElements";
+
 
 export const AboutButton = styled(Button)`
 
@@ -21,9 +21,8 @@ export const AboutImage = styled.div`
         width: 100%;
     `}
 `;
-export const AboutSection = styled(Section)`
+export const AboutSection = styled.section`
     padding-inline: 40px;
-    padding-block: 40px;
     background-color: ${({ theme }) => theme.color.lightgray};
     ${media.lessThan('large')`
         padding-inline: 20px;

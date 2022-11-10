@@ -1,5 +1,5 @@
-import { graphql } from 'gatsby'
 import React from 'react'
+import { graphql } from 'gatsby'
 import { ContactDetails, ContactForm, Main } from '../components'
 import { FlexContainer } from '../elements';
 

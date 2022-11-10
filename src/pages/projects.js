@@ -1,7 +1,7 @@
-import { graphql } from 'gatsby';
 import React, { useEffect, useState } from 'react';
+import { graphql } from 'gatsby';
 import { Main, Project } from '../components';
-import { FilterButton, FilterProjects } from '../elements';
+import { ProjectsIntro, ProjectsList, ProjectsListFilter, ProjectsListFilterButton } from '../elements';
 
 
 export default function Projects({ location, data: { 
@@ -18,7 +18,7 @@ export default function Projects({ location, data: {
 
   const filterCategory = () => services.map(({ title }) => {
     return (
-      <FilterButton 
+      <ProjectsListFilterButton 
       text={title} 
       onClick={handleChange} 
       value={title}
@@ -46,12 +46,16 @@ export default function Projects({ location, data: {
     
   return (
       <Main>
+        <ProjectsIntro>
           <h1>{link_3}</h1>
           <h3>{quote_projects}</h3>
-          <FilterProjects>
-            {filterCategory()}<FilterButton text="view all" onClick={handleChange} value={null} selected={category===''} />
-          </FilterProjects>
+        </ProjectsIntro>
+        <ProjectsList>
+          <ProjectsListFilter>
+            {filterCategory()}<ProjectsListFilterButton text="view all" onClick={handleChange} value={null} selected={category===''} />
+          </ProjectsListFilter>
           {projectComponents()}
+        </ProjectsList>
       </Main>
   )
 }
@@ -90,7 +94,7 @@ query ProjectsQuery {
       node {
         name
         childImageSharp {
-          gatsbyImageData(width: 500, layout: CONSTRAINED, placeholder: BLURRED)
+          gatsbyImageData(width: 768, layout: CONSTRAINED, placeholder: BLURRED)
         }
       }
     }

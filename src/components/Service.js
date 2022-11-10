@@ -1,6 +1,6 @@
 import React from 'react';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
-import { ServiceButton, ServiceDescription, ServiceImage, ServiceInfo, ServiceSection, ServiceTitle } from '../elements';
+import { ServiceButton, ServiceDescription, ServiceImage, ServiceInfo, ServiceTitle, ServiceWrapper } from '../elements';
 import { Link } from 'gatsby';
 
 
@@ -10,7 +10,7 @@ export function Service({ service: { title, description }, edge: { node } }) {
     const image = getImage(node)
 
     return (
-        <ServiceSection id={title}>
+        <ServiceWrapper>
             <ServiceImage>
                 <GatsbyImage image={image} alt={title} />
             </ServiceImage>
@@ -21,6 +21,6 @@ export function Service({ service: { title, description }, edge: { node } }) {
                     <ServiceButton text={'VIEW MORE'}/>
                 </Link>
             </ServiceInfo>
-        </ServiceSection>
+        </ServiceWrapper>
     )
 };

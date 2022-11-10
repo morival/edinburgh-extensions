@@ -1,6 +1,6 @@
 export * from './ContactDetailsElements';
 export * from './ContactFormElements';
-export * from './ContainerElements';
+export * from './MainElements';
 export * from './FooterElements';
 export * from './HeaderElements';
 export * from './HomeAboutElements';

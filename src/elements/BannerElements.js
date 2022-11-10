@@ -45,7 +45,7 @@ const smallWrapperAnim = keyframes`
 export const BannerTextWrapper = styled.div`
     width: 0;
     height: 150px;
-    
+    text-align: center;
     animation: ${largeWrapperAnim} 2s 1s forwards;
     ${media.lessThan('medium')`
         height: 105px;

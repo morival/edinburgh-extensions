@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { Button } from '../components/controls';
-import { Section } from './ThemeElements';
 
 
 export const ContactButton = styled(Button)`
@@ -9,9 +8,8 @@ export const ContactButton = styled(Button)`
 export const IntroDescription = styled.div`
     max-width: 800px;
 `;
-export const IntroSection = styled(Section)`
-    padding-inline: 80px;
-    padding-block: 40px;
+export const IntroSection = styled.section`
+    padding-inline: 40px;
     background: ${({ theme }) => theme.color.dark_blue};
     color: ${({ theme }) => theme.color.white};
 `;

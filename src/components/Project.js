@@ -1,7 +1,7 @@
 import { GatsbyImage } from 'gatsby-plugin-image';
 import { getImage } from 'gatsby-plugin-image';
 import React from 'react';
-import { ProjectDescription, ProjectImage, ProjectImageCover, ProjectInfo, ProjectLink, ProjectLocation, ProjectServices, ProjectWrapper } from '../elements';
+import { ProjectDescription, ProjectImage, ProjectImageCover, ProjectInfo, ProjectLink, ProjectServices, ProjectTitle, ProjectWrapper } from '../elements';
 
 
 export function Project({ project: { frontmatter: { title, location, services, slug }, html }, node }) {
@@ -18,7 +18,7 @@ export function Project({ project: { frontmatter: { title, location, services, s
                     <ProjectImageCover>{title}</ProjectImageCover>
             </ProjectLink>
             <ProjectInfo>
-                <ProjectLocation>{location}</ProjectLocation>
+                <ProjectTitle>{location}</ProjectTitle>
                 <ProjectServices>{listOfServices()}</ProjectServices>
                 <ProjectDescription dangerouslySetInnerHTML={{ __html: html }} />
             </ProjectInfo>

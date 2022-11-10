@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import media from "styled-media-query";
 import { Button } from "../components/controls";
-import { Section } from "./ThemeElements";
 
 export const ServiceButton = styled(Button)`
     
@@ -30,12 +29,11 @@ export const ServiceImageContainer = styled.div`
 export const ServicesDescription = styled.p`
 
 `;
-export const ServicesSection = styled(Section)`
+export const ServicesSection = styled.section`
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-inline: 25px;
-    padding-block: 40px;
     /* background-color: ${({ theme }) => theme.color.lightgray}; */
     ${media.lessThan('large')`
     

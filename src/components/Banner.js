@@ -27,7 +27,7 @@ export function Banner() {
     const bgImage = convertToBgImage(getImage(data.file))
 
     return (
-        <BannerImage Tag='section' {...bgImage} preserveStackingContext>
+        <BannerImage {...bgImage} preserveStackingContext>
             <BannerImageInner>
                 <BannerTextWrapper>
                     <BannerTextContainer>Welcome to</BannerTextContainer>

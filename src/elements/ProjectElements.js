@@ -2,29 +2,9 @@ import { Link } from "gatsby";
 import styled, { css } from "styled-components";
 import media from "styled-media-query";
 import { Button } from "../components/controls";
+import { ComponentInfo } from "./ThemeElements";
 
-export const FilterButton = styled(Button)`
-    ${(props) => {
-        switch (props.selected) {
-            case true:
-                return css`
-                    background-color: ${({ theme }) => theme.color.gray};
-                `;
-            default:
-                return css`
-                    background-color: ${({ theme }) => theme.color.lightgray};
-                `;
-        }
-    }}
-`;
-export const FilterProjects = styled.div`
-    display: flex;
-    justify-content: center;
-    ${media.lessThan('medium')`
-        flex-direction: column;
-        padding-inline: 20px;
-    `}
-`;
+
 export const ProjectDescription = styled.div`
 
 `;
@@ -52,53 +32,78 @@ export const ProjectImageCover = styled.div`
     top: 0;
     height: 100%;
     width: 100%;
-    max-width: 500px;
+    max-width: 768px;
     transition: .5s ease;
     :hover {
         opacity: 0.8;
     }
 `;
-export const ProjectInfo = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-inline: 50px;
-    width: 100%;
-    ${media.between('medium', 'large')`
-        padding-inline: 30px;
-    `}
-    ${media.lessThan('small')`
-        padding-inline: 20px;
-    `}
+export const ProjectInfo = styled(ComponentInfo)`
+    
 `;
 export const ProjectLink = styled(Link)`
     display: flex;
     justify-content: center;
     position: relative;
-    width: 100%;
-`;
-export const ProjectLocation = styled.h5`
-
+    width: 50%;
+    ${media.lessThan('medium')`
+        width: 100%;
+    `}
 `;
 export const ProjectServices = styled.div`
     display: flex;
     justify-content: center;
     gap: 20px;
 `;
+export const ProjectTitle = styled.h5`
+
+`;
+export const ProjectsIntro = styled.section`
+
+`;
+export const ProjectsList = styled.section`
+    /* padding-block: 0; */
+`;
+export const ProjectsListFilter = styled.div`
+    display: flex;
+    justify-content: center;
+    padding-block: 20px;
+    ${media.lessThan('medium')`
+        flex-direction: column;
+        align-items: center;
+    `}
+`;
+export const ProjectsListFilterButton = styled(Button)`
+    ${(props) => {
+        switch (props.selected) {
+            case true:
+                return css`
+                    background-color: ${({ theme }) => theme.color.gray};
+                `;
+            default:
+                return css`
+                    background-color: ${({ theme }) => theme.color.lightgray};
+                `;
+        }
+    }}
+    ${media.lessThan('medium')`
+        width: 180px;
+    `}
+`;
 export const ProjectWrapper = styled.div`
     display: flex;
     /* apply to every second ProjectWrapper */
-    &:nth-of-type(2n)  {
+    &:nth-of-type(2n) {
         flex-direction: row-reverse;
+        background-color: ${({ theme }) => theme.color.lightgray};
         ${media.lessThan('medium')`
             flex-direction: column;
         `}
     }
     justify-content: center;
-    gap: 40px;
-    background-color: ${({ theme }) => theme.color.lightgray};
+    /* gap: 40px; */
     ${media.lessThan('large')`
-        
+        /* gap: 0; */
     `}
     ${media.lessThan('medium')`
         flex-direction: column;

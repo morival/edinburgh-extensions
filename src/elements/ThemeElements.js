@@ -1,4 +1,5 @@
 import styled, { createGlobalStyle } from "styled-components";
+import media from "styled-media-query";
 
 
 export const theme = {
@@ -19,10 +20,23 @@ export const theme = {
         copy: 'Source Sans Pro',
     },
 };
-export const Section = styled.section`
-    width: 100%;
-`;
-
+export const ComponentInfo = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 50px 100px;
+    width: 50%;
+    ${media.lessThan('large')`
+        padding: 30px;
+    `}
+    ${media.lessThan('medium')`
+        padding: 50px;
+        width: 100%;
+    `}
+    ${media.lessThan('small')`
+        padding: 20px;
+    `}
+`
 export const GlobalStyle = createGlobalStyle`
     body {
         background: ${({ theme }) => theme.color.white};
@@ -32,8 +46,24 @@ export const GlobalStyle = createGlobalStyle`
         margin: 0;
         padding: 0;
     }
+    header {
+
+    }
+    main {
+        text-align: center;
+    }
+    footer {
+
+    }
     nav {
         background: ${({ theme }) => theme.color.dark_blue};
+    }
+    section {
+        width: 100%;
+        padding-block: 40px;
+        ${media.lessThan('medium')`
+            padding-block: 0;
+        `}
     }
     h1, h2, h3 {
         font-family: ${({ theme }) => theme.fonts.header}, sans-serif;
