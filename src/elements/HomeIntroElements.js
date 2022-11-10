@@ -6,7 +6,7 @@ export const ContactButton = styled(Button)`
 
 `;
 export const IntroDescription = styled.div`
-    max-width: 800px;
+    max-width: 810px;
 `;
 export const IntroSection = styled.section`
     padding-inline: 40px;

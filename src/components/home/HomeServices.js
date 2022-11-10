@@ -43,7 +43,7 @@ export function Services({ slogan, services }) {
         <ServicesSection>
             <h3>{slogan}</h3>
             <ServicesDescription>
-              Our portfolio includes a variety of projects from ... to ...
+              Our highly skilled team will perfect your project from foundations upwards.
             </ServicesDescription>
             <ServicesWrapper>
                 {servicesComponents()}

@@ -34,7 +34,7 @@ export const ServiceImageContainer = styled.div`
         width: 100%;
     `}
     ${media.lessThan('small')`
-    margin: 5px 10px;
+        margin: 5px 10px;
     `}
 `;
 export const ServicesDescription = styled.p`

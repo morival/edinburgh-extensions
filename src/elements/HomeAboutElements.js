@@ -22,10 +22,10 @@ export const AboutImage = styled.div`
     `}
 `;
 export const AboutSection = styled.section`
-    padding-inline: 40px;
+    /* padding-inline: 40px; */
     background-color: ${({ theme }) => theme.color.lightgray};
     ${media.lessThan('large')`
-        padding-inline: 20px;
+        /* padding-inline: 20px; */
     `}
     ${media.lessThan('small')`
         

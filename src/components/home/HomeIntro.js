@@ -12,8 +12,7 @@ export function Intro() {
                     <h4>
                         We are a family business with over 30 years’ experience in building and high-end renovations. 
                         Driven by a constant commitment to excel in every project, 
-                        we deliver the best product gratifying each individual's demands, 
-                        managed professionally from the project brief to hand over day.
+                        we deliver the best product gratifying each individual's demands.
                     </h4>
                 </IntroDescription>
                 <div>

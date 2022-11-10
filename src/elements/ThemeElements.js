@@ -60,7 +60,7 @@ export const GlobalStyle = createGlobalStyle`
     }
     section {
         width: 100%;
-        padding-block: 40px;
+        padding-block: 50px;
         ${media.lessThan('medium')`
             /* padding-block: 0; */
         `}
