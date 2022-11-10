@@ -10,7 +10,7 @@ export function Service({ service: { title, description }, edge: { node } }) {
     const image = getImage(node)
 
     return (
-        <ServiceWrapper>
+        <ServiceWrapper id={title}>
             <ServiceImage>
                 <GatsbyImage image={image} alt={title} />
             </ServiceImage>

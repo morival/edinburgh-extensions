@@ -25,6 +25,17 @@ export const ServiceImageCover = styled.div`
 `;
 export const ServiceImageContainer = styled.div`
     position: relative;
+    margin: 5px;
+    ${media.lessThan('huge')`
+        width: calc(50% - 10px);
+    `}
+    ${media.lessThan('medium')`
+        margin: 10px 20px;
+        width: 100%;
+    `}
+    ${media.lessThan('small')`
+    margin: 5px 10px;
+    `}
 `;
 export const ServicesDescription = styled.p`
 
@@ -33,28 +44,20 @@ export const ServicesSection = styled.section`
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-inline: 25px;
+    /* padding-inline: 25px; */
     /* background-color: ${({ theme }) => theme.color.lightgray}; */
     ${media.lessThan('large')`
     
     `}
     ${media.lessThan('small')`
-        padding-inline: 20px;
+        /* padding-inline: 20px; */
     `}
 `;
 export const ServicesWrapper = styled.div`
     display: flex;
     justify-content: center;
-    gap: 40px;
-    ${media.lessThan('large')`
+    /* gap: 40px; */
+    ${media.lessThan('huge')`
         flex-wrap: wrap;
-        gap: 20px;
-    `}
-    ${media.lessThan('medium')`
-        gap: 40px;
-        flex-direction: column;
-    `}
-    ${media.lessThan('small')`
-        gap: 20px;
     `}
 `;

@@ -12,7 +12,7 @@ export function Services({ slogan, services }) {
           node {
             relativePath
             childImageSharp {
-              gatsbyImageData(width: 400, height: 300, layout: CONSTRAINED, placeholder: BLURRED)
+              gatsbyImageData(width: 768, height: 576, layout: CONSTRAINED, placeholder: BLURRED)
             }
           }
         }
@@ -27,15 +27,14 @@ export function Services({ slogan, services }) {
       const image = getImage(edge.node)
       const serviceImage = () => (image ? <GatsbyImage image={image} alt={service.title} /> : null)
       return (
-        <Link to={`/services#${service.title}`} key={i}>
-          <ServiceImageContainer>
+        <ServiceImageContainer key={i}>
+          <Link to={`/services#${service.title}`} >
             {serviceImage()}
             <ServiceImageCover>
               {service.title}
-              {/* <h2>{service.title}</h2> */}
             </ServiceImageCover>
-          </ServiceImageContainer>
-        </Link>
+          </Link>
+        </ServiceImageContainer>
       )
     })
   )

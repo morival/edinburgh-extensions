@@ -10,7 +10,7 @@ export function About({ slogan }) {
         file(name: {eq: "about_us"}) {
           id
           childImageSharp {
-            gatsbyImageData(placeholder: BLURRED, width: 400)
+            gatsbyImageData(placeholder: BLURRED, width: 768)
           }
         }
       }

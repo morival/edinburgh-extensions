@@ -62,7 +62,7 @@ export const GlobalStyle = createGlobalStyle`
         width: 100%;
         padding-block: 40px;
         ${media.lessThan('medium')`
-            padding-block: 0;
+            /* padding-block: 0; */
         `}
     }
     h1, h2, h3 {

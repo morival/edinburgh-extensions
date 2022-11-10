@@ -9,12 +9,16 @@ export default function Contact({ data: {site: { siteMetadata: { links: { link_5
     // console.log(slogan_contact)
     return (
         <Main>
+          <section>
             <h1>{link_5}</h1>
             <h3>{quote_contact}</h3>
+          </section>
+          <section>
             <FlexContainer>
                 <ContactForm />
                 <ContactDetails />
             </FlexContainer>
+          </section>
         </Main>
     )
 }
