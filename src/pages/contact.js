@@ -1,6 +1,6 @@
 import { graphql } from 'gatsby'
 import React from 'react'
-import { ContactDetails, ContactForm, Container } from '../components'
+import { ContactDetails, ContactForm, Main } from '../components'
 import { FlexContainer } from '../elements';
 
 
@@ -8,14 +8,14 @@ export default function Contact({ data: {site: { siteMetadata: { links: { link_5
 
     // console.log(slogan_contact)
     return (
-        <Container>
+        <Main>
             <h1>{link_5}</h1>
             <h3>{quote_contact}</h3>
             <FlexContainer>
                 <ContactForm />
                 <ContactDetails />
             </FlexContainer>
-        </Container>
+        </Main>
     )
 }
 

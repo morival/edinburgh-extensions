@@ -25,7 +25,7 @@ export const FlexContainer = styled.div`
         width: 1000px;
     `}
 `;
-export const MainContainer = styled.main`
+export const MainWrapper = styled.main`
     display: flex;
     flex-direction: column;
     align-items: center;

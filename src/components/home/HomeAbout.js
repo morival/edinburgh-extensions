@@ -24,8 +24,7 @@ export function About({ slogan }) {
             <AboutWrapper>
                 <AboutImage><GatsbyImage image={image} alt={file.id} /></AboutImage>
                 <AboutDescription>
-                    <p>We are a Family run home extension and renovation business with over 30 years of experience in the industry.</p> 
-                    <p>Driven by a constant commitment to excel in every project, we deliver the best results at an affordable price.</p>
+                    
                     <div>
                         <Link to='/about'><AboutButton text='about us'/></Link>
                     </div>

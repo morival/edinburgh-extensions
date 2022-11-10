@@ -1,18 +1,18 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { Container } from '../components';
+import { Main } from '../components';
 
 
 export default function ProjectTemplate({ data: { markdownRemark: { frontmatter: { title }, html } } }) {
     
     // console.log(frontmatter)
     return (
-        <Container>
+        <Main>
             <div>
                 <h3>{title}</h3>
             </div>
             <div dangerouslySetInnerHTML={{ __html: html }} />
-        </Container>
+        </Main>
     )
 };
 

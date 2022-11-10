@@ -1,6 +1,6 @@
 import { graphql } from 'gatsby';
 import React from 'react'
-import { Container, Service } from '../components';
+import { Main, Service } from '../components';
 
 
 export default function Services({ data: { site: { siteMetadata: { 
@@ -16,12 +16,12 @@ export default function Services({ data: { site: { siteMetadata: {
     })
 
     return ( 
-        <Container>
+        <Main>
             <h1>{link_2}</h1>
             <h3>{quote_services}</h3>
             <p>We provide a high quality product gratifying each individual's demands, managed professionally from the project brief to hand over day.</p>
             {serviceComponents()}
-        </Container>
+        </Main>
     )
 }
 

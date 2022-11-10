@@ -1,6 +1,6 @@
 import { graphql } from 'gatsby';
 import React, { useEffect, useState } from 'react';
-import { Container, Project } from '../components';
+import { Main, Project } from '../components';
 import { FilterButton, FilterProjects } from '../elements';
 
 
@@ -45,14 +45,14 @@ export default function Projects({ location, data: {
     }, [location.state])
     
   return (
-      <Container>
+      <Main>
           <h1>{link_3}</h1>
           <h3>{quote_projects}</h3>
           <FilterProjects>
             {filterCategory()}<FilterButton text="view all" onClick={handleChange} value={null} selected={category===''} />
           </FilterProjects>
           {projectComponents()}
-      </Container>
+      </Main>
   )
 }
 
