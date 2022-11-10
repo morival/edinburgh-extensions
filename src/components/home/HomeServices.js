@@ -20,7 +20,6 @@ export function Services({ slogan, services }) {
     }
   `)
   
-  
   const servicesComponents = () => (
     services.map((service, i) => {
       const edge = allFile.edges.find(edge => edge.node.relativePath === service.relativePath)
@@ -30,7 +29,7 @@ export function Services({ slogan, services }) {
         <ServiceImageContainer key={i}>
           <Link to={`/services#${service.title}`} >
             {serviceImage()}
-            <ServiceImageCover>
+            <ServiceImageCover className='cover'>
               {service.title}
             </ServiceImageCover>
           </Link>

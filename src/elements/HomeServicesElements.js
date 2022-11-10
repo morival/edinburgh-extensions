@@ -11,7 +11,7 @@ export const ServiceImageCover = styled.div`
     align-items: center;
     justify-content: center;
     color: ${({ theme }) => theme.color.white};
-    background-color: ${({ theme }) => theme.color.gray};
+    /* background-color: ${({ theme }) => theme.color.dark_blue}; */
     text-transform: capitalize;
     font-size: xxx-large;
     opacity: 0.3;
@@ -36,6 +36,20 @@ export const ServiceImageContainer = styled.div`
     ${media.lessThan('small')`
         margin: 5px 10px;
     `}
+    &:nth-of-type(2n+1) > a > .cover {
+        background-color: ${({ theme }) => theme.color.dark_blue};
+    }
+    &:nth-of-type(2n) > a > .cover {
+        background-color: ${({ theme }) => theme.color.orange};
+    }
+    ${media.between('medium', 'huge')`
+        &:nth-child(3) > a > .cover {
+            background-color: ${({ theme }) => theme.color.orange};
+        }
+        &:nth-child(4) > a > .cover {
+            background-color: ${({ theme }) => theme.color.dark_blue};
+        }
+    `}
 `;
 export const ServicesDescription = styled.p`
 
@@ -44,8 +58,6 @@ export const ServicesSection = styled.section`
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* padding-inline: 25px; */
-    /* background-color: ${({ theme }) => theme.color.lightgray}; */
     ${media.lessThan('large')`
     
     `}
