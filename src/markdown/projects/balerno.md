@@ -1,8 +1,8 @@
 ---
 markdown: project
-title: Balerno (extensions and renovation)
+title: Balerno (Extensions,Renovation and New Builds?)
 location: Balerno
-services: extensions, new builds
+services: extensions, renovations, new builds
 slug: balerno
 thumb: balerno-thumb
 ---

@@ -7,10 +7,10 @@ export function About({ slogan }) {
 
     const { file } = useStaticQuery(graphql`
       query HomeAboutQuery {
-        file(name: {eq: "about_us"}) {
+        file(name: {eq: "Transparent Logo"}) {
           id
           childImageSharp {
-            gatsbyImageData(placeholder: BLURRED, width: 768)
+            gatsbyImageData(height: 200)
           }
         }
       }

@@ -6,6 +6,7 @@ export const HeaderWrapper = styled.header`
 `;
 
 export const TopHeader = styled.div`
+    height: 4vh;
     margin: 0;
     padding: 0 20px;
     list-style-type: none;

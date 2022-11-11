@@ -2,17 +2,6 @@ import { Link } from 'gatsby';
 import styled from 'styled-components';
 import media from "styled-media-query";
 
-export const NavbarWrapper = styled.nav`
-    display: flex;
-    justify-content: space-between;
-    height: 200px;
-    ${media.lessThan('large')`
-        padding: 0;
-    `}
-    ${media.lessThan('medium')`
-        justify-content: center;
-    `}
-`;
 export const NavList = styled.ul`
     ${media.lessThan('medium')`
         flex-direction: column;
@@ -24,12 +13,6 @@ export const NavList = styled.ul`
         opacity: 1;
         transition: all 0.3s ease;
         z-index: 1;
-        @media (max-height: 662px) {
-            justify-content: end;
-        }
-        ${media.lessThan('small')`
-            /* justify-content: end; */
-        `}
     `}
 `;
 export const  NavListItem = styled.li`
@@ -58,10 +41,21 @@ export const NavListItemSpan = styled.span`
         }
     `}
 `;
-export const NavLogo = styled(Link)`
+export const NavLogoContainer = styled.div`
+    width: 16vh;
     z-index: 999;
-    flex-shrink: 2030;
-    align-self: center;
+`
+export const NavLogo = styled(Link)`
+    position: relative;
+`;
+export const NavLogoOnHover = styled.div`
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    transition: opacity .5s ease;
+    :hover {
+        opacity: 1;
+    }
 `;
 export const NavLink = styled(Link)`
     display: flex;
@@ -97,5 +91,17 @@ export const MenuIcon = styled.div`
         &:hover {
             color: ${({ theme }) => theme.color.hover};
         }
+    `}
+`;
+export const NavbarWrapper = styled.nav`
+    display: flex;
+    justify-content: center;
+    height: 16vh;
+    gap: 10px;
+    ${media.lessThan('large')`
+        padding: 0;
+    `}
+    ${media.lessThan('medium')`
+        justify-content: center;
     `}
 `;
