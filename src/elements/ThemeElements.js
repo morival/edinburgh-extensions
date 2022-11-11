@@ -6,13 +6,16 @@ export const theme = {
     color: {
         black: '#000000',
         brownish_orange: '#E37627',
-        dark_blue: '#284389',
+        dark_blue: '#1C3168',
+        // dark_blue: '#284389',
         dark_gray: '#3e3e49',
         gray: '#808080',
         hover: '#FAFAD2',
         lightgray: '#d3d3d3',
         orange: '#FC832B',
         social_icons: '#B9B9B9',
+        transparent_dark_blue: 'rgba(28,49,104,0.2)',
+        transparent_orange: 'rgba(252,131,43,0.2)',
         white: '#ffffff',
     },
     fonts: {

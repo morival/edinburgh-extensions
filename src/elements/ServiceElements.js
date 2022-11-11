@@ -29,10 +29,13 @@ export const ServiceWrapper = styled.div`
     /* apply to every second Service Section */
     &:nth-of-type(2n) {
         flex-direction: row-reverse;
-        background-color: ${({ theme }) => theme.color.lightgray};
+        background-color: ${({ theme }) => theme.color.transparent_orange};
         ${media.lessThan('medium')`
             flex-direction: column;
         `}
+    }
+    &:nth-of-type(2n+1) {
+        background-color: ${({ theme }) => theme.color.transparent_dark_blue};
     }
     justify-content: center;
     /* gap: 40px; */
