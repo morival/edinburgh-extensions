@@ -65,8 +65,9 @@ export const GlobalStyle = createGlobalStyle`
             /* padding-block: 0; */
         `}
     }
-    h1, h2, h3 {
+    h1, h2, h3, h4 {
         font-family: ${({ theme }) => theme.fonts.header}, sans-serif;
+        margin-bottom: 1rem;
         a &:hover {
             color: ${({ theme }) => theme.color.brownish_orange};
         }

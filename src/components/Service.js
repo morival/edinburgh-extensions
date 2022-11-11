@@ -16,7 +16,9 @@ export function Service({ service: { title, description }, edge: { node } }) {
             </ServiceImage>
             <ServiceInfo>
                 <ServiceTitle>{title}</ServiceTitle>
-                <ServiceDescription>{description}</ServiceDescription>
+                <ServiceDescription>
+                    <p>{description}</p>
+                </ServiceDescription>
                 <Link to='/projects' state={{ filter: title }}>
                     <ServiceButton text={'VIEW MORE'}/>
                 </Link>

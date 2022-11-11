@@ -23,10 +23,10 @@ export function About({ slogan }) {
             <AboutWrapper>
                 <AboutImage><GatsbyImage image={image} alt={file.id} /></AboutImage>
                 <AboutDescription>
-                  Our success lies in combining years of experience with innovative and creative thinking.
-                    <div>
-                        <Link to='/about'><AboutButton text='about us'/></Link>
-                    </div>
+                  <p>Our success lies in combining years of experience with innovative and creative thinking.</p>
+                  <div>
+                      <Link to='/about'><AboutButton text='about us'/></Link>
+                  </div>
                 </AboutDescription>
             </AboutWrapper>
         </AboutSection>
