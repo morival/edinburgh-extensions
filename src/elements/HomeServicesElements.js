@@ -51,20 +51,6 @@ export const ServiceImageContainer = styled.div`
         }
     `}
 `;
-export const ServicesDescription = styled.p`
-
-`;
-export const ServicesSection = styled.section`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    ${media.lessThan('large')`
-    
-    `}
-    ${media.lessThan('small')`
-        /* padding-inline: 20px; */
-    `}
-`;
 export const ServicesWrapper = styled.div`
     display: flex;
     justify-content: center;

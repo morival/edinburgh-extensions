@@ -67,7 +67,7 @@ export const NavLink = styled(Link)`
     text-transform: capitalize;
     z-index: 1;
     ${media.lessThan('large')`
-        font-size: 1.3rem;
+        /* font-size: 1.3rem; */
     `}
     ${media.lessThan('medium')`
         width: 100%;

@@ -27,6 +27,7 @@ export const ComponentInfo = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     padding: 50px 100px;
     width: 50%;
     ${media.lessThan('large')`
@@ -40,6 +41,14 @@ export const ComponentInfo = styled.div`
         padding: 20px;
     `}
 `
+export const ComponentInfoCenter = styled(ComponentInfo)`
+    width: 100%;
+`;
+export const SectionBlue = styled.section`
+    /* padding-inline: 40px; */
+    background: ${({ theme }) => theme.color.dark_blue};
+    color: ${({ theme }) => theme.color.white};
+`;
 export const GlobalStyle = createGlobalStyle`
     body {
         background: ${({ theme }) => theme.color.white};

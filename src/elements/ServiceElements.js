@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import media from 'styled-media-query';
-import { ComponentInfo } from './ThemeElements';
 
 
 export const ServiceDescription = styled.div`
@@ -11,9 +10,6 @@ export const ServiceImage = styled.div`
     ${media.lessThan('medium')`
         width: 100%;
     `}
-`;
-export const ServiceInfo = styled(ComponentInfo)`
-    
 `;
 export const ServiceTitle = styled.h3`
     text-transform: capitalize;

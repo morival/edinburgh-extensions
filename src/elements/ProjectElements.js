@@ -2,8 +2,6 @@ import { Link } from "gatsby";
 import styled, { css } from "styled-components";
 import media from "styled-media-query";
 import { Button } from "../components/controls";
-import { ComponentInfo } from "./ThemeElements";
-
 
 export const ProjectDescription = styled.div`
 
@@ -37,9 +35,6 @@ export const ProjectImageCover = styled.div`
     :hover {
         opacity: 0.8;
     }
-`;
-export const ProjectInfo = styled(ComponentInfo)`
-    
 `;
 export const ProjectLink = styled(Link)`
     display: flex;

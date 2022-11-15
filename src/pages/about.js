@@ -17,7 +17,7 @@ export default function About({ data: { site: { siteMetadata: { links: { link_4 
               <br/>
               <h6>We are a small family business where we put all our focus on one project at a time.</h6>
               <h6>Every job we do is unique and consulting ideas with our clients allows us to tailor every detail to suit their demands.</h6>
-              <h6>Our work is driven by shared common values: enthusiasm, determination and passion.</h6>
+              <h6>Our work is driven by shared common values: enthusiasm???, determination and passion.</h6>
               <h3>Meet our members</h3>
               <h6>Stan</h6>
               <h6>Bartek was 12 when his building journey began. In his free time he was helping his uncle Stan on sites carrying out light tasks. In 2018 he decided to leave the university and pursue his career as a joiner. After completing his apprenticeship, Bartek and Stan decided to join their forces and start Edinburgh Extensions.</h6>

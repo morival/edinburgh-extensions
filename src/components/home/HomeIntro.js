@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import { ContactButton, IntroDescription, IntroSection, IntroWrapper } from '../../elements';
+import { ComponentInfoCenter, ContactButton, IntroDescription, IntroWrapper, SectionBlue } from '../../elements';
 
 
 export function Intro() {
     
     return(
-        <IntroSection>
-            <IntroWrapper>
+        <SectionBlue>
+            <ComponentInfoCenter>
                 <IntroDescription>
                     <h4>
                         We are a family business with over 30 years’ experience in building and high-end renovations. 
@@ -15,10 +15,10 @@ export function Intro() {
                         we deliver the best product gratifying each individual's demands.
                     </h4>
                 </IntroDescription>
-                <div>
-                    <Link to='/contact'><ContactButton text='contact us'/></Link>
-                </div>
+            </ComponentInfoCenter>
+            <IntroWrapper>
+                <Link to='/contact'><ContactButton text='contact us'/></Link>
             </IntroWrapper>
-        </IntroSection>
+        </SectionBlue>
     )
 };

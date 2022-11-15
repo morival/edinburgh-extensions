@@ -6,29 +6,10 @@ import { Button } from "../components/controls";
 export const AboutButton = styled(Button)`
 
 `;
-export const AboutDescription = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 50%;
-    ${media.lessThan('medium')`
-        width: 100%;
-    `}
-`;
 export const AboutImage = styled.div`
     width: 50%;
     ${media.lessThan('medium')`
         width: 100%;
-    `}
-`;
-export const AboutSection = styled.section`
-    /* padding-inline: 40px; */
-    background-color: ${({ theme }) => theme.color.lightgray};
-    ${media.lessThan('large')`
-        /* padding-inline: 20px; */
-    `}
-    ${media.lessThan('small')`
-        
     `}
 `;
 export const AboutWrapper = styled.div`
