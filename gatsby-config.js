@@ -46,7 +46,6 @@ module.exports = {
       },
     ],
     social: {
-      facebook: `https://facebook.com`,
       instagram: `https://instagram.com`,
     },
     quotes: {

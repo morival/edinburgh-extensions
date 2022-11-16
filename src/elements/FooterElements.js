@@ -28,9 +28,8 @@ export const CopyRights = styled.div`
 `;
 export const Follow = styled.div`
     display: flex;
-    justify-content: end;
-    gap: 10px;
-    padding: 20px;
+    align-items: end;
+    padding: 10px;
 `;
 export const FooterWrapper = styled.footer`
     color: ${({ theme }) => theme.color.white};
@@ -65,7 +64,7 @@ export const Menu = styled.div`
     `}
 `;
 export const SiteLink = styled(Link)`
-    color: ${({ theme }) => theme.color.white};
+    color: ${({ theme }) => theme.color.orange};
 `;
 export const SiteMap = styled.div`
 

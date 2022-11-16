@@ -38,11 +38,11 @@ export function ContactDetails(params) {
             <div>
                 <ContactContainer>
                     <MdPhone />
-                    <ContactTel>{phone_1}</ContactTel>
+                    <ContactTel>{phone_1} - Bartek</ContactTel>
                 </ContactContainer>
                 <ContactContainer>
                     <MdPhone />
-                    <ContactTel>{phone_2}</ContactTel>
+                    <ContactTel>{phone_2} - Stan</ContactTel>
                 </ContactContainer>
                 <ContactContainer>
                     <MdEmail />

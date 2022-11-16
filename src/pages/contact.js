@@ -6,17 +6,16 @@ import { ComponentInfoCenter, FlexContainer, SectionBlue } from '../elements';
 
 export default function Contact({ data: { site: { siteMetadata: { links, quotes: { quote_contact } } } } }) {
 
-  const page = links.find(({link}) => link === "contact") 
+  const page = links.find(({ link }) => link === "contact")
 
   return (
     <Main>
       <Banner link={page.link} />
       <SectionBlue>
-        <h1>{page.name}</h1>
-        <h3>{quote_contact}</h3>
-        {/* <ComponentInfoCenter>
-          <p>We are happy to hear your thoughts about your project at any time. You can ...</p>
-        </ComponentInfoCenter> */}
+        <h3>Got A Project In Mind?</h3>
+        <ComponentInfoCenter>
+          <h4>{quote_contact}</h4>
+        </ComponentInfoCenter>
         <FlexContainer>
           <ContactDetails />
           <ContactForm />
