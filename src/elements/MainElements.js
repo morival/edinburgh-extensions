@@ -12,16 +12,17 @@ export const ContainerWrapper = styled.div`
 `;
 export const FlexContainer = styled.div`
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     padding-inline: 15px;
     width: 100%;
     ${media.greaterThan('small')`
-        width: 420px;
+        /* width: 420px; */
     `}
     ${media.greaterThan('medium')`
-        width: 750px;
+        /* width: 750px; */
     `}
     ${media.greaterThan('large')`
-        width: 1000px;
+        /* width: 1000px; */
     `}
 `;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql, Link, useStaticQuery } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
-import { AboutButton, AboutImage, AboutWrapper, ComponentInfo, SectionBlue } from '../../elements';
+import { AboutButton, AboutLogo, AboutWrapper, ComponentInfo, SectionBlue } from '../../elements';
 
 
 export function About({ slogan }) {
@@ -22,7 +22,7 @@ export function About({ slogan }) {
         <SectionBlue>
           <h3>{slogan}</h3>
           <AboutWrapper>
-            <AboutImage><GatsbyImage image={image} alt={file.id} /></AboutImage>
+            <AboutLogo><GatsbyImage image={image} alt={file.id} /></AboutLogo>
             <ComponentInfo>
               <p>Our success lies in combining years of experience with innovative and creative thinking.</p>
               <Link to='/about'><AboutButton text='about us'/></Link>

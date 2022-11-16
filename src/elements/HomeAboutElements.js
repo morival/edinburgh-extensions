@@ -6,7 +6,7 @@ import { Button } from "../components/controls";
 export const AboutButton = styled(Button)`
 
 `;
-export const AboutImage = styled.div`
+export const AboutLogo = styled.div`
     width: 50%;
     ${media.lessThan('medium')`
         width: 100%;

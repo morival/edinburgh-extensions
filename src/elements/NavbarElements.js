@@ -2,6 +2,25 @@ import { Link } from 'gatsby';
 import styled from 'styled-components';
 import media from "styled-media-query";
 
+export const NavLink = styled(Link)`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 1rem;
+    font-size: 1.5rem;
+    text-transform: capitalize;
+    z-index: 1;
+    ${media.lessThan('large')`
+        /* font-size: 1.3rem; */
+    `}
+    ${media.lessThan('medium')`
+        width: 100%;
+        padding: 1rem 0;
+        max-width: 350px;
+        font-size: 2rem;
+    `}
+`;
 export const NavList = styled.ul`
     ${media.lessThan('medium')`
         flex-direction: column;
@@ -56,25 +75,6 @@ export const NavLogoOnHover = styled.div`
     :hover {
         opacity: 1;
     }
-`;
-export const NavLink = styled(Link)`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    padding: 1rem;
-    font-size: 1.8rem;
-    text-transform: capitalize;
-    z-index: 1;
-    ${media.lessThan('large')`
-        /* font-size: 1.3rem; */
-    `}
-    ${media.lessThan('medium')`
-        width: 100%;
-        padding: 1rem 0;
-        max-width: 350px;
-        font-size: 2rem;
-    `}
 `;
 export const MenuIcon = styled.div`
     display: none;
