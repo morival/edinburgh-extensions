@@ -115,4 +115,7 @@ export const GlobalStyle = createGlobalStyle`
             color: ${({ theme }) => theme.color.hover};
         }
     }
+    ::placeholder {
+        /* font-size: 1em; */
+    }
 `;

@@ -51,7 +51,7 @@ module.exports = {
     },
     quotes: {
       quote_about: `Catchy quote (ethos, manifesto)`,
-      quote_contact: `Catchy quote (encouraging to get in touch)`,
+      quote_contact: `We are happy to hear your thoughts about your project at any time. You can ...`,
       quote_home_about: `Build Your Dreams With Us`,
       quote_home_services: `The roof is our limit`,
       quote_home_projects: `We nailed it!`,

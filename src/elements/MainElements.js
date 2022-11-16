@@ -12,9 +12,10 @@ export const ContainerWrapper = styled.div`
 `;
 export const FlexContainer = styled.div`
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
+    align-items: center;
     flex-wrap: wrap;
-    padding-inline: 15px;
+    /* padding-inline: 15px; */
     width: 100%;
     ${media.greaterThan('small')`
         /* width: 420px; */

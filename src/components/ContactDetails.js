@@ -35,18 +35,20 @@ export function ContactDetails(params) {
             <ContactLogo>
                 <GatsbyImage image={image} alt={file.id} />
             </ContactLogo>
-            <ContactContainer>
-                <MdPhone />
-                <ContactTel>{ phone_1 }</ContactTel>
-            </ContactContainer>
-            <ContactContainer>
-                <MdPhone />
-                <ContactTel>{ phone_2 }</ContactTel>
-            </ContactContainer>
-            <ContactContainer>
-                <MdEmail />
-                <ContactEmail>{ email }</ContactEmail>
-            </ContactContainer>
+            <div>
+                <ContactContainer>
+                    <MdPhone />
+                    <ContactTel>{phone_1}</ContactTel>
+                </ContactContainer>
+                <ContactContainer>
+                    <MdPhone />
+                    <ContactTel>{phone_2}</ContactTel>
+                </ContactContainer>
+                <ContactContainer>
+                    <MdEmail />
+                    <ContactEmail>{email}</ContactEmail>
+                </ContactContainer>
+            </div>
         </ContactDetailsWrapper>
     )
 };
