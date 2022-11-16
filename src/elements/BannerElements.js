@@ -11,7 +11,7 @@ export const BannerImageInner = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 80vh;
+    height: ${props => props.page==='home' ? '80vh' : '30vh'};
 `;
 const bannerTextContainer = keyframes`
     33% { opacity: 0; visibility: hidden; }
@@ -43,6 +43,7 @@ const smallWrapperAnim = keyframes`
     100% { width: 280px; border: solid wheat; }
 `;
 export const BannerTextWrapper = styled.div`
+    display: ${props => props.page==='home' ? 'block' : 'none'};
     width: 0;
     height: 150px;
     text-align: center;

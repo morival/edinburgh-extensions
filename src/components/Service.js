@@ -5,8 +5,7 @@ import { Link } from 'gatsby';
 
 
 export function Service({ service: { title, description }, edge: { node } }) {
-    
-    // const { title, description } = service;
+ 
     const image = getImage(node)
 
     return (
@@ -15,7 +14,9 @@ export function Service({ service: { title, description }, edge: { node } }) {
                 <GatsbyImage image={image} alt={title} />
             </ServiceImage>
             <ComponentInfo>
-                <ServiceTitle>{title}</ServiceTitle>
+                <ServiceTitle>
+                    {title}
+                </ServiceTitle>
                 <ServiceDescription>
                     <p>{description}</p>
                 </ServiceDescription>

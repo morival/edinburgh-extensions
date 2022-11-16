@@ -1,6 +1,6 @@
 import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
-import { QuotationMark, TestimonialsCarousel, TestimonialsCarouselCaption, TestimonialsCarouselItem, TestimonialsCarouselName, TestimonialsCarouselText, TestimonialsComment, TestimonialsQuote, TestimonialsSection } from '../../elements';
+import { QuotationMark, SectionBlue, TestimonialsCarousel, TestimonialsCarouselCaption, TestimonialsCarouselItem, TestimonialsCarouselName, TestimonialsCarouselText, TestimonialsComment, TestimonialsQuote } from '../../elements';
 
 
 export function Testimonials({ slogan }) {
@@ -38,11 +38,11 @@ export function Testimonials({ slogan }) {
     // console.log(allMarkdownRemark.nodes)
 
     return (
-        <TestimonialsSection>
+        <SectionBlue>
             <h3>{slogan}</h3>
             <TestimonialsCarousel variant="dark" controls={false} interval='120000'>
                 {testimonialComponents()}
             </TestimonialsCarousel>
-        </TestimonialsSection>
+        </SectionBlue>
     )
 };

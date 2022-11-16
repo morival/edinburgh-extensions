@@ -5,11 +5,12 @@ import { Normalize } from 'styled-normalize';
 
 
 export const Theme = ({ children }) => {
+
   return (
     <ThemeProvider theme={theme}>
         <GlobalStyle />
         <Normalize />
-            {children}
+        {children}
     </ThemeProvider>
   )
 }

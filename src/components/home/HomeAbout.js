@@ -3,6 +3,7 @@ import { graphql, Link, useStaticQuery } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import { AboutButton, AboutImage, AboutWrapper, ComponentInfo, SectionBlue } from '../../elements';
 
+
 export function About({ slogan }) {
 
     const { file } = useStaticQuery(graphql`

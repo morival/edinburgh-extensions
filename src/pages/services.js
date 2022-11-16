@@ -7,7 +7,7 @@ import { ComponentInfoCenter, ServicesIntro, ServicesList } from '../elements';
 export default function Services({ data: { site: { siteMetadata: { 
     services, 
     quotes: { quote_services },
-    links: { link_2 }} },
+    links }},
   allFile: { edges } } }) {
     
     const serviceComponents = () => 
@@ -20,7 +20,7 @@ export default function Services({ data: { site: { siteMetadata: {
         <Main>
           <ServicesIntro>
             <ComponentInfoCenter>
-              <h1>{link_2}</h1>
+              {/* <h1>{link_2}</h1> */}
               <h3>{quote_services}</h3>
               <p>We provide a high quality product gratifying each individual's demands, managed professionally from the project brief to hand over day.</p>
             </ComponentInfoCenter>
@@ -43,7 +43,8 @@ query ServicesQuery {
         relativePath
       }
       links {
-        link_2
+        link
+        name
       }
       quotes {
         quote_services

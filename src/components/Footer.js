@@ -7,70 +7,65 @@ import { FaFacebook, FaInstagram } from 'react-icons/fa';
 
 export const Footer = () => {
 
-    const data = useStaticQuery(graphql`
-    query FooterQuery {
-        file(name: {eq: "Transparent Logo"}) {
-          childImageSharp {
-            gatsbyImageData(height: 160)
-          }
-        }
-        site {
-          siteMetadata {
-            contact {
-              phone_1
-              phone_2
-              email
-            }
-            links {
-              link_1
-              link_2
-              link_3
-              link_4
-              link_5
-            }
-            social {
-              facebook
-              instagram
-            }
-            title
-          }
+  const { file, site } = useStaticQuery(graphql`
+  query FooterQuery {
+      file(name: {eq: "Transparent Logo"}) {
+        childImageSharp {
+          gatsbyImageData(height: 160)
         }
       }
-    `)
-    const image = getImage(data.file)
-    const { title } = data.site.siteMetadata
-    const { link_1, link_2, link_3, link_4, link_5 } = data.site.siteMetadata.links
-    const { phone_1, phone_2, email } = data.site.siteMetadata.contact
-    const { facebook, instagram } = data.site.siteMetadata.social
+      site {
+        siteMetadata {
+          contact {
+            phone_1
+            phone_2
+            email
+          }
+          links {
+            link
+            name
+          }
+          social {
+            facebook
+            instagram
+          }
+          title
+        }
+      }
+    }
+  `)
+  const image = getImage(file)
+  const { title } = site.siteMetadata
+  const { phone_1, phone_2, email } = site.siteMetadata.contact
+  const { facebook, instagram } = site.siteMetadata.social
+  
+  const siteMapItems = site.siteMetadata.links.map(page => {
+    return <div key={page.link}><SiteLink to={page.link==='home' ? `/`:`/${page.link}`}>{page.name}</SiteLink></div>
+  })
 
-    // console.log(image)
-    return (
-        <FooterWrapper>
-            <MainFooter>
-                <Contact>
-                    <Logo to='/'><GatsbyImage image={image} alt="logo" /></Logo>
-                    <ContactDetails>
-                        <div>Bartek - {phone_1}</div>
-                        <div>Stan - {phone_2}</div>
-                        <div>{email}</div>
-                    </ContactDetails>
-                </Contact>
-                <Menu>
-                    <Title>menu</Title>
-                    <SiteMap>
-                        <div><SiteLink to="/">{link_1}</SiteLink></div>
-                        <div><SiteLink to="/services">{link_2}</SiteLink></div>
-                        <div><SiteLink to="/projects">{link_3}</SiteLink></div>
-                        <div><SiteLink to="/about">{link_4}</SiteLink></div>
-                        <div><SiteLink to="/contact">{link_5}</SiteLink></div>
-                    </SiteMap>
-                </Menu>
-            </MainFooter>
-            <Follow>
-                <SocialMediaLink href={facebook} aria-label='Facebook' color='#3b5998'><FaFacebook /></SocialMediaLink>
-                <SocialMediaLink href={instagram} aria-label='Instagram' color='#c32aa3'><FaInstagram /></SocialMediaLink>
-            </Follow>
-            <CopyRights>© {new Date().getFullYear()} {title}. All Rights Reserved.</CopyRights>
-        </FooterWrapper>
-    )
+  return (
+    <FooterWrapper>
+      <MainFooter>
+        <Contact>
+          <Logo to='/'><GatsbyImage image={image} alt="logo" /></Logo>
+          <ContactDetails>
+            <div>Bartek - {phone_1}</div>
+            <div>Stan - {phone_2}</div>
+            <div>{email}</div>
+          </ContactDetails>
+        </Contact>
+        <Menu>
+          <Title>menu</Title>
+          <SiteMap>
+            {siteMapItems}
+          </SiteMap>
+        </Menu>
+      </MainFooter>
+      <Follow>
+        <SocialMediaLink href={facebook} aria-label='Facebook' color='#3b5998'><FaFacebook /></SocialMediaLink>
+        <SocialMediaLink href={instagram} aria-label='Instagram' color='#c32aa3'><FaInstagram /></SocialMediaLink>
+      </Follow>
+      <CopyRights>© {new Date().getFullYear()} {title}. All Rights Reserved.</CopyRights>
+    </FooterWrapper>
+  )
 };

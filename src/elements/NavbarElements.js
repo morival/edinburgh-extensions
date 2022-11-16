@@ -93,7 +93,7 @@ export const MenuIcon = styled.div`
         }
     `}
 `;
-export const NavbarWrapper = styled.nav`
+export const NavbarSection = styled.nav`
     display: flex;
     justify-content: center;
     height: 16vh;

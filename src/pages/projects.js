@@ -6,7 +6,7 @@ import { ComponentInfoCenter, ProjectsIntro, ProjectsList, ProjectsListFilter, P
 
 export default function Projects({ location, data: { 
   allMarkdownRemark: { nodes }, 
-  site: { siteMetadata: { links: { link_3 }, services, quotes: { quote_projects }} },
+  site: { siteMetadata: { links, services, quotes: { quote_projects }} },
   allFile: { edges }
 } }) {
 
@@ -48,7 +48,7 @@ export default function Projects({ location, data: {
       <Main>
         <ProjectsIntro>
           <ComponentInfoCenter>
-            <h1>{link_3}</h1>
+            {/* <h1>{link_3}</h1> */}
             <h3>{quote_projects}</h3>
           </ComponentInfoCenter>
         </ProjectsIntro>
@@ -81,7 +81,8 @@ query ProjectsQuery {
   site {
     siteMetadata {
       links {
-        link_3
+        link
+        name
       }
       services {
         title

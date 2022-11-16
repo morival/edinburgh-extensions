@@ -1,26 +1,28 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { ContactDetails, ContactForm, Main } from '../components'
+import { Banner, ContactDetails, ContactForm, Main } from '../components'
 import { FlexContainer } from '../elements';
 
 
-export default function Contact({ data: {site: { siteMetadata: { links: { link_5 }, quotes: { quote_contact } } } } }) {
+export default function Contact({ data: { site: { siteMetadata: { links, quotes: { quote_contact } } } } }) {
 
-    // console.log(slogan_contact)
-    return (
-        <Main>
-          <section>
-            <h1>{link_5}</h1>
-            <h3>{quote_contact}</h3>
-          </section>
-          <section>
-            <FlexContainer>
-                <ContactForm />
-                <ContactDetails />
-            </FlexContainer>
-          </section>
-        </Main>
-    )
+  const page = links.find(({link}) => link === "contact") 
+
+  return (
+    <Main>
+      <Banner link={page.link} />
+      <section>
+        <h1>{page.name}</h1>
+        <h3>{quote_contact}</h3>
+      </section>
+      <section>
+        <FlexContainer>
+          <ContactForm />
+          <ContactDetails />
+        </FlexContainer>
+      </section>
+    </Main>
+  )
 }
 
 
@@ -29,7 +31,8 @@ query ContactQuery {
   site {
     siteMetadata {
       links {
-        link_5
+        link
+        name
       }
       quotes {
         quote_contact
