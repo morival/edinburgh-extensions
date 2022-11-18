@@ -29,6 +29,7 @@ export const CopyRights = styled.div`
 export const Follow = styled.div`
     display: flex;
     align-items: end;
+    justify-content: end;
     padding: 10px;
 `;
 export const FooterWrapper = styled.footer`

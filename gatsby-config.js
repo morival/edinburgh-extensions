@@ -49,7 +49,7 @@ module.exports = {
       instagram: `https://instagram.com`,
     },
     quotes: {
-      quote_about: `Catchy quote (ethos, manifesto)`,
+      quote_about: `We pride ourselves in finding innovative solutions to challenging projects`,
       quote_contact: `We are happy to hear your thoughts about your project at any time. You can ...`,
       quote_home_about: `Build Your Dreams With Us`,
       quote_home_services: `The roof is our limit`,

@@ -109,8 +109,8 @@ export const GlobalStyle = createGlobalStyle`
     button {
         background-color: ${({ theme }) => theme.color.orange};
         border-color: ${({ theme }) => theme.color.brownish_orange};
-        border-radius: 5px;
-        padding: 5px 10px;
+        /* border-radius: 5px; */
+        padding: 10px 20px;
         :hover {
             color: ${({ theme }) => theme.color.hover};
         }

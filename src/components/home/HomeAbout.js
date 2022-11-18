@@ -24,7 +24,7 @@ export function About({ slogan }) {
           <AboutWrapper>
             <AboutLogo><GatsbyImage image={image} alt={file.id} /></AboutLogo>
             <ComponentInfo>
-              <p>Our success lies in combining years of experience with innovative and creative thinking.</p>
+              <p>Our well organised and creative approach to every project lies in years of experience and innovative thinking.</p>
               <Link to='/about'><AboutButton text='about us'/></Link>
             </ComponentInfo>
           </AboutWrapper>
