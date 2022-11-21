@@ -7,7 +7,7 @@ export const theme = {
         black: '#000000',
         brownish_orange: '#E37627',
         dark_blue: '#1C3168',
-        // dark_blue: '#284389',
+        // dark_blue: '#284389', // original
         dark_gray: '#3e3e49',
         gray: '#808080',
         hover: '#FAFAD2',
@@ -28,17 +28,13 @@ export const ComponentInfo = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 50px 100px;
-    width: 50%;
-    ${media.lessThan('large')`
-        padding: 30px;
-    `}
-    ${media.lessThan('medium')`
-        padding: 50px;
-        width: 100%;
-    `}
-    ${media.lessThan('small')`
-        padding: 20px;
+    width: 100%;
+    padding: clamp(20px, 6vw, 100px);
+`
+export const ComponentInfoBreak = styled(ComponentInfo)`
+    ${media.greaterThan('large')`
+        width: 50%;
+        padding: clamp(20px, 2.6vw, 100px);
     `}
 `
 export const ComponentInfoCenter = styled(ComponentInfo)`
@@ -62,6 +58,8 @@ export const GlobalStyle = createGlobalStyle`
 
     }
     main {
+        display: grid;
+        grid-gap: 50px;
         text-align: center;
     }
     footer {
@@ -72,7 +70,7 @@ export const GlobalStyle = createGlobalStyle`
     }
     section {
         width: 100%;
-        padding-block: 50px;
+        /* padding-block: 50px; */
         ${media.lessThan('medium')`
             /* padding-block: 0; */
         `}

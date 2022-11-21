@@ -6,9 +6,12 @@ export const ServiceDescription = styled.div`
 
 `;
 export const ServiceImage = styled.div`
-    width: 50%;
-    ${media.lessThan('medium')`
-        width: 100%;
+    width: 100%;
+    ${media.greaterThan('medium')`
+        width: 50%;
+    `}
+    ${media.greaterThan('large')`
+        text-align: left;
     `}
 `;
 export const ServiceTitle = styled.h3`
@@ -22,23 +25,21 @@ export const ServicesList = styled.section`
 `;
 export const ServiceWrapper = styled.div`
     display: flex;
-    /* apply to every second Service Section */
-    &:nth-of-type(2n) {
-        flex-direction: row-reverse;
-        background-color: ${({ theme }) => theme.color.transparent_orange};
-        ${media.lessThan('medium')`
-            flex-direction: column;
-        `}
-    }
-    &:nth-of-type(2n+1) {
-        background-color: ${({ theme }) => theme.color.transparent_dark_blue};
-    }
+    flex-direction: column;
     justify-content: center;
-    /* gap: 40px; */
-    ${media.lessThan('large')`
-        /* gap: 20px; */
+    background-color: ${({ theme }) => theme.color.transparent_dark_blue};
+    ${media.greaterThan('medium')`
+        flex-direction: row;
     `}
-    ${media.lessThan('medium')`
-        flex-direction: column;
-    `}
+    &:nth-of-type(2n) {
+        background-color: ${({ theme }) => theme.color.transparent_orange};
+        ${media.greaterThan('medium')`
+            flex-direction: row-reverse;
+        `}
+        .image {
+            ${media.greaterThan('large')`
+                text-align: right;
+            `}
+        }
+    }
 `;

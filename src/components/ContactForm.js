@@ -1,12 +1,12 @@
 import React from 'react';
-import { ContactFormInput, ContactFormRow, ContactFormWrapper, ContactFormTextArea, SubmitButton, ContactFormForm } from '../elements';
+import { ContactFormInput, ContactFormRow, ContactFormTextArea, SubmitButton, ContactFormForm, ComponentInfoBreak } from '../elements';
 
 
 export function ContactForm(params) {
     
     
     return (
-        <ContactFormWrapper>
+        <ComponentInfoBreak>
             <ContactFormForm name="contact" method="POST" data-netlify="true">
                 <ContactFormRow><ContactFormInput type="text" name="name" placeholder="Name" /></ContactFormRow>
                 <ContactFormRow><ContactFormInput type="text" name="telephone" placeholder="Phone Number" /></ContactFormRow>
@@ -16,6 +16,6 @@ export function ContactForm(params) {
                     <SubmitButton type="submit" text={"Send"} />
                 </ContactFormRow>
             </ContactFormForm>
-        </ContactFormWrapper>
+        </ComponentInfoBreak>
     )
 };

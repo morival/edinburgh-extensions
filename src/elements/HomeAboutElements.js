@@ -15,16 +15,9 @@ export const AboutLogo = styled.div`
 export const AboutWrapper = styled.div`
     display: flex;
     justify-content: center;
-    padding: 20px;
-    gap: 40px;
-    ${media.lessThan('large')`
-        gap: 20px;
-    `}
-    ${media.lessThan('medium')`
-        flex-wrap: wrap;
-        gap: 10px;
-    `}
-    ${media.lessThan('small')`
-        flex-direction: column;
+    /* padding: 20px; */
+    flex-wrap: wrap;
+    ${media.greaterThan('large')`
+        flex-wrap: nowrap;
     `}
 `;

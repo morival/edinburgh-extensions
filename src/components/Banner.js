@@ -31,7 +31,7 @@ export function Banner({ link }) {
     const banner = allFile.edges.find(({ node }) => node.name.includes(link))
     const bgImage = convertToBgImage(getImage(banner.node))
     const page = link
-    console.log(page)
+    // console.log(page)
 
     return (
       <BannerImage {...bgImage} preserveStackingContext>

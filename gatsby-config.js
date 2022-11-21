@@ -34,15 +34,15 @@ module.exports = {
       }, {
         title: `renovations`,
         description: `Steel fitting is not an alien task for us. With multiple beams fitted across the city, we make structures stable and safe. We can alternate or take down any wall in your house no matter what its function is. No matter what weight or size the beam is, we can fit it.`,
-        relativePath: `services/con-example.jpg`,
+        relativePath: `services/ren-example.jpg`,
       }, {
         title: `new builds`,
         description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`,
-        relativePath: `services/ref-example.jpg`,
+        relativePath: `services/new-example.jpg`,
       }, {
         title: `conversions`,
         description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`,
-        relativePath: `services/ref-example.jpg`,
+        relativePath: `services/con-example.jpg`,
       },
     ],
     social: {

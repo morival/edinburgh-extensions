@@ -6,7 +6,7 @@ export const ContactButton = styled(Button)`
 
 `;
 export const IntroDescription = styled.div`
-    max-width: 810px;
+    
 `;
 export const IntroWrapper = styled.div`
     display: flex;
