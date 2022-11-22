@@ -1,21 +1,21 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { Main } from '../components'
+import { ComponentTitle } from '../elements'
 
 export default function About({ data: { site: { siteMetadata: { links, quotes: { quote_about } } } } }) {
-  
-  const page = links.find(({link}) => link === "about") 
+
+  // const page = links.find(({ link }) => link === "about")
 
   return (
     <Main>
       <section>
-        <h1>{page.name}</h1>
-        <h3>{quote_about}</h3>
+        <ComponentTitle>
+          <h3>{quote_about}</h3>
+        </ComponentTitle>
       </section>
       <section>
         <div>
-          {/* <h6>image</h6> */}
-          <h3>About us</h3>
           <h6>(explaining why you and your uncle decided to start a family business)</h6>
           <br />
           <h6>We are a small family business where we put all our focus on one project at a time.</h6>

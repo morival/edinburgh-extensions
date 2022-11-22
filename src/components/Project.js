@@ -14,7 +14,7 @@ export function Project({ project: { frontmatter: { title, location, services, s
         <ProjectWrapper>
             <ProjectLink to={'/projects/'+slug}>
                 <ProjectImage className='image'>{projectImage()}</ProjectImage>
-                <ProjectImageCover>{title}</ProjectImageCover>
+                <ProjectImageCover className='cover'>{title}</ProjectImageCover>
             </ProjectLink>
             <ComponentInfoBreak>
                 <ProjectTitle>{location}</ProjectTitle>

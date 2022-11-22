@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql, Link, useStaticQuery } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
-import { ComponentInfoCenter, ServiceImageContainer, ServiceImageCover, ServicesWrapper } from '../../elements';
+import { ComponentInfo, ComponentTitle, ServiceImageContainer, ServiceImageCover, ServicesWrapper } from '../../elements';
 
 
 export function Services({ slogan, services }) {
@@ -43,10 +43,12 @@ export function Services({ slogan, services }) {
     
     return (
         <section>
-            <h3>{slogan}</h3>
-            <ComponentInfoCenter>
+            <ComponentTitle>
+              <h3>{slogan}</h3>
+            </ComponentTitle>
+            <ComponentInfo>
               <p>Our highly skilled team will perfect your project from foundations upwards.</p>
-            </ComponentInfoCenter>
+            </ComponentInfo>
             <ServicesWrapper>
                 {servicesComponents()}
             </ServicesWrapper>

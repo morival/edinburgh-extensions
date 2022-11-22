@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { Banner, ContactDetails, ContactForm, Main } from '../components'
-import { ComponentInfoCenter, FlexContainer, SectionBlue } from '../elements';
+import { ComponentInfo, ComponentTitle, FlexContainer, SectionBlue } from '../elements';
 
 
 export default function Contact({ data: { site: { siteMetadata: { links, quotes: { quote_contact } } } } }) {
@@ -12,10 +12,12 @@ export default function Contact({ data: { site: { siteMetadata: { links, quotes:
     <Main>
       <Banner link={page.link} />
       <SectionBlue>
-        <h3>Got A Project In Mind?</h3>
-        <ComponentInfoCenter>
+        <ComponentTitle>
+          <h3>Got A Project In Mind?</h3>
+        </ComponentTitle>
+        <ComponentInfo>
           <h4>{quote_contact}</h4>
-        </ComponentInfoCenter>
+        </ComponentInfo>
         <FlexContainer>
           <ContactDetails />
           <ContactForm />

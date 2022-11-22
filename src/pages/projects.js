@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { graphql } from 'gatsby';
 import { Main, Project } from '../components';
-import { ComponentInfoCenter, ProjectsIntro, ProjectsList, ProjectsListFilter, ProjectsListFilterButton } from '../elements';
+import { ComponentInfo, ComponentTitle, ProjectsIntro, ProjectsList, ProjectsListFilter, ProjectsListFilterButton } from '../elements';
 
 
 export default function Projects({ location, data: { 
@@ -47,10 +47,12 @@ export default function Projects({ location, data: {
   return (
       <Main>
         <ProjectsIntro>
-          <ComponentInfoCenter>
-            {/* <h1>{link_3}</h1> */}
-            <h3>{quote_projects}</h3>
-          </ComponentInfoCenter>
+          <ComponentTitle>
+              <h3>{quote_projects}</h3>
+          </ComponentTitle>
+          <ComponentInfo>
+            <p>some paragraph...</p>
+          </ComponentInfo>
         </ProjectsIntro>
         <ProjectsList>
           <ProjectsListFilter>

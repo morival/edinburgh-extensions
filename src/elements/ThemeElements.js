@@ -29,16 +29,16 @@ export const ComponentInfo = styled.div`
     justify-content: center;
     align-items: center;
     width: 100%;
-    padding: clamp(20px, 6vw, 100px);
-`
+    padding: clamp(15px, 4vw, 50px);
+`;
 export const ComponentInfoBreak = styled(ComponentInfo)`
     ${media.greaterThan('large')`
         width: 50%;
         padding: clamp(20px, 2.6vw, 100px);
     `}
-`
-export const ComponentInfoCenter = styled(ComponentInfo)`
-    width: 100%;
+`;
+export const ComponentTitle = styled.div`
+    padding: clamp(15px, 4vw, 50px);
 `;
 export const SectionBlue = styled.section`
     /* padding-inline: 40px; */
@@ -108,7 +108,7 @@ export const GlobalStyle = createGlobalStyle`
         background-color: ${({ theme }) => theme.color.orange};
         border-color: ${({ theme }) => theme.color.brownish_orange};
         /* border-radius: 5px; */
-        padding: 10px 20px;
+        padding: 1rem;
         :hover {
             color: ${({ theme }) => theme.color.hover};
         }

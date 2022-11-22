@@ -87,8 +87,18 @@ export const ProjectsListFilterButton = styled(Button)`
 `;
 export const ProjectWrapper = styled.div`
     display: flex;
-    /* apply to every second ProjectWrapper */
+    flex-direction: column;
+    ${media.greaterThan('medium')`
+            flex-direction: row;
+        `}
     &:nth-of-type(2n) {
+        background-color: ${({ theme }) => theme.color.lightgray};
+        ${media.greaterThan('medium')`
+            flex-direction: row-reverse;
+        `}
+    }
+    /* apply to every second ProjectWrapper */
+    /* &:nth-of-type(2n) {
         flex-direction: row-reverse;
         background-color: ${({ theme }) => theme.color.lightgray};
         ${media.lessThan('medium')`
@@ -96,11 +106,7 @@ export const ProjectWrapper = styled.div`
         `}
     }
     justify-content: center;
-    /* gap: 40px; */
-    ${media.lessThan('large')`
-        /* gap: 0; */
-    `}
     ${media.lessThan('medium')`
         flex-direction: column;
-    `}
+    `} */
 `;
