@@ -47,7 +47,8 @@ export function Services({ slogan, services }) {
               <h3>{slogan}</h3>
             </ComponentTitle>
             <ComponentInfo>
-              <p>Our highly skilled team will perfect your project from foundations upwards.</p>
+              <h4>We offer a range of services such as building extensions, renovations, conversions as well as full project management.</h4>
+              <h4>Our highly skilled team will perfect your project from foundations upwards.</h4>
             </ComponentInfo>
             <ServicesWrapper>
                 {servicesComponents()}

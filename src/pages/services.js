@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby';
 import { Main, Service } from '../components';
-import { ComponentInfo, ComponentTitle, ServicesIntro, ServicesList } from '../elements';
+import { ComponentInfo, ComponentTitle } from '../elements';
 
 
 export default function Services({ data: { site: { siteMetadata: { 
@@ -18,17 +18,17 @@ export default function Services({ data: { site: { siteMetadata: {
 
     return ( 
         <Main>
-          <ServicesIntro>
+          <section>
             <ComponentTitle>
                 <h3>{quote_services}</h3>
             </ComponentTitle>
             <ComponentInfo>
-              <p>We provide a high quality product gratifying each individual's demands, managed professionally from the project brief to hand over day.</p>
+              <h4>If you are looking to expand your space for more freedom, you are in the right place. We can help you to take the first steps. <br/>We will run your dream project from day one to day finish. Providing high quality work across all the stages. <br/>We minimise the use of outside contractors to maintain a high level of detail and quality.</h4>
             </ComponentInfo>
-          </ServicesIntro>
-          <ServicesList>
+          </section>
+          <section>
             {serviceComponents()}
-          </ServicesList>
+          </section>
         </Main>
     )
 }
@@ -40,8 +40,10 @@ query ServicesQuery {
     siteMetadata {
       services {
         description
-        title
         relativePath
+        subServices
+        title
+        types
       }
       links {
         link

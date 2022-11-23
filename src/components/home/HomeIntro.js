@@ -9,7 +9,7 @@ export function Intro() {
         <SectionBlue>
             <ComponentInfo>
                 <h4>
-                    We are a family business with over 30 years’ experience in building and high-end renovations. 
+                    We are a family business with over 30 years’ experience in building and high-end renovations.<br/>
                     Driven by a constant commitment to excel in every project, 
                     we deliver the best product gratifying each individual's demands.
                 </h4>

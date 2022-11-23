@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import media from "styled-media-query";
 import { Button } from "../components/controls";
-import { ComponentInfo } from "./ThemeElements";
 
 export const ServiceButton = styled(Button)`
     
@@ -48,12 +47,6 @@ export const ServiceImageContainer = styled.div`
         &:nth-child(4) > a > .cover {
             background-color: ${({ theme }) => theme.color.dark_blue};
         }
-    `}
-`;
-export const ServiceInfoContainer = styled(ComponentInfo)`
-    ${media.greaterThan('medium')`
-        width: 50%;
-        padding: clamp(20px, 2.6vw, 100px);
     `}
 `;
 export const ServicesWrapper = styled.div`

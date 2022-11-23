@@ -7,4 +7,4 @@ slug: roseburn
 thumb: roseburn-thumb
 ---
 
-**Heading 2 for the Roseburn (extensions, renovations, conversions) project** Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+This project involved us taking down a 120 year old stone wall in order to build an extension at the back. To preserve the original character of the building the stone was handled with care so that we could reuse it for extensions. On top of this, we renovated the whole cottage, in the attic space we turned one big area into a couple rooms and a bathroom. 

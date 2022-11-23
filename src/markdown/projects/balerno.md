@@ -1,10 +1,10 @@
 ---
 markdown: project
-title: Balerno (Extensions,Renovation and New Builds?)
+title: Balerno (Extensions, Renovation)
 location: Balerno
-services: extensions, renovations, new builds
+services: extensions, renovations
 slug: balerno
 thumb: balerno-thumb
 ---
 
-**Heading 2 for the Balerno (extensions and renovation) project** Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+We transformed this older looking semi-detached house into a modern style residence. With a unique extension and upgraded external walls with insulation and tender, this home is one of a kind in Balerno.

@@ -29,24 +29,32 @@ module.exports = {
     services: [
       {
         title: `extensions`,
-        description: `If you are looking to expand your space for more freedom, you are in the right place. We can help you to take the first steps. We will run your dream project from day one to day finish. Providing high quality work across all the stages. We minimise the use of outside contractors to maintain a high level of detail and quality.`,
+        description: `Enhance your house with additional space. With us you will have the opportunity to optimise your extensions to your needs.`,
+        types: [`kitchen extension`, `rear extension`, `side return extension`, `single storey extension`, `double storey extension`],
+        subServices: [`substructure`, `superstructure`, `steel fitting`, `foundation`, `masonry`, `roof`, `structural frame`, `tiling`, `wall: load bearing walls, compartment walls, external walls, retaining walls`, `finishing joinery`],
         relativePath: `services/ext-example.jpg`,
       }, {
         title: `renovations`,
-        description: `Steel fitting is not an alien task for us. With multiple beams fitted across the city, we make structures stable and safe. We can alternate or take down any wall in your house no matter what its function is. No matter what weight or size the beam is, we can fit it.`,
+        description: `Restoring the past is not an easy task. Wherever you want to retain original character or bring a new life, at Edinburgh Extensions we will make it come true.`,
+        types: [`kitchen renovation`, `bathroom renovation`, `bedroom renovation`],
+        subServices: [`plastering & bonding`, `refit solutions`, `structural changes`, `property modernisation`, `tiling`, `removal and erection of partition walls`, `carpentry`, `finishing joinery`],
         relativePath: `services/ren-example.jpg`,
       }, {
         title: `new builds`,
-        description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`,
+        description: `...`,
+        types: [`house`, `garden office`, `summer house`],
+        subServices: [`substructure`, `superstructure`, `steel fitting`, `foundation`, `masonry`, `roof`, `structural frame`, `tiling`, `wall: load bearing walls, compartment walls, external walls, retaining walls`, `finishing joinery`],
         relativePath: `services/new-example.jpg`,
       }, {
         title: `conversions`,
-        description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`,
+        description: `Attic conversions can generate a substantial amount of extra living space. With a little bit of thought you can turn your useless space into a hub in your house.`,
+        types: [`attic conversion`, `dormer formation`],
+        subServices: [`steel fitting`, `structural frame`, `roof`, `finishing joinery`],
         relativePath: `services/con-example.jpg`,
       },
     ],
     social: {
-      instagram: `https://instagram.com`,
+      instagram: `https://www.instagram.com/edinburghextensions/`,
     },
     quotes: {
       quote_about: `We pride ourselves in finding innovative solutions to challenging projects`,
@@ -56,7 +64,7 @@ module.exports = {
       quote_home_projects: `We nailed it!`,
       quote_home_testimonials: `What Our Clients Have To Say`,
       quote_projects: `Adding Quality in every project`,
-      quote_services: `Creating dreams with beams`,
+      quote_services: `A lasting value`,
     },
   },
   plugins: [
