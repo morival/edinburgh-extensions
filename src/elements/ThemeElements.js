@@ -32,7 +32,7 @@ export const ComponentInfo = styled.div`
     padding: clamp(15px, 4vw, 50px);
 `;
 export const ComponentInfoBreak = styled(ComponentInfo)`
-    ${media.greaterThan('large')`
+    ${media.greaterThan('medium')`
         width: 50%;
         padding: clamp(20px, 2.6vw, 100px);
     `}

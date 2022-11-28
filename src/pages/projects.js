@@ -99,7 +99,7 @@ query ProjectsQuery {
       node {
         name
         childImageSharp {
-          gatsbyImageData(width: 768, layout: CONSTRAINED, placeholder: BLURRED)
+          gatsbyImageData(width: 768, layout: FULL_WIDTH, placeholder: BLURRED)
         }
       }
     }

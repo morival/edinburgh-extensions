@@ -7,15 +7,15 @@ import { ComponentInfoBreak, ProjectDescription, ProjectImage, ProjectImageCover
 export function Project({ project: { frontmatter: { title, location, services, slug }, html }, node }) {
 
     const image = getImage(node)
-    const projectImage = () => (image ? <GatsbyImage image={image} alt={title} /> : null)
+    const projectImage = () => (image ? <GatsbyImage image={image} style={{height:'100%'}} alt={title} /> : null)
     const listOfServices = () => (services.split(', ').map(service => <p key={service}>{service}</p>))
     
     return (
         <ProjectWrapper>
-            <ProjectLink to={'/projects/'+slug}>
+            {/* <ProjectLink to={'/projects/'+slug}> */}
                 <ProjectImage className='image'>{projectImage()}</ProjectImage>
-                <ProjectImageCover className='cover'>{title}</ProjectImageCover>
-            </ProjectLink>
+                {/* <ProjectImageCover className='cover'>{title}</ProjectImageCover> */}
+            {/* </ProjectLink> */}
             <ComponentInfoBreak>
                 <ProjectTitle>{location}</ProjectTitle>
                 <ProjectServices>{listOfServices()}</ProjectServices>

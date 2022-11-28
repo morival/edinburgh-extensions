@@ -8,15 +8,18 @@ export const ProjectDescription = styled.div`
 `;
 export const ProjectImage = styled.div`
     width: 100%;
-    min-width: 400px;
-    ${media.lessThan('large')`
+    /* min-width: 400px; */
+    ${media.greaterThan('medium')`
+        width: 50%;
+    `}
+    /* ${media.lessThan('large')`
         min-width: 300px;
         display: flex;
         justify-content: center;
     `}
     ${media.lessThan('medium')`
         
-    `}
+    `} */
 `;
 export const ProjectImageCover = styled.div`
     position: absolute;
@@ -30,7 +33,7 @@ export const ProjectImageCover = styled.div`
     top: 0;
     height: 100%;
     width: 100%;
-    max-width: 768px;
+    /* max-width: 768px; */
     transition: .5s ease;
     :hover {
         opacity: 0.8;
@@ -60,15 +63,24 @@ export const ProjectsList = styled.section`
     /* padding-block: 0; */
 `;
 export const ProjectsListFilter = styled.div`
-    display: flex;
+    /* display: flex;
     justify-content: center;
     padding-block: 20px;
     ${media.lessThan('medium')`
         flex-direction: column;
         align-items: center;
+    `} */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+    ${media.greaterThan('medium')`
+        flex-direction: row;
     `}
 `;
 export const ProjectsListFilterButton = styled(Button)`
+    width: 180px;
     ${(props) => {
         switch (props.selected) {
             case true:
@@ -81,8 +93,8 @@ export const ProjectsListFilterButton = styled(Button)`
                 `;
         }
     }}
-    ${media.lessThan('medium')`
-        width: 180px;
+    ${media.greaterThan('medium')`
+        width: 130px;
     `}
 `;
 export const ProjectWrapper = styled.div`
@@ -97,16 +109,4 @@ export const ProjectWrapper = styled.div`
             flex-direction: row-reverse;
         `}
     }
-    /* apply to every second ProjectWrapper */
-    /* &:nth-of-type(2n) {
-        flex-direction: row-reverse;
-        background-color: ${({ theme }) => theme.color.lightgray};
-        ${media.lessThan('medium')`
-            flex-direction: column;
-        `}
-    }
-    justify-content: center;
-    ${media.lessThan('medium')`
-        flex-direction: column;
-    `} */
 `;
