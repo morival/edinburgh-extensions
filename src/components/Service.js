@@ -21,7 +21,7 @@ export function Service({ service: { title, description, types }, edge: { node }
     return (
         <ServiceWrapper id={title}>
             <ServiceImage className='image'>
-                <GatsbyImage image={image} alt={title} />
+                <GatsbyImage image={image} style={{height:'100%', width:'100%'}} alt={title} />
             </ServiceImage>
             <ServiceInfoContainer>
                 <ServiceTitle>

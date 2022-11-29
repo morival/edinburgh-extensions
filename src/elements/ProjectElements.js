@@ -8,18 +8,6 @@ export const ProjectDescription = styled.div`
 `;
 export const ProjectImage = styled.div`
     width: 100%;
-    /* min-width: 400px; */
-    ${media.greaterThan('medium')`
-        width: 50%;
-    `}
-    /* ${media.lessThan('large')`
-        min-width: 300px;
-        display: flex;
-        justify-content: center;
-    `}
-    ${media.lessThan('medium')`
-        
-    `} */
 `;
 export const ProjectImageCover = styled.div`
     position: absolute;
@@ -33,7 +21,6 @@ export const ProjectImageCover = styled.div`
     top: 0;
     height: 100%;
     width: 100%;
-    /* max-width: 768px; */
     transition: .5s ease;
     :hover {
         opacity: 0.8;
@@ -43,9 +30,9 @@ export const ProjectLink = styled(Link)`
     display: flex;
     justify-content: center;
     position: relative;
-    width: 50%;
-    ${media.lessThan('medium')`
-        width: 100%;
+    width: 100%;
+    ${media.greaterThan('medium')`
+        width: 50%;
     `}
 `;
 export const ProjectServices = styled.div`
@@ -80,7 +67,6 @@ export const ProjectsListFilter = styled.div`
     `}
 `;
 export const ProjectsListFilterButton = styled(Button)`
-    width: 180px;
     ${(props) => {
         switch (props.selected) {
             case true:
@@ -93,6 +79,7 @@ export const ProjectsListFilterButton = styled(Button)`
                 `;
         }
     }}
+    width: 180px;
     ${media.greaterThan('medium')`
         width: 130px;
     `}

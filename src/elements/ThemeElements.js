@@ -41,7 +41,6 @@ export const ComponentTitle = styled.div`
     padding: clamp(15px, 4vw, 50px);
 `;
 export const SectionBlue = styled.section`
-    /* padding-inline: 40px; */
     background: ${({ theme }) => theme.color.dark_blue};
     color: ${({ theme }) => theme.color.white};
 `;

@@ -28,11 +28,15 @@ export const ServiceImageContainer = styled.div`
     margin: 5px 0;
     width: 100%;
     ${media.greaterThan('small')`
-        margin: 10px 20px;
+        margin: 15px 30px;
     `}
     ${media.greaterThan('medium')`
         margin: 5px;
         width: calc(50% - 10px);
+    `}
+    ${media.greaterThan('large')`
+        margin: 15px;
+        width: calc(50% - 30px);
     `}
     &:nth-of-type(2n+1) > a > .cover {
         background-color: ${({ theme }) => theme.color.dark_blue};

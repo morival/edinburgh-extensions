@@ -12,10 +12,10 @@ export function Project({ project: { frontmatter: { title, location, services, s
     
     return (
         <ProjectWrapper>
-            {/* <ProjectLink to={'/projects/'+slug}> */}
+            <ProjectLink to={'/projects/'+slug}>
                 <ProjectImage className='image'>{projectImage()}</ProjectImage>
-                {/* <ProjectImageCover className='cover'>{title}</ProjectImageCover> */}
-            {/* </ProjectLink> */}
+                <ProjectImageCover className='cover'>{title}</ProjectImageCover>
+            </ProjectLink>
             <ComponentInfoBreak>
                 <ProjectTitle>{location}</ProjectTitle>
                 <ProjectServices>{listOfServices()}</ProjectServices>
