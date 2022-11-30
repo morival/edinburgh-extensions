@@ -1,11 +1,13 @@
 import { Link } from "gatsby";
 import styled from "styled-components";
 import media from "styled-media-query";
+import { FaInstagram } from 'react-icons/fa';
 
 
 export const Contact = styled.div`
     display: flex;
     column-gap: 40px;
+    padding-block: 30px;
     ${media.lessThan('large')`
         flex-direction: column;
         align-items: center;
@@ -13,7 +15,6 @@ export const Contact = styled.div`
     ${media.lessThan('medium')`
     `}
     ${media.lessThan('small')`
-        padding-block: 30px;
     `}
 `;
 export const ContactDetails = styled.div`
@@ -30,7 +31,16 @@ export const Follow = styled.div`
     display: flex;
     align-items: end;
     justify-content: end;
-    padding: 10px;
+    /* padding: 10px; */
+`;
+export const FooterInstagramIcon = styled(FaInstagram)`
+    width: 30px;
+    height: 30px;
+    padding: 3px;
+    color: ${({ theme }) => theme.color.gray};
+    :hover {
+        color: ${({ theme }) => theme.color.social_icons};
+    }
 `;
 export const FooterWrapper = styled.footer`
     color: ${({ theme }) => theme.color.white};
@@ -46,42 +56,24 @@ export const Logo = styled(Link)`
 `;
 export const MainFooter = styled.div`
     display: flex;
+    flex-direction: column;
     justify-content: space-evenly;
     padding: 40px 1rem;
-    ${media.lessThan('small')`
-        flex-direction: column;
-        padding: 0;
+    ${media.greaterThan('small')`
+        flex-direction: row;
     `}
 `;
 export const Menu = styled.div`
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     gap: 8px; 
-    padding: 10px;
-    min-width: 100px;
-    ${media.lessThan('small')`
-        margin: auto;
-    `}
 `;
 export const SiteLink = styled(Link)`
     color: ${({ theme }) => theme.color.orange};
 `;
 export const SiteMap = styled.div`
-
-`;
-export const SocialMediaLink = styled.a`
-    svg {
-        width: 30px;
-        height: 30px;
-        padding: 3px;
-        color: ${({ theme }) => theme.color.social_icons};
-    }
-    svg {
-        :hover {
-            color: ${props => props.color};
-        }
-    }
+    margin: auto;
+    min-width: 100px;
 `;
 
 export const Title = styled.div`

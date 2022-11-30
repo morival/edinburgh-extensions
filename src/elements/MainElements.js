@@ -15,15 +15,5 @@ export const FlexContainer = styled.div`
     justify-content: space-evenly;
     align-items: center;
     flex-wrap: wrap;
-    /* padding-inline: 15px; */
     width: 100%;
-    ${media.greaterThan('small')`
-        /* width: 420px; */
-    `}
-    ${media.greaterThan('medium')`
-        /* width: 750px; */
-    `}
-    ${media.greaterThan('large')`
-        /* width: 1000px; */
-    `}
 `;

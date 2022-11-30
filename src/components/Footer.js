@@ -1,8 +1,7 @@
 import React from 'react'
-import { Contact, ContactDetails, CopyRights, Follow, FooterWrapper, Logo, MainFooter, Menu, SiteLink, SiteMap, SocialMediaLink, Title } from '../elements';
+import { Contact, ContactDetails, CopyRights, Follow, FooterInstagramIcon, FooterWrapper, Logo, MainFooter, Menu, SiteLink, SiteMap, Title } from '../elements';
 import { graphql, useStaticQuery } from 'gatsby';
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import { FaInstagram } from 'react-icons/fa';
 
 
 export const Footer = () => {
@@ -54,14 +53,14 @@ export const Footer = () => {
           </ContactDetails>
         </Contact>
         <Menu>
-          <Title>menu</Title>
           <SiteMap>
+            <Title>menu</Title>
             {siteMapItems}
           </SiteMap>
-        </Menu>
         <Follow>
-          <SocialMediaLink href={instagram} aria-label='Instagram' color='#c32aa3'><FaInstagram /></SocialMediaLink>
+          <a href={instagram} aria-label='Instagram' alt='Instagram'><FooterInstagramIcon /></a>
         </Follow>
+        </Menu>
       </MainFooter>
       <CopyRights>© {new Date().getFullYear()} {title}. All Rights Reserved.</CopyRights>
     </FooterWrapper>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
-import { ContactDetailsWrapper, ContactEmail, ContactLogo, ContactTel, ContactContainer } from '../elements';
+import { ContactDetailsWrapper, ContactEmail, ContactTel, ContactContainer } from '../elements';
 import { MdEmail, MdPhone } from 'react-icons/md';
 
 
@@ -32,9 +32,9 @@ export function ContactDetails(params) {
 
     return (
         <ContactDetailsWrapper>
-            <ContactLogo>
+            <div>
                 <GatsbyImage image={image} alt={file.id} />
-            </ContactLogo>
+            </div>
             <div>
                 <ContactContainer>
                     <MdPhone />

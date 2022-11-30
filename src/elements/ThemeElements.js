@@ -13,7 +13,7 @@ export const theme = {
         hover: '#FAFAD2',
         lightgray: '#d3d3d3',
         orange: '#FC832B',
-        social_icons: '#B9B9B9',
+        social_icons: '#c32aa3',
         transparent_dark_blue: 'rgba(28,49,104,0.2)',
         transparent_orange: 'rgba(252,131,43,0.2)',
         white: '#ffffff',

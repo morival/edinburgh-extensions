@@ -9,18 +9,13 @@ export const ContactDetailsWrapper = styled.div`
     justify-items: center;
     align-items: center;
     text-align: start;
-    /* background: ${({ theme }) => theme.color.dark_blue};
-    color: ${({ theme }) => theme.color.white}; */
     padding-block: 20px;
-    width: 50%;
-    ${media.lessThan('large')`
-        width: 100%;
+    width: 100%;
+    ${media.greaterThan('large')`
+        width: 50%;
     `}
 `;
 export const ContactEmail = styled.div`
-
-`;
-export const ContactLogo = styled.div`
 
 `;
 export const ContactTel = styled.div`
@@ -31,8 +26,8 @@ export const ContactContainer = styled.div`
     align-items: center;
     padding-block: 5px;
     gap: 10px;
-    font-size: 1.15em;
-    ${media.lessThan('small')`
-        font-size: 1em;
+    font-size: 1em;
+    ${media.greaterThan('small')`
+        font-size: 1.15em;
     `}
 `;

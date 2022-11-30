@@ -1,6 +1,6 @@
 import React from 'react';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
-import { ServiceButton, ServiceDescription, ServiceDetailsContainer, ServiceImage, ServiceInfoContainer, ServiceTitle, ServiceTypesContainer, ServiceWrapper } from '../elements';
+import { ServiceButton, ServiceDescription, ServiceDetailsContainer, ServiceImage, ServiceInfoContainer, ServiceTickIcon, ServiceTitle, ServiceType, ServiceTypesContainer, ServiceWrapper } from '../elements';
 import { Link } from 'gatsby';
 
 
@@ -10,7 +10,10 @@ export function Service({ service: { title, description, types }, edge: { node }
     // console.log(types)
     const serviceTypes = () => 
         types.map((type, i) => 
-            <h6 key={i}>{type}</h6>
+            <ServiceType key={i}>
+                <ServiceTickIcon />
+                <h6>{type}</h6>
+            </ServiceType>
         )
 
     // const servicesList = () =>
@@ -28,10 +31,10 @@ export function Service({ service: { title, description, types }, edge: { node }
                     {title}
                 </ServiceTitle>
                 <ServiceDescription>
-                    <h5>{description}</h5>
+                    {description}
                 </ServiceDescription>
                 <ServiceDetailsContainer>
-                    <h5>Types of {title} Edinburgh Extensions carry out accounts for:</h5>
+                    <h5>Edinburgh Extensions offers:</h5>
                     <ServiceTypesContainer>{serviceTypes()}</ServiceTypesContainer>
                     {/* <div>
                         <h5>Sub-services</h5>
@@ -39,7 +42,7 @@ export function Service({ service: { title, description, types }, edge: { node }
                     </div> */}
                 </ServiceDetailsContainer>
                 <Link to='/projects' state={{ filter: title }}>
-                    <ServiceButton text={'VIEW OUR PREVIOUS PROJECTS'}/>
+                    <ServiceButton text={`VIEW OUR ${title} PROJECTS`}/>
                 </Link>
             </ServiceInfoContainer>
         </ServiceWrapper>

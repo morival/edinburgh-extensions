@@ -21,13 +21,13 @@ const bannerTextContainer = keyframes`
 export const BannerTextContainer = styled.div`
     color: ${props => props.color || 'white'};
     visibility: hidden;
-    font-size: 50px;
+    font-size: 25px;
     animation: ${bannerTextContainer} 4s forwards;
-    ${media.lessThan('medium')`
+    ${media.greaterThan('small')`
         font-size: 35px;
     `}
-    ${media.lessThan('small')`
-        font-size: 25px;
+    ${media.greaterThan('medium')`
+        font-size: 50px;    
     `}
 `;
 const largeWrapperAnim = keyframes`
@@ -44,18 +44,18 @@ const smallWrapperAnim = keyframes`
 `;
 export const BannerTextWrapper = styled.div`
     display: ${props => props.page==='home' ? 'block' : 'none'};
-    width: 0;
-    height: 150px;
     text-align: center;
-    animation: ${largeWrapperAnim} 2s 1s forwards;
-    ${media.lessThan('medium')`
+    width: 0;
+    background-color: ${({ theme }) => theme.color.dark_gray};
+    opacity: 0.8;
+    height: 75px;
+    animation: ${smallWrapperAnim} 2s 1s forwards;
+    ${media.greaterThan('small')`
         height: 105px;
         animation: ${mediumWrapperAnim} 2s 1s forwards;
     `}
-    ${media.lessThan('small')`
-        height: 75px;
-        animation: ${smallWrapperAnim} 2s 1s forwards;
+    ${media.greaterThan('medium')`
+        height: 150px;
+        animation: ${largeWrapperAnim} 2s 1s forwards;
     `}
-    background-color: ${({ theme }) => theme.color.dark_gray};
-    opacity: 0.8;
 `;
