@@ -27,12 +27,6 @@ export const CopyRights = styled.div`
     text-align: center;
     background-color: ${({ theme }) => theme.color.black};
 `;
-export const Follow = styled.div`
-    display: flex;
-    align-items: end;
-    justify-content: end;
-    /* padding: 10px; */
-`;
 export const FooterInstagramIcon = styled(FaInstagram)`
     width: 30px;
     height: 30px;

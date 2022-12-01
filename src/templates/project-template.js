@@ -1,6 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import { Main } from '../components';
+import { ComponentInfo, ComponentTitle } from '../elements';
 
 
 export default function ProjectTemplate({ data: { markdownRemark: { frontmatter: { title }, html } } }) {
@@ -8,10 +9,15 @@ export default function ProjectTemplate({ data: { markdownRemark: { frontmatter:
     // console.log(frontmatter)
     return (
         <Main>
-            <div>
+          <section>
+            <ComponentTitle>
                 <h3>{title}</h3>
-            </div>
-            <div dangerouslySetInnerHTML={{ __html: html }} />
+            </ComponentTitle>
+            <ComponentInfo dangerouslySetInnerHTML={{ __html: html }} />
+          </section>
+          <section>
+
+          </section>
         </Main>
     )
 };

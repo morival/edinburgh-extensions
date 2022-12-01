@@ -4,10 +4,8 @@ import { Main, Service } from '../components';
 import { ComponentInfo, ComponentTitle } from '../elements';
 
 
-export default function Services({ data: { site: { siteMetadata: { 
-    services, 
-    quotes: { quote_services },
-    links }},
+export default function Services({ data: { 
+  site: { siteMetadata: { services, quotes: { quote_services } }},
   allFile: { edges } } }) {
     
     const serviceComponents = () => 
@@ -23,7 +21,7 @@ export default function Services({ data: { site: { siteMetadata: {
                 <h3>{quote_services}</h3>
             </ComponentTitle>
             <ComponentInfo>
-              <h4>If you are looking to expand your space for more freedom, you are in the right place. <br/>We can help you to take the first steps. <br/>We will run your dream project from day one to day finish, providing high quality work across all the stages. <br/>We minimise the use of outside contractors to maintain a high level of detail and quality.</h4>
+              <h5>If you are looking to expand your space for more freedom, you are in the right place. <br/>We can help you to take the first steps. <br/>We will run your dream project from day one to day finish, providing high quality work across all the stages. <br/>We minimise the use of outside contractors to maintain a high level of detail and quality.</h5>
             </ComponentInfo>
           </section>
           <section>
@@ -44,10 +42,6 @@ query ServicesQuery {
         subServices
         title
         types
-      }
-      links {
-        link
-        name
       }
       quotes {
         quote_services

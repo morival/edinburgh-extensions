@@ -26,7 +26,7 @@ export const theme = {
 export const ComponentInfo = styled.div`
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
     width: 100%;
     padding: clamp(15px, 4vw, 50px);

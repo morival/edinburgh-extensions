@@ -3,9 +3,8 @@ import { graphql } from 'gatsby'
 import { Main } from '../components'
 import { ComponentTitle } from '../elements'
 
-export default function About({ data: { site: { siteMetadata: { links, quotes: { quote_about } } } } }) {
+export default function About({ data: { site: { siteMetadata: { quotes: { quote_about } } } } }) {
 
-  // const page = links.find(({ link }) => link === "about")
 
   return (
     <Main>
@@ -37,10 +36,6 @@ export const query = graphql`
 query AboutQuery {
   site {
     siteMetadata {
-      links {
-        link
-        name
-      }
       quotes {
         quote_about
       }

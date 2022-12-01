@@ -38,25 +38,13 @@ export const ProjectLink = styled(Link)`
 export const ProjectServices = styled.div`
     display: flex;
     justify-content: center;
-    gap: 20px;
+    width: 100%;
+    background-color: ${({ theme }) => theme.color.orange};
 `;
-export const ProjectTitle = styled.h5`
+export const ProjectTitle = styled.h2`
 
-`;
-export const ProjectsIntro = styled.section`
-
-`;
-export const ProjectsList = styled.section`
-    /* padding-block: 0; */
 `;
 export const ProjectsListFilter = styled.div`
-    /* display: flex;
-    justify-content: center;
-    padding-block: 20px;
-    ${media.lessThan('medium')`
-        flex-direction: column;
-        align-items: center;
-    `} */
     display: flex;
     flex-direction: column;
     justify-content: center;

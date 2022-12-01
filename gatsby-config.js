@@ -19,12 +19,7 @@ module.exports = {
       { name: `services`, link: `services` },
       { name: `our work`, link: `projects` },
       { name: `about us`, link: `about` },
-      { name: `contact us`, link: `contact` }
-      // link_1: `home`,
-      // link_2: `services`,
-      // link_3: `our work`,
-      // link_4: `about us`,
-      // link_5: `contact us`,
+      { name: `contact us`, link: `contact` },
     ],
     services: [
       {

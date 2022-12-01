@@ -4,7 +4,9 @@ import { Banner, ContactDetails, ContactForm, Main } from '../components'
 import { ComponentInfo, ComponentTitle, FlexContainer, SectionBlue } from '../elements';
 
 
-export default function Contact({ data: { site: { siteMetadata: { links, quotes: { quote_contact } } } } }) {
+export default function Contact({ data: { site: { siteMetadata: { 
+  links, 
+  quotes: { quote_contact } } } } }) {
 
   const page = links.find(({ link }) => link === "contact")
 

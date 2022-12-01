@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { graphql } from 'gatsby';
 import { Main, Project } from '../components';
-import { ComponentInfo, ComponentTitle, ProjectsIntro, ProjectsList, ProjectsListFilter, ProjectsListFilterButton } from '../elements';
+import { ComponentInfo, ComponentTitle, ProjectsListFilter, ProjectsListFilterButton } from '../elements';
 
 
 export default function Projects({ location, data: { 
   allMarkdownRemark: { nodes }, 
-  site: { siteMetadata: { links, services, quotes: { quote_projects }} },
+  site: { siteMetadata: { services, quotes: { quote_projects }} },
   allFile: { edges }
 } }) {
-
+  
   const [category, setCategory] = useState('');
 
   const handleChange = (e) => {
@@ -40,26 +40,26 @@ export default function Projects({ location, data: {
   
     // Filter projects by category selected on Services page
     useEffect(() => {
-      setCategory(location.state.filter || '')
-      // console.log(location.state.filter)
+      if (location.state !== null)
+        setCategory(location.state.filter)
     }, [location.state])
     
   return (
       <Main>
-        <ProjectsIntro>
+        <section>
           <ComponentTitle>
               <h3>{quote_projects}</h3>
           </ComponentTitle>
           <ComponentInfo>
             <p>some paragraph...</p>
           </ComponentInfo>
-        </ProjectsIntro>
-        <ProjectsList>
+        </section>
+        <section>
           <ProjectsListFilter>
             {filterCategory()}<ProjectsListFilterButton text="view all" onClick={handleChange} value={null} selected={category===''} />
           </ProjectsListFilter>
           {projectComponents()}
-        </ProjectsList>
+        </section>
       </Main>
   )
 }
@@ -82,10 +82,6 @@ query ProjectsQuery {
   }
   site {
     siteMetadata {
-      links {
-        link
-        name
-      }
       services {
         title
       }

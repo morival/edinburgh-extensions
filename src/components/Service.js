@@ -7,7 +7,7 @@ import { Link } from 'gatsby';
 export function Service({ service: { title, description, types }, edge: { node } }) {
  
     const image = getImage(node)
-    // console.log(types)
+    
     const serviceTypes = () => 
         types.map((type, i) => 
             <ServiceType key={i}>

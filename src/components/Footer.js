@@ -1,5 +1,5 @@
 import React from 'react'
-import { Contact, ContactDetails, CopyRights, Follow, FooterInstagramIcon, FooterWrapper, Logo, MainFooter, Menu, SiteLink, SiteMap, Title } from '../elements';
+import { Contact, ContactDetails, CopyRights, FooterInstagramIcon, FooterWrapper, Logo, MainFooter, Menu, SiteLink, SiteMap, Title } from '../elements';
 import { graphql, useStaticQuery } from 'gatsby';
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
@@ -47,6 +47,9 @@ export const Footer = () => {
         <Contact>
           <Logo to='/'><GatsbyImage image={image} alt="logo" /></Logo>
           <ContactDetails>
+            <div>
+              <a href={instagram} aria-label='Instagram' alt='Instagram'><FooterInstagramIcon /></a>
+            </div>
             <div>Bartek - {phone_1}</div>
             <div>Stan - {phone_2}</div>
             <div>{email}</div>
@@ -57,9 +60,6 @@ export const Footer = () => {
             <Title>menu</Title>
             {siteMapItems}
           </SiteMap>
-        <Follow>
-          <a href={instagram} aria-label='Instagram' alt='Instagram'><FooterInstagramIcon /></a>
-        </Follow>
         </Menu>
       </MainFooter>
       <CopyRights>© {new Date().getFullYear()} {title}. All Rights Reserved.</CopyRights>

@@ -4,7 +4,8 @@ import { Banner, Main } from '../components';
 import { About, Intro, Projects, Services, Testimonials } from '../components/home';
 
 
-export default function IndexPage({ data: { site: { siteMetadata: { links,
+export default function IndexPage({ data: { site: { siteMetadata: { 
+  links,
   services,
   quotes: { quote_home_about, quote_home_services, quote_home_projects, quote_home_testimonials } }}} }) {
 
