@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { graphql } from 'gatsby';
 import { Main, Project } from '../components';
-import { ComponentInfo, ComponentTitle, ProjectsListFilter, ProjectsListFilterButton } from '../elements';
+import { ComponentTitle, ContainerFlexColumn, ProjectsListFilter, ProjectsListFilterButton } from '../elements';
 
 
 export default function Projects({ location, data: { 
@@ -50,9 +50,9 @@ export default function Projects({ location, data: {
           <ComponentTitle>
               <h3>{quote_projects}</h3>
           </ComponentTitle>
-          <ComponentInfo>
+          <ContainerFlexColumn>
             <p>some paragraph...</p>
-          </ComponentInfo>
+          </ContainerFlexColumn>
         </section>
         <section>
           <ProjectsListFilter>

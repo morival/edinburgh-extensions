@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
-import { ContactDetailsWrapper, ContactEmail, ContactTel, ContactContainer } from '../elements';
+import { ContactContainer, ContactWrapper } from '../elements';
 import { MdEmail, MdPhone } from 'react-icons/md';
 
 
@@ -31,24 +31,24 @@ export function ContactDetails(params) {
     const { email, phone_1, phone_2 } = site.siteMetadata.contact
 
     return (
-        <ContactDetailsWrapper>
+        <ContactWrapper>
             <div>
                 <GatsbyImage image={image} alt={file.id} />
             </div>
             <div>
                 <ContactContainer>
                     <MdPhone />
-                    <ContactTel>{phone_1} - Bartek</ContactTel>
+                    <div>{phone_1} - Bartek</div>
                 </ContactContainer>
                 <ContactContainer>
                     <MdPhone />
-                    <ContactTel>{phone_2} - Stan</ContactTel>
+                    <div>{phone_2} - Stan</div>
                 </ContactContainer>
                 <ContactContainer>
                     <MdEmail />
-                    <ContactEmail>{email}</ContactEmail>
+                    <div>{email}</div>
                 </ContactContainer>
             </div>
-        </ContactDetailsWrapper>
+        </ContactWrapper>
     )
 };

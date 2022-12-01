@@ -1,16 +1,23 @@
 import styled from "styled-components";
 import media from "styled-media-query";
 import { Button } from "../components/controls";
+import { ContainerFlexRow, ContainerHalfLarge } from "./ThemeElements";
 
 
+export const ContactContainer = styled(ContainerFlexRow)`
+    align-items: center;
+    padding-block: 5px;
+    gap: 10px;
+    font-size: 1em;
+    ${media.greaterThan('small')`
+        font-size: 1.15em;
+    `}
+`;
 export const ContactFormForm = styled.form`
     max-width: 600px;
     width: 100%;
     ${media.greaterThan('small')`
         padding: 1em;
-    `}
-    ${media.greaterThan('large')`
-        width: 50%;
     `}
 `;
 export const ContactFormInput = styled.input`
@@ -29,6 +36,9 @@ export const ContactFormTextArea = styled.textarea`
     /* ::placeholder {
         color: red;
     } */
+`;
+export const ContactWrapper = styled(ContainerHalfLarge)`
+    align-items: center;
 `;
 export const SubmitButton = styled(Button)`
     width: 100%;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
-import { ServiceButton, ServiceDescription, ServiceDetailsContainer, ServiceImage, ServiceInfoContainer, ServiceTickIcon, ServiceTitle, ServiceType, ServiceTypesContainer, ServiceWrapper } from '../elements';
+import { ContainerHalfLarge, Flex, ServiceButton, ServiceDescription, ServiceDetailsContainer, ServiceTickIcon, ServiceTitle, ServiceTypesContainer, ServiceWrapper } from '../elements';
 import { Link } from 'gatsby';
 
 
@@ -10,10 +10,10 @@ export function Service({ service: { title, description, types }, edge: { node }
     
     const serviceTypes = () => 
         types.map((type, i) => 
-            <ServiceType key={i}>
+            <Flex key={i}>
                 <ServiceTickIcon />
                 <h6>{type}</h6>
-            </ServiceType>
+            </Flex>
         )
 
     // const servicesList = () =>
@@ -23,10 +23,10 @@ export function Service({ service: { title, description, types }, edge: { node }
 
     return (
         <ServiceWrapper id={title}>
-            <ServiceImage className='image'>
+            <ContainerHalfLarge>
                 <GatsbyImage image={image} style={{height:'100%', width:'100%'}} alt={title} />
-            </ServiceImage>
-            <ServiceInfoContainer>
+            </ContainerHalfLarge>
+            <ContainerHalfLarge>
                 <ServiceTitle>
                     {title}
                 </ServiceTitle>
@@ -44,7 +44,7 @@ export function Service({ service: { title, description, types }, edge: { node }
                 <Link to='/projects' state={{ filter: title }}>
                     <ServiceButton text={`VIEW OUR ${title} PROJECTS`}/>
                 </Link>
-            </ServiceInfoContainer>
+            </ContainerHalfLarge>
         </ServiceWrapper>
     )
 };

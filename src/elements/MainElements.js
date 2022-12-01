@@ -12,8 +12,8 @@ export const ContainerWrapper = styled.div`
 `;
 export const FlexContainer = styled.div`
     display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+    /* justify-content: space-evenly; */
+    /* align-items: center; */
     flex-wrap: wrap;
     width: 100%;
 `;

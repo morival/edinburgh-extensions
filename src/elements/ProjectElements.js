@@ -2,16 +2,13 @@ import { Link } from "gatsby";
 import styled, { css } from "styled-components";
 import media from "styled-media-query";
 import { Button } from "../components/controls";
+import { ContainerFlexColumn, ContainerFlexRow } from "./ThemeElements";
 
 export const ProjectDescription = styled.div`
 
 `;
-export const ProjectImage = styled.div`
-    width: 100%;
-`;
-export const ProjectImageCover = styled.div`
+export const ProjectImageCover = styled(ContainerFlexColumn)`
     position: absolute;
-    display: flex;
     align-items: center;
     justify-content: center;
     color: ${({ theme }) => theme.color.white};
@@ -20,7 +17,6 @@ export const ProjectImageCover = styled.div`
     opacity: 0.3;
     top: 0;
     height: 100%;
-    width: 100%;
     transition: .5s ease;
     :hover {
         opacity: 0.8;
@@ -35,18 +31,7 @@ export const ProjectLink = styled(Link)`
         width: 50%;
     `}
 `;
-export const ProjectServices = styled.div`
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    background-color: ${({ theme }) => theme.color.orange};
-`;
-export const ProjectTitle = styled.h2`
-
-`;
-export const ProjectsListFilter = styled.div`
-    display: flex;
-    flex-direction: column;
+export const ProjectsListFilter = styled(ContainerFlexColumn)`
     justify-content: center;
     align-items: center;
     padding: 1em;
@@ -71,6 +56,10 @@ export const ProjectsListFilterButton = styled(Button)`
     ${media.greaterThan('medium')`
         width: 130px;
     `}
+`;
+export const ProjectServices = styled(ContainerFlexRow)`
+    justify-content: center;
+    background-color: ${({ theme }) => theme.color.orange};
 `;
 export const ProjectWrapper = styled.div`
     display: flex;

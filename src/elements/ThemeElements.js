@@ -23,18 +23,40 @@ export const theme = {
         copy: 'Source Sans Pro',
     },
 };
+export const Flex = styled.div`
+    display: flex;
+`;
+export const ContainerFlexColumn = styled.div`
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+`;
+export const ContainerFlexRow = styled.div`
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+`;
+export const ContainerHalfMedium = styled(ContainerFlexColumn)`
+    ${media.greaterThan('medium')`
+        width: 50%;
+    `}
+`;
+export const ContainerHalfLarge = styled(ContainerFlexColumn)`
+    ${media.greaterThan('large')`
+        width: 50%;
+    `}
+`;
 export const ComponentInfo = styled.div`
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
     align-items: center;
     width: 100%;
-    padding: clamp(15px, 4vw, 50px);
+    /* padding: clamp(15px, 4vw, 50px); */
 `;
 export const ComponentInfoBreak = styled(ComponentInfo)`
     ${media.greaterThan('medium')`
         width: 50%;
-        padding: clamp(20px, 2.6vw, 100px);
+        /* padding: clamp(20px, 2.6vw, 100px); */
     `}
 `;
 export const ComponentTitle = styled.div`
@@ -69,10 +91,6 @@ export const GlobalStyle = createGlobalStyle`
     }
     section {
         width: 100%;
-        /* padding-block: 50px; */
-        ${media.lessThan('medium')`
-            /* padding-block: 0; */
-        `}
     }
     h1, h2, h3, h4 {
         font-family: ${({ theme }) => theme.fonts.header}, sans-serif;

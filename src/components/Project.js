@@ -1,7 +1,7 @@
 import React from 'react';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import { getImage } from 'gatsby-plugin-image';
-import { ComponentInfoBreak, ProjectDescription, ProjectImage, ProjectImageCover, ProjectLink, ProjectServices, ProjectTitle, ProjectWrapper } from '../elements';
+import { ContainerFlexColumn, ContainerHalfMedium, ProjectDescription, ProjectImageCover, ProjectLink, ProjectServices, ProjectWrapper } from '../elements';
 
 
 export function Project({ node, project: { html, frontmatter: { 
@@ -18,14 +18,14 @@ export function Project({ node, project: { html, frontmatter: {
     return (
         <ProjectWrapper>
             <ProjectLink to={'/projects/'+slug}>
-                <ProjectImage className='image'>{projectImage()}</ProjectImage>
+                <ContainerFlexColumn className='image'>{projectImage()}</ContainerFlexColumn>
                 <ProjectImageCover className='cover'>{title}</ProjectImageCover>
             </ProjectLink>
-            <ComponentInfoBreak>
-                <ProjectTitle>{location}</ProjectTitle>
+            <ContainerHalfMedium>
+                <h2>{location}</h2>
                 <ProjectServices>{listOfServices()}</ProjectServices>
                 <ProjectDescription dangerouslySetInnerHTML={{ __html: html }} />
-            </ComponentInfoBreak>
+            </ContainerHalfMedium>
         </ProjectWrapper>
     )
 };
