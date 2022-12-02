@@ -2,25 +2,12 @@ import { Link } from "gatsby";
 import styled from "styled-components";
 import media from "styled-media-query";
 import { FaInstagram } from 'react-icons/fa';
+import { ContainerFlexColumn, ContainerHalfLarge, ContainerHalfLargeRow } from "./LayoutElements";
 
 
-export const Contact = styled.div`
-    display: flex;
-    column-gap: 40px;
+export const Contact = styled(ContainerHalfLargeRow)`
+    flex-wrap: wrap;
     padding-block: 30px;
-    ${media.lessThan('large')`
-        flex-direction: column;
-        align-items: center;
-    `}
-    ${media.lessThan('medium')`
-    `}
-    ${media.lessThan('small')`
-    `}
-`;
-export const ContactDetails = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
 `;
 export const CopyRights = styled.div`
     padding: 0.6rem;
@@ -48,28 +35,21 @@ export const Logo = styled(Link)`
         justify-content: start;
     `}
 `;
-export const MainFooter = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    padding: 40px 1rem;
-    ${media.greaterThan('small')`
-        flex-direction: row;
-    `}
-`;
-export const Menu = styled.div`
-    display: flex;
+export const Menu = styled(ContainerHalfLarge)`
     justify-content: space-between;
     gap: 8px; 
 `;
 export const SiteLink = styled(Link)`
     color: ${({ theme }) => theme.color.orange};
 `;
-export const SiteMap = styled.div`
-    margin: auto;
-    min-width: 100px;
+export const SiteMapItems = styled(ContainerFlexColumn)`
+    text-align: center;
+    gap: 0.4em 1em;
+    ${media.between('medium', 'large')`
+        flex-direction: row;
+    `}
 `;
-
 export const Title = styled.div`
+    text-align: center;
     text-transform: uppercase;
 `;

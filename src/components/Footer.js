@@ -1,5 +1,5 @@
 import React from 'react'
-import { Contact, ContactDetails, CopyRights, FooterInstagramIcon, FooterWrapper, Logo, MainFooter, Menu, SiteLink, SiteMap, Title } from '../elements';
+import { Contact, ContainerFlexRowWrap, ContainerHalfMedium, CopyRights, FooterInstagramIcon, FooterWrapper, Logo, MarginAuto, Menu, SiteLink, SiteMapItems, Title } from '../elements';
 import { graphql, useStaticQuery } from 'gatsby';
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
@@ -43,25 +43,27 @@ export const Footer = () => {
 
   return (
     <FooterWrapper>
-      <MainFooter>
+      <ContainerFlexRowWrap>
         <Contact>
-          <Logo to='/'><GatsbyImage image={image} alt="logo" /></Logo>
-          <ContactDetails>
-            <div>
-              <a href={instagram} aria-label='Instagram' alt='Instagram'><FooterInstagramIcon /></a>
-            </div>
-            <div>Bartek - {phone_1}</div>
-            <div>Stan - {phone_2}</div>
-            <div>{email}</div>
-          </ContactDetails>
+          <ContainerHalfMedium>
+            <Logo to='/'><GatsbyImage image={image} alt="logo" /></Logo>
+          </ContainerHalfMedium>
+          <ContainerHalfMedium>
+            <MarginAuto>
+              <div><a href={instagram} aria-label='Instagram' alt='Instagram'><FooterInstagramIcon /></a></div>
+              <div>Bartek - {phone_1}</div>
+              <div>Stan - {phone_2}</div>
+              <div>{email}</div>
+            </MarginAuto>
+          </ContainerHalfMedium>
         </Contact>
         <Menu>
-          <SiteMap>
+          <MarginAuto>
             <Title>menu</Title>
-            {siteMapItems}
-          </SiteMap>
+            <SiteMapItems>{siteMapItems}</SiteMapItems>
+          </MarginAuto>
         </Menu>
-      </MainFooter>
+      </ContainerFlexRowWrap>
       <CopyRights>© {new Date().getFullYear()} {title}. All Rights Reserved.</CopyRights>
     </FooterWrapper>
   )

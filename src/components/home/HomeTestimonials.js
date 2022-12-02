@@ -35,7 +35,6 @@ export function Testimonials({ slogan }) {
             </TestimonialsCarouselText>
         </TestimonialsCarouselItem>)
     }
-    // console.log(allMarkdownRemark.nodes)
 
     return (
         <SectionBlue>

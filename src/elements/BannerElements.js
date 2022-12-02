@@ -1,17 +1,19 @@
 import BackgroundImage from "gatsby-background-image";
 import styled, { keyframes } from "styled-components";
 import media from "styled-media-query";
+import { Flex } from "./LayoutElements";
 
 
 export const BannerImage = styled(BackgroundImage)`
     background-attachment: fixed;
-    width: 100%;
 `;
-export const BannerImageInner = styled.div`
-    display: flex;
+export const BannerImageInner = styled(Flex)`
     justify-content: center;
     align-items: center;
-    height: ${props => props.page==='home' ? '80vh' : '30vh'};
+    height: ${props => props.page==='home' ? '84vh' : '34vh'};
+    ${media.greaterThan('medium')`
+        height: ${props => props.page==='home' ? '80vh' : '30vh'};
+    `}
 `;
 const bannerTextContainer = keyframes`
     33% { opacity: 0; visibility: hidden; }
@@ -21,13 +23,13 @@ const bannerTextContainer = keyframes`
 export const BannerTextContainer = styled.div`
     color: ${props => props.color || 'white'};
     visibility: hidden;
-    font-size: 25px;
+    font-size: 1.5em;
     animation: ${bannerTextContainer} 4s forwards;
     ${media.greaterThan('small')`
-        font-size: 35px;
+        font-size: 2.1em;
     `}
     ${media.greaterThan('medium')`
-        font-size: 50px;    
+        font-size: 3em;    
     `}
 `;
 const largeWrapperAnim = keyframes`

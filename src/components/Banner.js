@@ -34,7 +34,7 @@ export function Banner({ link }) {
     // console.log(page)
 
     return (
-      <BannerImage {...bgImage} preserveStackingContext>
+      <BannerImage Tag={'section'} {...bgImage} preserveStackingContext>
           <BannerImageInner page={page}>
               <BannerTextWrapper page={page}>
                   <BannerTextContainer>Welcome to</BannerTextContainer>

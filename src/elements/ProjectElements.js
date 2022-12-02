@@ -2,7 +2,7 @@ import { Link } from "gatsby";
 import styled, { css } from "styled-components";
 import media from "styled-media-query";
 import { Button } from "../components/controls";
-import { ContainerFlexColumn, ContainerFlexRow } from "./ThemeElements";
+import { ContainerFlexColumn, ContainerFlexRow, ContainerFlexRowWrap } from "./LayoutElements";
 
 export const ProjectDescription = styled.div`
 
@@ -61,9 +61,7 @@ export const ProjectServices = styled(ContainerFlexRow)`
     justify-content: center;
     background-color: ${({ theme }) => theme.color.orange};
 `;
-export const ProjectWrapper = styled.div`
-    display: flex;
-    flex-direction: column;
+export const ProjectWrapper = styled(ContainerFlexRowWrap)`
     ${media.greaterThan('medium')`
             flex-direction: row;
         `}

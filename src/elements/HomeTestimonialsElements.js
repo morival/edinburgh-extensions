@@ -1,6 +1,7 @@
 import { Carousel } from "react-bootstrap";
 import styled from "styled-components";
 import media from "styled-media-query";
+import { Flex } from "./LayoutElements";
 
 export const TestimonialsCarousel = styled(Carousel)`
     
@@ -27,20 +28,17 @@ export const TestimonialsCarouselName = styled.p`
     text-align: end;
     padding-inline-end: 50px;
 `;
-export const TestimonialsCarouselText = styled.div`
+export const TestimonialsCarouselText = styled(Flex)`
     min-height: 400px;
-    display: flex;
     justify-content: center;
     position: relative;
     padding-block: 50px;
 `;
 export const TestimonialsComment = styled.div`
     p {
-        ${media.lessThan('medium')`
-            font-size: 0.95rem;
-        `}
-        ${media.lessThan('small')`
-            font-size: 0.9rem;
+        font-size: 0.9em;
+        ${media.greaterThan('small')`
+            font-size: 0.95em;
         `}
     }
 `;
@@ -52,27 +50,11 @@ export const QuotationMark = styled.div`
     position: absolute;
     top: 0;
     left: 20px;
-    ${media.lessThan('small')`
-        left: 15px;
-    `}
     & ~ & {
         top: auto;
         left: auto;
         right: 20px;
         bottom: 0;
-        ${media.lessThan('small')`
-            right: 15px;
-        `}
     }
     font-size: 3rem;
-`;
-export const TestimonialsSection = styled.section`
-    background-color: ${({ theme }) => theme.color.lightgray};
-    padding-inline: 40px;
-    ${media.lessThan('large')`
-        padding-inline: 20px;
-    `}
-    ${media.lessThan('small')`
-        
-    `}
 `;

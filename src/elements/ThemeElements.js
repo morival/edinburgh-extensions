@@ -1,5 +1,4 @@
-import styled, { createGlobalStyle } from "styled-components";
-import media from "styled-media-query";
+import { createGlobalStyle } from "styled-components";
 
 
 export const theme = {
@@ -23,49 +22,8 @@ export const theme = {
         copy: 'Source Sans Pro',
     },
 };
-export const Flex = styled.div`
-    display: flex;
-`;
-export const ContainerFlexColumn = styled.div`
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-`;
-export const ContainerFlexRow = styled.div`
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-`;
-export const ContainerHalfMedium = styled(ContainerFlexColumn)`
-    ${media.greaterThan('medium')`
-        width: 50%;
-    `}
-`;
-export const ContainerHalfLarge = styled(ContainerFlexColumn)`
-    ${media.greaterThan('large')`
-        width: 50%;
-    `}
-`;
-export const ComponentInfo = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    /* padding: clamp(15px, 4vw, 50px); */
-`;
-export const ComponentInfoBreak = styled(ComponentInfo)`
-    ${media.greaterThan('medium')`
-        width: 50%;
-        /* padding: clamp(20px, 2.6vw, 100px); */
-    `}
-`;
-export const ComponentTitle = styled.div`
-    padding: clamp(15px, 4vw, 50px);
-`;
-export const SectionBlue = styled.section`
-    background: ${({ theme }) => theme.color.dark_blue};
-    color: ${({ theme }) => theme.color.white};
-`;
+
+
 export const GlobalStyle = createGlobalStyle`
     body {
         background: ${({ theme }) => theme.color.white};

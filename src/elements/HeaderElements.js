@@ -6,16 +6,16 @@ export const HeaderWrapper = styled.header`
 `;
 
 export const TopHeader = styled.div`
-    height: 4vh;
-    margin: 0;
-    padding: 0 20px;
-    list-style-type: none;
-    display: flex;
-    justify-content: flex-end;
-    gap: 10px;
-    background-color: ${({ theme }) => theme.color.black};
-    ${media.lessThan('medium')`
-        display: none;
+    display: none;
+    ${media.greaterThan('medium')`
+        display: flex;
+        justify-content: flex-end;
+        margin: 0;
+        padding: 0 20px;
+        height: 4vh;
+        gap: 10px;
+        /* list-style-type: none; */
+        background-color: ${({ theme }) => theme.color.black};
     `}
 `;
 export const TopHeaderItem = styled.div`

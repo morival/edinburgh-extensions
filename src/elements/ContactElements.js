@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import media from "styled-media-query";
 import { Button } from "../components/controls";
-import { ContainerFlexRow, ContainerHalfLarge } from "./ThemeElements";
+import { ContainerFlexRow, ContainerHalfLarge } from "./LayoutElements";
 
 
 export const ContactContainer = styled(ContainerFlexRow)`

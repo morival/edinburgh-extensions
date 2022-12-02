@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql, Link, useStaticQuery } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
-import { ComponentInfo, ComponentTitle, ServiceImageContainer, ServiceImageCover, ServicesWrapper } from '../../elements';
+import { ComponentTitle, ContainerFlexColumn, ServiceImageContainer, ServiceImageCover, ServicesWrapper } from '../../elements';
 
 
 export function Services({ slogan, services }) {
@@ -32,7 +32,7 @@ export function Services({ slogan, services }) {
         <ServiceImageContainer key={i}>
           <Link to={`/services#${service.title}`} >
             {serviceImage()}
-            <ServiceImageCover className='cover'>
+            <ServiceImageCover>
               {service.title}
             </ServiceImageCover>
           </Link>
@@ -46,10 +46,10 @@ export function Services({ slogan, services }) {
             <ComponentTitle>
               <h3>{slogan}</h3>
             </ComponentTitle>
-            <ComponentInfo>
+            <ContainerFlexColumn>
               <h4>We offer a range of services such as building extensions, renovations, conversions as well as full project management.</h4>
               <h4>Our highly skilled team will perfect your project from foundations upwards.</h4>
-            </ComponentInfo>
+            </ContainerFlexColumn>
             <ServicesWrapper>
                 {servicesComponents()}
             </ServicesWrapper>

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import media from 'styled-media-query';
 import { TiTick } from 'react-icons/ti'
-import { ContainerFlexRow } from './ThemeElements';
+import { ContainerFlexRowWrap } from './LayoutElements';
 
 
 export const ServiceDescription = styled.p`
@@ -41,8 +41,7 @@ export const ServiceTypesContainer = styled.div`
     justify-content: space-around;
     gap: 0 2em;
 `;
-export const ServiceWrapper = styled(ContainerFlexRow)`
-    flex-wrap: wrap;
+export const ServiceWrapper = styled(ContainerFlexRowWrap)`
     background-color: ${({ theme }) => theme.color.transparent_dark_blue};
     &:nth-of-type(2n) {
         background-color: ${({ theme }) => theme.color.transparent_orange};
