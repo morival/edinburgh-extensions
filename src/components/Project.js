@@ -12,20 +12,34 @@ export function Project({ node, project: { html, frontmatter: {
 
 
     const image = getImage(node)
-    const projectImage = () => (image ? <GatsbyImage image={image} style={{height:'100%'}} alt={title} /> : null)
+    const projectImage = () => (image && <GatsbyImage image={image} style={{height:'100%'}} alt={title} />)
     const listOfServices = () => (services.split(', ').map((service, i) => <div key={i}>&nbsp;{i!==0 && "|"}&nbsp;{service}</div>))
     
     return (
         <ProjectWrapper>
             <ProjectLink to={'/projects/'+slug}>
                 <ContainerFlexColumn className='image'>{projectImage()}</ContainerFlexColumn>
-                <ProjectImageCover className='cover'>{title}</ProjectImageCover>
+                <ProjectImageCover className='cover'>
+                    <div>{title}</div>
+                    <div>view project</div>
+                </ProjectImageCover>
             </ProjectLink>
-            <ContainerHalfMedium>
-                <h2>{location}</h2>
-                <ProjectServices>{listOfServices()}</ProjectServices>
-                <ProjectDescription dangerouslySetInnerHTML={{ __html: html }} />
-            </ContainerHalfMedium>
         </ProjectWrapper>
     )
+    // return (
+    //     <ProjectWrapper>
+    //         <ProjectLink to={'/projects/'+slug}>
+    //             <ContainerFlexColumn className='image'>{projectImage()}</ContainerFlexColumn>
+    //             <ProjectImageCover className='cover'>
+    //                 <div>{title}</div>
+    //                 <div>view project</div>
+    //             </ProjectImageCover>
+    //         </ProjectLink>
+    //         <ContainerHalfMedium>
+    //             <h2>{location}</h2>
+    //             <ProjectServices>{listOfServices()}</ProjectServices>
+    //             <ProjectDescription dangerouslySetInnerHTML={{ __html: html }} />
+    //         </ContainerHalfMedium>
+    //     </ProjectWrapper>
+    // )
 };

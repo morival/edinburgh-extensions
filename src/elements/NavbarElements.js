@@ -2,44 +2,60 @@ import { Link } from 'gatsby';
 import styled from 'styled-components';
 import media from "styled-media-query";
 
+
+export const MenuIcon = styled.div`
+        z-index: 999;
+        position: absolute;
+        right: 0;
+        transform: translate(-100%, 60%);
+        font-size: 2em;
+        color: ${({ theme }) => theme.color.orange};
+        cursor: pointer;
+        &:hover {
+            color: ${({ theme }) => theme.color.hover};
+        }
+        ${media.greaterThan('medium')`
+            display: none;
+        `}
+`;
 export const NavLink = styled(Link)`
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100%;
-    padding: 1rem;
-    font-size: 1.5rem;
+    padding: 1rem 0;
+    font-size: 2rem;
     text-transform: capitalize;
+    width: 100%;
     z-index: 1;
-    ${media.lessThan('large')`
-        /* font-size: 1.3rem; */
-    `}
-    ${media.lessThan('medium')`
-        width: 100%;
-        padding: 1rem 0;
-        max-width: 350px;
-        font-size: 2rem;
+    ${media.greaterThan('medium')`
+        font-size: 1.5rem;
+        padding: 1rem;
     `}
 `;
 export const NavList = styled.ul`
-    ${media.lessThan('medium')`
-        flex-direction: column;
-        justify-content: center;
-        width: 100%;
-        height: 100vh;
-        position: absolute;
-        top: ${({ click }) => (click ? '0' : '-2000px')};
-        opacity: 1;
-        transition: all 0.3s ease;
-        z-index: 1;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: ${({ click }) => (click ? '0' : '-2000px')};
+    transition: all 0.3s ease;
+    z-index: 1;
+    ${media.greaterThan('medium')`
+        position: relative;
+        top: auto;
+        flex-direction: row;
+        width: auto;
+        height: auto;
     `}
 `;
 export const  NavListItem = styled.li`
     display: flex;
-    height: 100%;
+    height: 10vh;
     position: relative;
-    ${media.lessThan('medium')`
-        height: 80px;
+    ${media.greaterThan('medium')`
+        height: 100%;
     `}
 `;
 export const NavListItemSpan = styled.span`
@@ -76,32 +92,10 @@ export const NavLogoOnHover = styled.div`
         opacity: 1;
     }
 `;
-export const MenuIcon = styled.div`
-    display: none;
-    ${media.lessThan('medium')`
-        z-index: 999;
-        display: block;
-        position: absolute;
-        /* top: 20px; */
-        right: 0;
-        transform: translate(-100%, 60%);
-        font-size: 2rem;
-        color: ${({ theme }) => theme.color.orange};
-        cursor: pointer;
-        &:hover {
-            color: ${({ theme }) => theme.color.hover};
-        }
-    `}
-`;
 export const NavbarSection = styled.nav`
     display: flex;
     justify-content: center;
+    padding: 0;
     height: 16vh;
     gap: 10px;
-    ${media.lessThan('large')`
-        padding: 0;
-    `}
-    ${media.lessThan('medium')`
-        justify-content: center;
-    `}
 `;

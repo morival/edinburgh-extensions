@@ -2,7 +2,7 @@ import { Link } from "gatsby";
 import styled, { css } from "styled-components";
 import media from "styled-media-query";
 import { Button } from "../components/controls";
-import { ContainerFlexColumn, ContainerFlexRow, ContainerFlexRowWrap } from "./LayoutElements";
+import { ContainerFlexColumn, ContainerFlexRow, Flex } from "./LayoutElements";
 
 export const ProjectDescription = styled.div`
 
@@ -27,9 +27,14 @@ export const ProjectLink = styled(Link)`
     justify-content: center;
     position: relative;
     width: 100%;
-    ${media.greaterThan('medium')`
+    /* ${media.greaterThan('medium')`
         width: 50%;
-    `}
+    `} */
+`;
+export const ProjectList = styled.div`
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(367px, 1fr));
+gap: 1em;
 `;
 export const ProjectsListFilter = styled(ContainerFlexColumn)`
     justify-content: center;
@@ -61,8 +66,8 @@ export const ProjectServices = styled(ContainerFlexRow)`
     justify-content: center;
     background-color: ${({ theme }) => theme.color.orange};
 `;
-export const ProjectWrapper = styled(ContainerFlexRowWrap)`
-    ${media.greaterThan('medium')`
+export const ProjectWrapper = styled(Flex)`
+    /* ${media.greaterThan('medium')`
             flex-direction: row;
         `}
     &:nth-of-type(2n) {
@@ -70,5 +75,5 @@ export const ProjectWrapper = styled(ContainerFlexRowWrap)`
         ${media.greaterThan('medium')`
             flex-direction: row-reverse;
         `}
-    }
+    } */
 `;
