@@ -32,9 +32,21 @@ export const ProjectLink = styled(Link)`
     `} */
 `;
 export const ProjectList = styled.div`
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(367px, 1fr));
-gap: 1em;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    justify-content: center;
+    gap: 1em;
+    ${media.greaterThan('small')`
+        grid-template-columns: repeat(auto-fit, minmax(351px, 1fr));
+        padding: 1em;
+    `}
+    ${media.greaterThan('medium')`
+        /* gap: 2em; */
+    `}
+    ${media.greaterThan('large')`
+        /* grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); */
+        /* grid-template-columns: repeat(auto-fit, minmax(367px, 1fr)); */
+    `}
 `;
 export const ProjectsListFilter = styled(ContainerFlexColumn)`
     justify-content: center;
@@ -67,13 +79,9 @@ export const ProjectServices = styled(ContainerFlexRow)`
     background-color: ${({ theme }) => theme.color.orange};
 `;
 export const ProjectWrapper = styled(Flex)`
-    /* ${media.greaterThan('medium')`
-            flex-direction: row;
-        `}
-    &:nth-of-type(2n) {
-        background-color: ${({ theme }) => theme.color.lightgray};
-        ${media.greaterThan('medium')`
-            flex-direction: row-reverse;
-        `}
-    } */
+    height: 100%;
+    width: 100%;
+    max-width: 617px;
+    margin: auto;
+    /* ${props => props.number && 'width: 100%; max-width: 617px; margin: auto;'} */
 `;
