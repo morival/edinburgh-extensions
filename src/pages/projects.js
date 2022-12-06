@@ -15,7 +15,7 @@ export default function Projects({ location, data: {
   const handleChange = (e) => {
     setCategory(e.target.value)
   }
-
+  // console.log(location.state)
   const filterCategory = () => services.map(({ title }) => {
     return (
       <ProjectsListFilterButton 
@@ -23,11 +23,11 @@ export default function Projects({ location, data: {
       onClick={handleChange} 
       value={title}
       // check if this category is selected
-      selected={title===category} 
+      selected={category===title} 
       key={title} />
     )
   })
-
+  
   const projectComponents = () => {
     const filterProjects = nodes.filter(project => project.frontmatter.services.split(', ').some(service => service === category))
     const mapProjects = (category ? filterProjects : nodes).map((project, i) => {
@@ -37,13 +37,13 @@ export default function Projects({ location, data: {
     })
     return mapProjects
   }
-  
-    // Filter projects by category selected on Services page
-    useEffect(() => {
-      if (location.state !== null)
-        setCategory(location.state.filter)
+  // Filter projects by category selected on Services page
+  useEffect(() => {
+    if (location.state.filter !== undefined) {
+      setCategory(location.state.filter)
+    }
     }, [location.state])
-    
+
   return (
       <Main>
         <section>
