@@ -6,11 +6,15 @@ import { BannerImage, BannerImageInner, BannerTextContainer, BannerTextWrapper }
 
 
 export function Banner({ location }) {
-    
-    const { site, allFile } = useStaticQuery(graphql`
+
+  const { site, allFile } = useStaticQuery(graphql`
       query BannerQuery {
         site {
           siteMetadata {
+            links {
+              link
+              name
+            }
             title
           }
         }
@@ -26,25 +30,36 @@ export function Banner({ location }) {
         }
       }
     `);
-    const title = site.siteMetadata.title
-    // Generate page path without '/'. Replace empty path with 'home'
-    const path = location.pathname.slice(1) || "home"
-    // If Page is a Project Template, replace path with 'slug' of the Project
-    const link = path.slice(0, 9)==="projects/" ? path.slice(9) : path
-    // Find the banner node in 'banners' folder
-    const banner = allFile.edges.find(({ node }) => node.name.includes(link))
-    // Convert banner node into an image
-    const bgImage = convertToBgImage(getImage(banner.node))
-    console.log(link)
+  const title = site.siteMetadata.title
+  // Generate page path without '/'. Replace empty path with 'home'
+  const path = location.pathname.slice(1) || "home"
+  // If Page is a Project Template, replace path with 'slug' of the Project
+  const link = path.slice(0, 9) === "projects/" ? path.slice(9) : path
+  // Find the banner node in 'banners' folder
+  const banner = allFile.edges.find(({ node }) => node.name.includes(link))
+  // Convert banner node into an image
+  const bgImage = convertToBgImage(getImage(banner.node))
+  const page = site.siteMetadata.links.find(page => page.link === link)
+  const pageName = (page && page.name) || link
+  console.log(pageName)
+  const textWrapper = () =>
+    link === 'home' ?
+      <BannerTextWrapper>
+        <BannerTextContainer>Welcome to</BannerTextContainer>
+        <BannerTextContainer color='#FC832B'>{title.toUpperCase()}</BannerTextContainer>
+      </BannerTextWrapper>
+      :
+      <BannerTextWrapper>
+        <BannerTextContainer>{pageName}</BannerTextContainer>
+        {/* <BannerTextContainer>{ pageName }</BannerTextContainer> */}
+      </BannerTextWrapper>
 
-    return (
-      <BannerImage Tag={'section'} {...bgImage} preserveStackingContext>
-          <BannerImageInner page={link}>
-              <BannerTextWrapper page={link}>
-                  <BannerTextContainer>Welcome to</BannerTextContainer>
-                  <BannerTextContainer color='#FC832B'>{title.toUpperCase()}</BannerTextContainer>
-              </BannerTextWrapper>
-          </BannerImageInner>
-      </BannerImage>
-    )
+
+  return (
+    <BannerImage Tag={'section'} {...bgImage} preserveStackingContext>
+      <BannerImageInner page={link}>
+        {textWrapper()}
+      </BannerImageInner>
+    </BannerImage>
+  )
 };

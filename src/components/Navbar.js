@@ -34,9 +34,9 @@ export const Navbar = () => {
   const hoverIconPath = "Icon_On_Hover.png"
   const image = getImage(allFile.edges.find(edge => edge.node.relativePath === iconPath).node)
   const hoverImage = getImage(allFile.edges.find(edge => edge.node.relativePath === hoverIconPath).node)
-  const navListItems = site.siteMetadata.links.map(page => {
-    return page.link !== 'home' ? <NavListItem key={page.link}><NavLink to={`/${page.link}`}>{page.name}</NavLink><NavListItemSpan /></NavListItem> : null
-  })
+  const navListItems = site.siteMetadata.links.map(page => (
+    page.link !== 'home' && <NavListItem key={page.link}><NavLink to={`/${page.link}`}>{page.name}</NavLink><NavListItemSpan /></NavListItem>
+  ))
 
   const [click, setClick] = useState(false)
 
