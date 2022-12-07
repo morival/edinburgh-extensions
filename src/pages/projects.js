@@ -73,10 +73,10 @@ query ProjectsQuery {
     nodes {
       html
       frontmatter {
-        title
         location
         services
         slug
+        title
         thumb
       }
       id

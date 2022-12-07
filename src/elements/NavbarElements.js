@@ -8,7 +8,7 @@ export const MenuIcon = styled.div`
         position: absolute;
         right: 0;
         transform: translate(-100%, 60%);
-        font-size: 2em;
+        font-size: 4.5vh;
         color: ${({ theme }) => theme.color.orange};
         cursor: pointer;
         &:hover {

@@ -4,9 +4,7 @@ import media from "styled-media-query";
 import { Button } from "../components/controls";
 import { ContainerFlexColumn, ContainerFlexRow, Flex } from "./LayoutElements";
 
-export const ProjectDescription = styled.div`
 
-`;
 export const ProjectImageCover = styled(ContainerFlexColumn)`
     position: absolute;
     align-items: center;
@@ -76,7 +74,7 @@ export const ProjectsListFilterButton = styled(Button)`
 `;
 export const ProjectServices = styled(ContainerFlexRow)`
     justify-content: center;
-    background-color: ${({ theme }) => theme.color.orange};
+    /* background-color: ${({ theme }) => theme.color.orange}; */
 `;
 export const ProjectWrapper = styled(Flex)`
     height: 100%;
