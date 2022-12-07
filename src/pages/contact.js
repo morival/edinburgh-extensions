@@ -1,18 +1,17 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { Banner, ContactDetails, ContactForm, Main } from '../components'
+import { ContactDetails, ContactForm, Main } from '../components'
 import { ComponentInfo, ComponentTitle, FlexContainer, SectionBlue } from '../elements';
 
 
 export default function Contact({ data: { site: { siteMetadata: { 
-  links, 
+  // links, 
   quotes: { quote_contact } } } } }) {
 
-  const page = links.find(({ link }) => link === "contact")
+  // const page = links.find(({ link }) => link === "contact")
 
   return (
     <Main>
-      <Banner link={page.link} />
       <SectionBlue>
         <ComponentTitle>
           <h3>Got A Project In Mind?</h3>

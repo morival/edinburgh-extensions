@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { Banner, Main } from '../components';
+import { Main } from '../components';
 import { ComponentInfo, ComponentTitle, ProjectServices } from '../elements';
 
 
@@ -12,7 +12,6 @@ export default function ProjectTemplate({ data: { markdownRemark: { html, frontm
 
   return (
     <Main>
-      {/* <Banner /> */}
       <section>
         <ComponentTitle>
           <h3>{title}</h3>

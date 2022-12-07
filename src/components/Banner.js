@@ -5,10 +5,10 @@ import { convertToBgImage } from 'gbimage-bridge';
 import { BannerImage, BannerImageInner, BannerTextContainer, BannerTextWrapper } from '../elements';
 
 
-export function Banner({ link }) {
+export function Banner({ location }) {
     
     const { site, allFile } = useStaticQuery(graphql`
-      query LayoutQuery {
+      query BannerQuery {
         site {
           siteMetadata {
             title
@@ -27,16 +27,20 @@ export function Banner({ link }) {
       }
     `);
     const title = site.siteMetadata.title
-    
+    // Generate page path without '/'. Replace empty path with 'home'
+    const path = location.pathname.slice(1) || "home"
+    // If Page is a Project Template, replace path with 'slug' of the Project
+    const link = path.slice(0, 9)==="projects/" ? path.slice(9) : path
+    // Find the banner node in 'banners' folder
     const banner = allFile.edges.find(({ node }) => node.name.includes(link))
+    // Convert banner node into an image
     const bgImage = convertToBgImage(getImage(banner.node))
-    const page = link
-    // console.log(page)
+    console.log(link)
 
     return (
       <BannerImage Tag={'section'} {...bgImage} preserveStackingContext>
-          <BannerImageInner page={page}>
-              <BannerTextWrapper page={page}>
+          <BannerImageInner page={link}>
+              <BannerTextWrapper page={link}>
                   <BannerTextContainer>Welcome to</BannerTextContainer>
                   <BannerTextContainer color='#FC832B'>{title.toUpperCase()}</BannerTextContainer>
               </BannerTextWrapper>
