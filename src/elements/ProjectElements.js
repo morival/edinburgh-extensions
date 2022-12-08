@@ -22,8 +22,13 @@ export const FilterListButton = styled(Button)`
     padding: 0;
     color: ${({ theme }) => theme.color.orange};
     background-color: transparent;
+    z-index: 1;
 `;
 export const FilterListItem = styled.li`
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 2em;
     /* ${(props) => {
         switch (props.selected) {
             case true:
@@ -36,11 +41,22 @@ export const FilterListItem = styled.li`
                 `;
         }
     }} */
-    /* height: 1em; */
-    /* width: 180px;
-    ${media.greaterThan('medium')`
-        width: 130px;
-    `} */
+`;
+export const FilterListItemSpan = styled.span`
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-style: solid;
+    border-color: ${({ theme }) => theme.color.hover};
+    border-top-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
+    border-right-width: 0;
+    bottom: 0;
+    transition: .5s ease;
+    li:hover & {
+        border-bottom-width: 10px;
+    }
 `;
 export const ProjectImageCover = styled(ContainerFlexColumn)`
     position: absolute;

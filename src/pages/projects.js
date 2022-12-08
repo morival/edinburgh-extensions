@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { graphql } from 'gatsby';
 import { Main, Project } from '../components';
-import { ComponentTitle, ContainerFlexColumn, FilterList, FilterListButton, FilterListItem, ProjectList, SectionBlue } from '../elements';
+import { ComponentTitle, ContainerFlexColumn, FilterList, FilterListButton, FilterListItem, FilterListItemSpan, ProjectList, SectionBlue } from '../elements';
 
 
 export default function Projects({ location, data: {
@@ -20,10 +20,11 @@ export default function Projects({ location, data: {
   const filterCategory = () => services.map(({ title }) => (
     <FilterListItem key={title}>
       <FilterListButton
-      onClick={handleChange}
-      value={title}
-      selected={category === title} 
-      text={title} />
+        onClick={handleChange}
+        value={title}
+        selected={category === title}
+        text={title} />
+      <FilterListItemSpan />
     </FilterListItem>
   ))
 
@@ -56,6 +57,7 @@ export default function Projects({ location, data: {
         <FilterList>
           <FilterListItem>
             <FilterListButton onClick={handleChange} value={null} selected={category === null} text="view all" />
+            <FilterListItemSpan />
           </FilterListItem>
           {filterCategory()}
         </FilterList>
