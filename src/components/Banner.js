@@ -39,9 +39,12 @@ export function Banner({ location }) {
   const banner = allFile.edges.find(({ node }) => node.name.includes(link))
   // Convert banner node into an image
   const bgImage = convertToBgImage(getImage(banner.node))
+
+  // Find the name of the page
   const page = site.siteMetadata.links.find(page => page.link === link)
   const pageName = (page && page.name) || link
-  console.log(pageName)
+  // console.log(pageName)
+  
   const textWrapper = () =>
     link === 'home' ?
       <BannerTextWrapper>
@@ -51,7 +54,6 @@ export function Banner({ location }) {
       :
       <BannerTextWrapper>
         <BannerTextContainer>{pageName}</BannerTextContainer>
-        {/* <BannerTextContainer>{ pageName }</BannerTextContainer> */}
       </BannerTextWrapper>
 
 

@@ -21,7 +21,7 @@ export function Project({ node, project: { html, frontmatter: {
                 <ContainerFlexColumn className='image'>{projectImage()}</ContainerFlexColumn>
                 <ProjectImageCover className='cover'>
                     <div>{location}</div>
-                    {/* <div>view project</div> */}
+                    {/* {location} */}
                 </ProjectImageCover>
             </ProjectLink>
         </ProjectWrapper>

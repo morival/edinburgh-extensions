@@ -7,7 +7,8 @@ export function Button({ text, onClick, ...other }) {
         <button
         onClick={onClick}
         {...other}>
-            {text.toUpperCase()}
+            {text}
+            {/* {text.toUpperCase()} */}
         </button>
     )
 };

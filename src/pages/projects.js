@@ -1,68 +1,71 @@
 import React, { useEffect, useState } from 'react';
 import { graphql } from 'gatsby';
 import { Main, Project } from '../components';
-import { ComponentTitle, ContainerFlexColumn, ProjectList, ProjectsListFilter, ProjectsListFilterButton } from '../elements';
+import { ComponentTitle, ContainerFlexColumn, FilterList, FilterListButton, FilterListItem, ProjectList, SectionBlue } from '../elements';
 
 
-export default function Projects({ location, data: { 
-  allMarkdownRemark: { nodes }, 
-  site: { siteMetadata: { services, quotes: { quote_projects }} },
+export default function Projects({ location, data: {
+  allMarkdownRemark: { nodes },
+  site: { siteMetadata: { services, quotes: { quote_projects } } },
   allFile: { edges }
 } }) {
-  
-  const [category, setCategory] = useState('');
+
+  const [category, setCategory] = useState(null);
 
   const handleChange = (e) => {
+    console.log(e.target.value)
     setCategory(e.target.value)
   }
   // console.log(location.state)
-  const filterCategory = () => services.map(({ title }) => {
-    return (
-      <ProjectsListFilterButton 
-      text={title} 
-      onClick={handleChange} 
+  const filterCategory = () => services.map(({ title }) => (
+    <FilterListItem key={title}>
+      <FilterListButton
+      onClick={handleChange}
       value={title}
-      // check if this category is selected
-      selected={category===title} 
-      key={title} />
-    )
-  })
-  
+      selected={category === title} 
+      text={title} />
+    </FilterListItem>
+  ))
+
   const projectComponents = () => {
     const filterProjects = nodes.filter(project => project.frontmatter.services.split(', ').some(service => service === category))
     const mapProjects = (category ? filterProjects : nodes).map((project, i) => {
-      const edge = edges.find(({node}) => node.name === project.frontmatter.thumb)
+      const edge = edges.find(({ node }) => node.name === project.frontmatter.thumb)
       const node = edge ? edge.node : undefined;
       return <Project project={project} node={node} key={project.id} />
     })
     return mapProjects
   }
+
   // Filter projects by category selected on Services page
   useEffect(() => {
     if (location.state.filter !== undefined) {
       setCategory(location.state.filter)
     }
-    }, [location.state])
+  }, [location.state])
 
   return (
-      <Main>
-        <section>
-          <ComponentTitle>
-              <h3>{quote_projects}</h3>
-          </ComponentTitle>
-          <ContainerFlexColumn>
-            <p>some paragraph...</p>
-          </ContainerFlexColumn>
-        </section>
-        <section>
-          <ProjectsListFilter>
-            {filterCategory()}<ProjectsListFilterButton text="view all" onClick={handleChange} value={null} selected={category===''} />
-          </ProjectsListFilter>
-          <ProjectList>
-            {projectComponents()}
-          </ProjectList>
-        </section>
-      </Main>
+    <Main>
+      <SectionBlue>
+        <ComponentTitle>
+          <h3>{quote_projects}</h3>
+        </ComponentTitle>
+        <ContainerFlexColumn>
+          Previous Projects
+        </ContainerFlexColumn>
+        <FilterList>
+          <FilterListItem>
+            <FilterListButton onClick={handleChange} value={null} selected={category === null} text="view all" />
+          </FilterListItem>
+          {filterCategory()}
+        </FilterList>
+      </SectionBlue>
+      <section>
+        <ProjectList>
+          {projectComponents()}
+        </ProjectList>
+      </section>
+    </Main>
   )
 }
 

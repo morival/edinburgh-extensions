@@ -8,7 +8,6 @@ export const ServiceButton = styled(Button)`
 `;
 export const ServiceImageCover = styled(ContainerFlexColumn)`
     position: absolute;
-    align-items: center;
     justify-content: center;
     color: ${({ theme }) => theme.color.white};
     text-transform: capitalize;
