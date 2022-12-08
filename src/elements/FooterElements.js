@@ -1,5 +1,5 @@
 import { Link } from "gatsby";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import media from "styled-media-query";
 import { FaInstagram } from 'react-icons/fa';
 import { ContainerFlexColumn, ContainerHalfLarge, ContainerHalfLargeRow } from "./LayoutElements";
@@ -41,7 +41,18 @@ export const Menu = styled(ContainerHalfLarge)`
 `;
 export const SiteLink = styled(Link)`
     text-transform: capitalize;
-    color: ${({ theme }) => theme.color.orange};
+    ${(props) => {
+        switch (props.selected) {
+            case true:
+                return css`
+                    color: ${({ theme }) => theme.color.hover};
+                `;
+            default:
+                return css`
+                    color: ${({ theme }) => theme.color.orange};
+                `;
+        }
+    }}
 `;
 export const SiteMapItems = styled(ContainerFlexColumn)`
     text-align: center;

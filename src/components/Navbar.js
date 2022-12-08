@@ -38,7 +38,6 @@ export const Navbar = ({ location }) => {
   const hoverImage = getImage(allFile.edges.find(edge => edge.node.relativePath === hoverIconPath).node)
   
   const path = location.pathname.slice(1)
-  // console.log(path)
   const navListItems = site.siteMetadata.links.map(page => (
     page.link !== 'home' && <NavListItem key={page.link}>
       <NavLink to={`/${page.link}`} selected={page.link===path}>{page.name}</NavLink>

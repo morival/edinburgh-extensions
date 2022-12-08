@@ -37,8 +37,9 @@ export const Footer = ({ location }) => {
   const { phone_1, phone_2, email } = site.siteMetadata.contact
   const { instagram } = site.siteMetadata.social
 
+  const path = location.pathname.slice(1) || "home"
   const siteMapItems = site.siteMetadata.links.map(page => {
-    return <div key={page.link}><SiteLink to={page.link === 'home' ? `/` : `/${page.link}`}>{page.name}</SiteLink></div>
+    return <div key={page.link}><SiteLink to={page.link === 'home' ? `/` : `/${page.link}`} selected={page.link===path}>{page.name}</SiteLink></div>
   })
 
   return (
