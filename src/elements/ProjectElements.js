@@ -20,7 +20,19 @@ export const FilterList = styled.ul`
 export const FilterListButton = styled(Button)`
     border: 0;
     padding: 0;
-    color: ${({ theme }) => theme.color.orange};
+    ${(props) => {
+        switch (props.selected) {
+            case true:
+                return css`
+                    color: ${({ theme }) => theme.color.hover};
+                `;
+            default:
+                return css`
+                    color: ${({ theme }) => theme.color.orange};
+                `;
+        }
+    }}
+    /* color: ${({ theme }) => theme.color.orange}; */
     background-color: transparent;
     z-index: 1;
 `;
@@ -28,19 +40,7 @@ export const FilterListItem = styled.li`
     position: relative;
     display: flex;
     flex-direction: column;
-    height: 2em;
-    /* ${(props) => {
-        switch (props.selected) {
-            case true:
-                return css`
-                    background-color: ${({ theme }) => theme.color.gray};
-                `;
-            default:
-                return css`
-                    background-color: ${({ theme }) => theme.color.lightgray};
-                `;
-        }
-    }} */
+    height: 2.5em;
 `;
 export const FilterListItemSpan = styled.span`
     position: absolute;
