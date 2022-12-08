@@ -4,7 +4,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 
-export const Footer = () => {
+export const Footer = ({ location }) => {
 
   const { file, site } = useStaticQuery(graphql`
   query FooterQuery {

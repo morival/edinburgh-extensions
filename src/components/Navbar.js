@@ -5,38 +5,45 @@ import { FaTimes, FaBars } from 'react-icons/fa';
 import { MenuIcon, NavbarSection, NavLink, NavList, NavListItem, NavListItemSpan, NavLogo, NavLogoContainer, NavLogoOnHover } from '../elements';
 
 
-export const Navbar = () => {
+export const Navbar = ({ location }) => {
 
   const { site, allFile } = useStaticQuery(graphql`
-  query NavQuery {
-    site {
-      siteMetadata {
-        links {
-          link
-          name
+    query NavQuery {
+      site {
+        siteMetadata {
+          links {
+            link
+            name
+          }
         }
       }
-    }
-    allFile(filter: {name: {glob: "Icon*"}}) {
-      edges {
-        node {
-          id
-          relativePath
-          childImageSharp {
-            gatsbyImageData(width: 512, layout: CONSTRAINED, placeholder: BLURRED)
+      allFile(filter: {name: {glob: "Icon*"}}) {
+        edges {
+          node {
+            id
+            relativePath
+            childImageSharp {
+              gatsbyImageData(width: 512, layout: CONSTRAINED, placeholder: BLURRED)
+            }
           }
         }
       }
     }
-  }
   `);
+
+  // console.log(location)
   const iconPath = "Icon_Transparent.png"
   const hoverIconPath = "Icon_On_Hover.png"
   const image = getImage(allFile.edges.find(edge => edge.node.relativePath === iconPath).node)
   const hoverImage = getImage(allFile.edges.find(edge => edge.node.relativePath === hoverIconPath).node)
   
+  const path = location.pathname.slice(1)
+  // console.log(path)
   const navListItems = site.siteMetadata.links.map(page => (
-    page.link !== 'home' && <NavListItem key={page.link}><NavLink to={`/${page.link}`}>{page.name}</NavLink><NavListItemSpan /></NavListItem>
+    page.link !== 'home' && <NavListItem key={page.link}>
+      <NavLink to={`/${page.link}`} selected={page.link===path}>{page.name}</NavLink>
+      <NavListItemSpan />
+    </NavListItem>
   ))
 
   const [click, setClick] = useState(false)

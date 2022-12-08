@@ -40,6 +40,7 @@ export const Menu = styled(ContainerHalfLarge)`
     gap: 8px; 
 `;
 export const SiteLink = styled(Link)`
+    text-transform: capitalize;
     color: ${({ theme }) => theme.color.orange};
 `;
 export const SiteMapItems = styled(ContainerFlexColumn)`

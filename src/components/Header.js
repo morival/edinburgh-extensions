@@ -5,7 +5,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 import { MdPhoneIphone, MdOutlineEmail } from 'react-icons/md';
 
 
-export const Header = () => {
+export const Header = ({ location }) => {
 
   const data = useStaticQuery(graphql`
   query HeaderQuery {
@@ -30,7 +30,7 @@ export const Header = () => {
         <TopHeaderItem><MdPhoneIphone />Stan - {phone_2}</TopHeaderItem>
         <TopHeaderItem><MdOutlineEmail />{email}</TopHeaderItem>
       </TopHeader>
-      <Navbar/>
+      <Navbar location={location} />
     </HeaderWrapper>
   )
 };

@@ -10,10 +10,10 @@ export const Layout = ({ children, location }) => {
   return (
     <ParallaxProvider>
       <LayoutWrapper>
-        <Header />
+        <Header location={location} />
         <Banner location={location} />
         {children}
-        <Footer />
+        <Footer location={location} />
       </LayoutWrapper>
     </ParallaxProvider>
   )

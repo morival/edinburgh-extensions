@@ -11,13 +11,12 @@ export const FilterList = styled.ul`
     align-items: center;
     font-size: 0.75em;
     gap: 0.5em;
-    /* padding: 1em; */
-    /* height: 2em; */
     ${media.greaterThan('small')`
         font-size: 1.1em;
     `}
 `;
 export const FilterListButton = styled(Button)`
+    text-transform: capitalize;
     border: 0;
     padding: 0;
     ${(props) => {
@@ -32,7 +31,6 @@ export const FilterListButton = styled(Button)`
                 `;
         }
     }}
-    /* color: ${({ theme }) => theme.color.orange}; */
     background-color: transparent;
     z-index: 1;
 `;
@@ -90,23 +88,14 @@ export const ProjectList = styled.div`
         grid-template-columns: repeat(auto-fit, minmax(351px, 1fr));
         padding: 1em;
     `}
-    ${media.greaterThan('medium')`
-        /* gap: 2em; */
-    `}
-    ${media.greaterThan('large')`
-        /* grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); */
-        /* grid-template-columns: repeat(auto-fit, minmax(367px, 1fr)); */
-    `}
 `;
 
 export const ProjectServices = styled(ContainerFlexRow)`
     justify-content: center;
-    /* background-color: ${({ theme }) => theme.color.orange}; */
 `;
 export const ProjectWrapper = styled(Flex)`
     height: 100%;
     width: 100%;
     max-width: 617px;
     margin: auto;
-    /* ${props => props.number && 'width: 100%; max-width: 617px; margin: auto;'} */
 `;

@@ -13,7 +13,7 @@ export default function Projects({ location, data: {
   const [category, setCategory] = useState(null);
 
   const handleChange = (e) => {
-    console.log(e.target.value)
+    // console.log(e.target.value)
     setCategory(e.target.value)
   }
   // console.log(location.state)

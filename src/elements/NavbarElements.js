@@ -1,5 +1,5 @@
 import { Link } from 'gatsby';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import media from "styled-media-query";
 
 
@@ -32,6 +32,18 @@ export const NavLink = styled(Link)`
         font-size: 1.5rem;
         padding: 1rem;
     `}
+    ${(props) => {
+        switch (props.selected) {
+            case true:
+                return css`
+                    color: ${({ theme }) => theme.color.hover};
+                `;
+            default:
+                return css`
+                    color: ${({ theme }) => theme.color.orange};
+                `;
+        }
+    }}
 `;
 export const NavList = styled.ul`
     flex-direction: column;
