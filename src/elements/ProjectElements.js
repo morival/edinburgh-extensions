@@ -2,7 +2,7 @@ import { Link } from "gatsby";
 import styled, { css } from "styled-components";
 import media from "styled-media-query";
 import { Button } from "../components/controls";
-import { ContainerFlexColumn, ContainerFlexRow, Flex } from "./LayoutElements";
+import { ContainerFlexColumn, ContainerFlexRow } from "./LayoutElements";
 
 
 export const FilterList = styled.ul`
@@ -56,6 +56,15 @@ export const FilterListItemSpan = styled.span`
         border-bottom-width: 10px;
     }
 `;
+export const ProjectImageContainer = styled.div`
+    /* position: relative; */
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    max-width: 617px;
+    margin: auto;
+`;
 export const ProjectImageCover = styled(ContainerFlexColumn)`
     position: absolute;
     justify-content: end;
@@ -74,10 +83,13 @@ export const ProjectImageCover = styled(ContainerFlexColumn)`
     }
 `;
 export const ProjectLink = styled(Link)`
+    position: relative;
     display: flex;
     justify-content: center;
-    position: relative;
+    height: 100%;
     width: 100%;
+    max-width: 617px;
+    margin: auto;
 `;
 export const ProjectList = styled.div`
     display: grid;
@@ -89,13 +101,16 @@ export const ProjectList = styled.div`
         padding: 1em;
     `}
 `;
-
+export const ProjectServiceLink = styled(Link)`
+    color: ${({ theme }) => theme.color.orange};    
+`;
 export const ProjectServices = styled(ContainerFlexRow)`
     justify-content: center;
+    padding: 1em;
 `;
-export const ProjectWrapper = styled(Flex)`
-    height: 100%;
-    width: 100%;
-    max-width: 617px;
-    margin: auto;
-`;
+// export const ProjectWrapper = styled(Flex)`
+//     height: 100%;
+//     width: 100%;
+//     max-width: 617px;
+//     margin: auto;
+// `;
