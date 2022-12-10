@@ -2,6 +2,7 @@ export * from './Banner';
 export * from './ContactDetails';
 export * from './ContactForm';
 export * from './Main';
+export * from './Modal';
 export * from './Footer';
 export * from './Header';
 export * from './Layout';

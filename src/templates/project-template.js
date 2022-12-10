@@ -1,17 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { graphql } from 'gatsby';
-import { Main } from '../components';
+import { Main, Modal } from '../components';
 import { ComponentInfo, ContainerFlexColumn, Flex, ProjectImageContainer, ProjectList, ProjectServiceLink, ProjectServices, SectionBlue } from '../elements';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 
-export default function ProjectTemplate({ data: { 
+export default function ProjectTemplate({ data: {
   markdownRemark: { html, frontmatter: { location, services, slug, title, thumb } },
   allFile: { nodes } } }) {
 
-  // console.log(nodes)
+  const [modalShow, setModalShow] = useState(false)
+
   
-  const listOfServices = () => (services.split(', ').map((service, i) => 
+
+  const listOfServices = () => (services.split(', ').map((service, i) =>
     <Flex key={i}>
       {i !== 0 && <div>&nbsp;|&nbsp;</div>}
       <ProjectServiceLink to={`/services#${service}`} >
@@ -20,11 +22,16 @@ export default function ProjectTemplate({ data: {
     </Flex>
   ))
 
-  const projectGallery = () => nodes.map((node, i) => node && <ProjectImageContainer  key={i}>
-    <ContainerFlexColumn>
-      <GatsbyImage image={getImage(node)} alt={node.name} />
-    </ContainerFlexColumn>
-  </ProjectImageContainer>)
+  const projectGallery = () => nodes.map((node, i) => node &&
+    <ProjectImageContainer onClick={handleClick} key={i}>
+      <ContainerFlexColumn>
+        <GatsbyImage image={getImage(node)} alt={node.name} />
+      </ContainerFlexColumn>
+    </ProjectImageContainer>
+  )
+
+  const handleClick = (e) => setModalShow(e.target.alt)
+  const handleClose = () => setModalShow(false)
 
   return (
     <Main>
@@ -36,6 +43,7 @@ export default function ProjectTemplate({ data: {
         <ProjectList>
           {projectGallery()}
         </ProjectList>
+        <Modal nodes={nodes} show={modalShow} fullscreen={'md-down'} onHide={handleClose} />
       </section>
     </Main>
   )
@@ -57,7 +65,7 @@ query ProjectTemplateQuery($slug: String) {
   allFile(filter: {relativeDirectory: {ne: "", eq: $slug}}) {
     nodes {
       childImageSharp {
-        gatsbyImageData(width: 768, layout: FULL_WIDTH, placeholder: BLURRED)
+        gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
       }
       name
     }

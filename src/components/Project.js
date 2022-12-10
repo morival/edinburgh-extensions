@@ -10,7 +10,7 @@ export function Project({ node, project: { html, frontmatter: {
     // services, 
     slug } } }) {
 
-    console.log(node)
+
     const image = getImage(node)
     const projectImage = () => (image && <GatsbyImage image={image} style={{height:'100%'}} alt={title} />)
     // const listOfServices = () => (services.split(', ').map((service, i) => <div key={i}>&nbsp;{i!==0 && "|"}&nbsp;{service}</div>))

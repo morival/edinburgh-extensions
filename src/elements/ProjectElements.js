@@ -60,7 +60,7 @@ export const ProjectImageContainer = styled.div`
     /* position: relative; */
     display: flex;
     justify-content: center;
-    height: 100%;
+    /* height: 100%; */
     width: 100%;
     max-width: 617px;
     margin: auto;
