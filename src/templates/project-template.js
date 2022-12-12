@@ -43,7 +43,11 @@ export default function ProjectTemplate({ data: {
         <ProjectList>
           {projectGallery()}
         </ProjectList>
-        <Modal nodes={nodes} show={modalShow} fullscreen={'md-down'} onHide={handleClose} />
+        <Modal 
+          nodes={nodes} 
+          show={modalShow} 
+          fullscreen={true} 
+          onHide={handleClose} />
       </section>
     </Main>
   )
@@ -65,7 +69,7 @@ query ProjectTemplateQuery($slug: String) {
   allFile(filter: {relativeDirectory: {ne: "", eq: $slug}}) {
     nodes {
       childImageSharp {
-        gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
+        gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED)
       }
       name
     }

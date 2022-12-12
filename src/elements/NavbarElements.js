@@ -111,3 +111,6 @@ export const NavbarSection = styled.nav`
     height: 16vh;
     gap: 10px;
 `;
+export const DialogContainer = styled.div`
+    max-height: 90vh;
+`;
