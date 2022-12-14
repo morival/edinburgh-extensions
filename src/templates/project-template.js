@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { graphql } from 'gatsby';
 import { Main, Modal } from '../components';
 import { ComponentInfo, ContainerFlexColumn, Flex, ProjectImageContainer, ProjectList, ProjectServiceLink, ProjectServices, SectionBlue } from '../elements';
@@ -11,27 +11,32 @@ export default function ProjectTemplate({ data: {
 
   const [modalShow, setModalShow] = useState(false)
 
-  
+
 
   const listOfServices = () => (services.split(', ').map((service, i) =>
     <Flex key={i}>
       {i !== 0 && <div>&nbsp;|&nbsp;</div>}
-      <ProjectServiceLink to={`/services#${service}`} >
+      <ProjectServiceLink to={`/services#${service}`}>
         {service}
       </ProjectServiceLink>
     </Flex>
   ))
 
+  const refSetModal = useRef(null);
+  const handleClick = (i) => {
+    refSetModal.current.setModal(i);
+    setModalShow(true)
+  }
+  // const handleClick = (i) => setModalShow(i)
+  const handleClose = () => setModalShow(false)
+
   const projectGallery = () => nodes.map((node, i) => node &&
-    <ProjectImageContainer onClick={handleClick} key={i}>
+    <ProjectImageContainer onClick={() => handleClick(i)} key={i}>
       <ContainerFlexColumn>
         <GatsbyImage image={getImage(node)} alt={node.name} />
       </ContainerFlexColumn>
     </ProjectImageContainer>
   )
-
-  const handleClick = (e) => setModalShow(e.target.alt)
-  const handleClose = () => setModalShow(false)
 
   return (
     <Main>
@@ -43,12 +48,12 @@ export default function ProjectTemplate({ data: {
         <ProjectList>
           {projectGallery()}
         </ProjectList>
-        <Modal 
-          nodes={nodes} 
-          show={modalShow} 
-          // fullscreen={true} 
-          onHide={handleClose} 
-          centered/>
+        <Modal
+          nodes={nodes}
+          show={modalShow}
+          ref={refSetModal}
+          onHide={handleClose}
+          centered />
       </section>
     </Main>
   )

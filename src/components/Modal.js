@@ -1,14 +1,25 @@
+import React, { forwardRef, useImperativeHandle, useState } from 'react';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
-import React from 'react';
 import { ModalBS } from '../elements';
-// import { Modal as ModalBS } from 'react-bootstrap';
 // import { DialogContainer } from '../elements';
 
-export function Modal(props) {
 
-    // console.log(props.show)
-    const modalImage = props.nodes.find((node, i) => node.name === props.show)
-    // console.log(modalImage)
+export const Modal = forwardRef((props, ref) => {
+
+    const [modalIndex, setModalIndex] = useState(false)
+
+    console.log(props)
+    const modalImage = props.nodes[modalIndex]
+
+    useImperativeHandle(
+        ref,
+        () => ({
+            setModal(i) {
+                setModalIndex(i)
+                console.log(i)
+            }
+        }),
+    )
 
     return (
         <ModalBS
@@ -32,4 +43,4 @@ export function Modal(props) {
             </ModalBS.Body>
         </ModalBS>
     )
-};
+})
