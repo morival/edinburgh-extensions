@@ -1,6 +1,7 @@
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import React from 'react';
-import { Modal as ModalBS } from 'react-bootstrap';
+import { ModalBS } from '../elements';
+// import { Modal as ModalBS } from 'react-bootstrap';
 // import { DialogContainer } from '../elements';
 
 export function Modal(props) {
@@ -25,7 +26,7 @@ export function Modal(props) {
             <ModalBS.Body style={{ display: 'flex', padding: '0', background: 'black' }} >
                 {modalImage && <GatsbyImage 
                     objectFit='contain'
-                    style={{ maxHeight: '100vh' }} 
+                    // style={{ maxHeight: '100vh' }} 
                     image={getImage(modalImage)} 
                     alt={modalImage.name} />}
             </ModalBS.Body>

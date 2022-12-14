@@ -91,4 +91,10 @@ export const GlobalStyle = createGlobalStyle`
     ::placeholder {
         /* font-size: 1em; */
     }
+    .modal-backdrop-background {
+        --bs-backdrop-opacity: 0.9;
+    }
+    .modal-content-border {
+        --bs-modal-border-width: 0;
+    }
 `;

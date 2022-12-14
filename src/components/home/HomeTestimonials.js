@@ -1,5 +1,5 @@
-import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
+import { graphql, useStaticQuery } from 'gatsby';
 import { ComponentTitle, QuotationMark, SectionBlue, TestimonialsCarousel, TestimonialsCarouselCaption, TestimonialsCarouselItem, TestimonialsCarouselName, TestimonialsCarouselText, TestimonialsComment, TestimonialsQuote } from '../../elements';
 
 
@@ -22,7 +22,8 @@ export function Testimonials({ slogan }) {
 
     const testimonialComponents = () => {
         return allMarkdownRemark.nodes
-        .map(node => <TestimonialsCarouselItem key={node.frontmatter.name}>
+        .map(node => 
+        <TestimonialsCarouselItem key={node.frontmatter.name}>
             <TestimonialsCarouselText>
                 <TestimonialsCarouselCaption>
                     <TestimonialsQuote>

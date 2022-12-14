@@ -46,8 +46,9 @@ export default function ProjectTemplate({ data: {
         <Modal 
           nodes={nodes} 
           show={modalShow} 
-          fullscreen={true} 
-          onHide={handleClose} />
+          // fullscreen={true} 
+          onHide={handleClose} 
+          centered/>
       </section>
     </Main>
   )

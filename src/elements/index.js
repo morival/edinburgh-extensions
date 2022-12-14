@@ -12,4 +12,5 @@ export * from './LayoutElements';
 export * from './NavbarElements';
 export * from './ProjectElements';
 export * from './ServiceElements';
+export * from './TemplateProjectElements';
 export * from './ThemeElements';
