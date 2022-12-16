@@ -49,6 +49,7 @@ export default function ProjectTemplate({ data: {
           {projectGallery()}
         </ProjectList>
         <Modal
+          // size="xl"
           nodes={nodes}
           show={modalShow}
           ref={refSetModal}
