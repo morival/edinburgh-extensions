@@ -64,6 +64,7 @@ export const ProjectImageContainer = styled.div`
     width: 100%;
     max-width: 617px;
     margin: auto;
+    cursor: pointer;
 `;
 export const ProjectImageCover = styled(ContainerFlexColumn)`
     position: absolute;
