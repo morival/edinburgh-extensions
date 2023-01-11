@@ -5,13 +5,13 @@ import { ComponentTitle, ContainerFlexColumn } from '../elements';
 
 
 export default function Services({ data: { 
-  site: { siteMetadata: { services, quotes: { quote_services } }},
+  site: { siteMetadata: { services, siteTitle, quotes: { quote_services } }},
   allFile: { edges } } }) {
     
     const serviceComponents = () => 
     services.map((service, i) => {
       const edge = edges.find(({node}) => node.relativePath === service.relativePath)
-      return <Service service={service} edge={edge} key={i} />
+      return <Service service={service} siteTitle={siteTitle} edge={edge} key={i} />
     })
 
     return ( 
@@ -43,6 +43,7 @@ query ServicesQuery {
         title
         types
       }
+      siteTitle
       quotes {
         quote_services
       }

@@ -4,10 +4,9 @@ import { getImage } from 'gatsby-plugin-image';
 import { ContainerFlexColumn, ProjectImageCover, ProjectLink } from '../elements';
 
 
-export function Project({ node, project: { html, frontmatter: { 
+export function Project({ node, project: { frontmatter: { 
     title, 
-    location, 
-    // services, 
+    location,
     slug } } }) {
 
 
@@ -16,13 +15,11 @@ export function Project({ node, project: { html, frontmatter: {
     // const listOfServices = () => (services.split(', ').map((service, i) => <div key={i}>&nbsp;{i!==0 && "|"}&nbsp;{service}</div>))
     
     return (
-        // <ProjectWrapper>
-            <ProjectLink to={'/projects/'+slug}>
-                <ContainerFlexColumn className='image'>{projectImage()}</ContainerFlexColumn>
-                <ProjectImageCover className='cover'>
-                    <div>{location}</div>
-                </ProjectImageCover>
-            </ProjectLink>
-        // </ProjectWrapper>
+        <ProjectLink to={'/projects/'+slug}>
+            <ContainerFlexColumn className='image'>{projectImage()}</ContainerFlexColumn>
+            <ProjectImageCover className='cover'>
+                <div>{location}</div>
+            </ProjectImageCover>
+        </ProjectLink>
     )
 };

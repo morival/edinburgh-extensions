@@ -27,13 +27,13 @@ export const Footer = ({ location }) => {
           social {
             instagram
           }
-          title
+          siteTitle
         }
       }
     }
   `)
   const image = getImage(file)
-  const { title } = site.siteMetadata
+  const { siteTitle } = site.siteMetadata
   const { phone_1, phone_2, email } = site.siteMetadata.contact
   const { instagram } = site.siteMetadata.social
 
@@ -65,7 +65,7 @@ export const Footer = ({ location }) => {
           </MarginAuto>
         </Menu>
       </ContainerFlexRowWrap>
-      <CopyRights>© {new Date().getFullYear()} {title}. All Rights Reserved.</CopyRights>
+      <CopyRights>© {new Date().getFullYear()} {siteTitle}. All Rights Reserved.</CopyRights>
     </FooterWrapper>
   )
 };

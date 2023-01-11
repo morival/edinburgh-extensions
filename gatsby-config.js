@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     siteUrl: `https://www.edinburgh-extensions.co.uk`,
-    title: `Edinburgh Extensions`,
+    siteTitle: `Edinburgh Extensions`,
     description: `New builds, Extensions, Renovations, Bathrooms, Finishing Joinery, Masonry (Some Description...)`,
     contact: {
       street: `street`,

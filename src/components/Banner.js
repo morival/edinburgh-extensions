@@ -15,7 +15,7 @@ export function Banner({ location }) {
               link
               name
             }
-            title
+            siteTitle
           }
         }
         allFile(filter: {relativeDirectory: {eq: "banners"}}) {
@@ -30,7 +30,7 @@ export function Banner({ location }) {
         }
       }
     `);
-  const title = site.siteMetadata.title
+  const { siteTitle } = site.siteMetadata
   // Generate page path without '/'. Replace empty path with 'home'
   const path = location.pathname.slice(1) || "home"
   // If Page is a Project Template, replace path with 'slug' of the Project
@@ -49,7 +49,7 @@ export function Banner({ location }) {
     link === 'home' ?
       <BannerTextWrapper>
         <BannerTextContainer>Welcome to</BannerTextContainer>
-        <BannerTextContainer color='#FC832B'>{title.toUpperCase()}</BannerTextContainer>
+        <BannerTextContainer color='#FC832B'>{siteTitle.toUpperCase()}</BannerTextContainer>
       </BannerTextWrapper>
       :
       <BannerTextWrapper>

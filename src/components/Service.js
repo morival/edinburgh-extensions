@@ -4,7 +4,7 @@ import { ContainerHalfLarge, Flex, ServiceButton, ServiceDescription, ServiceDet
 import { Link } from 'gatsby';
 
 
-export function Service({ service: { title, description, types }, edge: { node } }) {
+export function Service({ service: { title, description, types }, siteTitle, edge: { node } }) {
  
     const image = getImage(node)
     
@@ -34,12 +34,8 @@ export function Service({ service: { title, description, types }, edge: { node }
                     {description}
                 </ServiceDescription>
                 <ServiceDetailsContainer>
-                    <h5>Edinburgh Extensions offers:</h5>
+                    <h5>{siteTitle} offers:</h5>
                     <ServiceTypesContainer>{serviceTypes()}</ServiceTypesContainer>
-                    {/* <div>
-                        <h5>Sub-services</h5>
-                        {servicesList()}
-                    </div> */}
                 </ServiceDetailsContainer>
                 <Link to='/projects' state={{ filter: title }}>
                     <ServiceButton text={`VIEW OUR ${title} PROJECTS`}/>

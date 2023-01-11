@@ -29,7 +29,7 @@ export const ContactFormRow = styled.div`
     margin: 10px;
 `;
 export const ContactFormTextArea = styled.textarea`
-    font-size: 1.1em;
+    font-size: 1.2em;
     padding: 5px;
     width: 100%;
     height: 150px;

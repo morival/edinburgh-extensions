@@ -70,17 +70,18 @@ export const ProjectImageCover = styled(ContainerFlexColumn)`
     position: absolute;
     justify-content: end;
     color: ${({ theme }) => theme.color.white};
-    background-color: ${({ theme }) => theme.color.gray};
+    /* background-color: ${({ theme }) => theme.color.gray}; */
+    background-image: linear-gradient(200deg, rgba(128, 128, 128, 0), rgba(128, 128, 128, 0), rgba(128, 128, 128, 1) 80%);
     align-items: start;
     text-transform: capitalize;
     font-size: 2.2em;
-    opacity: 0.3;
+    opacity: 0;
     top: 0;
     padding: 0.4em 0.8em;
     height: 100%;
     transition: .5s ease;
     :hover {
-        opacity: 0.8;
+        opacity: 1;
     }
 `;
 export const ProjectLink = styled(Link)`
