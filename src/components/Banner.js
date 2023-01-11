@@ -51,9 +51,11 @@ export function Banner({ location }) {
         <BannerTextContainer>Welcome to</BannerTextContainer>
         <BannerTextContainer color='#FC832B'>{siteTitle.toUpperCase()}</BannerTextContainer>
       </BannerTextWrapper>
-      :
+    :
       <BannerTextWrapper>
-        <BannerTextContainer>{pageName}</BannerTextContainer>
+        {link === 'terms' ?
+          <BannerTextContainer>Terms of Use</BannerTextContainer>
+        : <BannerTextContainer>{pageName}</BannerTextContainer>}
       </BannerTextWrapper>
 
 

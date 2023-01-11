@@ -70,3 +70,13 @@ export const SectionBlue = styled.section`
     background: ${({ theme }) => theme.color.dark_blue};
     color: ${({ theme }) => theme.color.white};
 `;
+export const TextCenter = styled.div`
+    text-align: center;
+`;
+export const TextLeft = styled.div`
+    padding: 2em;
+    text-align: left;
+`;
+export const TextRight = styled.div`
+    text-align: right;
+`;

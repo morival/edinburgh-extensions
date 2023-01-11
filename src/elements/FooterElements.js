@@ -22,7 +22,8 @@ export const FooterPrimary = styled(ContainerFlexRowWrap)`
     background-color: ${({ theme }) => theme.color.dark_gray};
 `;
 export const FooterSecondary = styled(ContainerFlexRowWrap)`
-    justify-content: center;
+    text-align: center;
+    justify-content: space-around;
     padding: 0.6rem;
     background-color: ${({ theme }) => theme.color.black};
 `;

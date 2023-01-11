@@ -67,9 +67,11 @@ export const Footer = ({ location }) => {
       </FooterPrimary>
       <FooterSecondary>
         <div>© {new Date().getFullYear()} {siteTitle}. All Rights Reserved.&nbsp;</div>
-        <SiteLink to='/terms'>Terms of Use</SiteLink>
-        <div>&nbsp;|&nbsp;</div>
-        <div>Privacy Policy</div>
+        <div>
+          <SiteLink to='/terms'>Terms of Use</SiteLink>
+          <span>&nbsp;|&nbsp;</span>
+          <span>Privacy Policy</span>
+        </div>
       </FooterSecondary>
     </FooterWrapper>
   )
