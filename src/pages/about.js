@@ -1,7 +1,7 @@
-import React from 'react'
-import { graphql } from 'gatsby'
-import { Main } from '../components'
-import { ComponentTitle } from '../elements'
+import React from 'react';
+import { graphql } from 'gatsby';
+import { Main } from '../components';
+import { ComponentTitle } from '../elements';
 
 export default function About({ data: { site: { siteMetadata: { quotes: { quote_about } } } } }) {
 
@@ -33,13 +33,13 @@ export default function About({ data: { site: { siteMetadata: { quotes: { quote_
 
 
 export const query = graphql`
-query AboutQuery {
-  site {
-    siteMetadata {
-      quotes {
-        quote_about
+  query AboutQuery {
+    site {
+      siteMetadata {
+        quotes {
+          quote_about
+        }
       }
     }
   }
-}
   `;

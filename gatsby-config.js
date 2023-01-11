@@ -9,7 +9,7 @@ module.exports = {
       postcode: `postcode`,
       phone_1: `07841 581 119`,
       phone_2: `07508 953 012`,
-      email: `edinburghextensions@yahoo.com`,
+      email: `info@edinburgh-extensions.co.uk`,
     },
     images: {
       

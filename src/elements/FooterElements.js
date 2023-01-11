@@ -2,17 +2,12 @@ import { Link } from "gatsby";
 import styled, { css } from "styled-components";
 import media from "styled-media-query";
 import { FaInstagram } from 'react-icons/fa';
-import { ContainerFlexColumn, ContainerHalfLarge, ContainerHalfLargeRow } from "./LayoutElements";
+import { ContainerFlexColumn, ContainerFlexRowWrap, ContainerHalfLarge, ContainerHalfLargeRow } from "./LayoutElements";
 
 
 export const Contact = styled(ContainerHalfLargeRow)`
     flex-wrap: wrap;
     padding-block: 30px;
-`;
-export const CopyRights = styled.div`
-    padding: 0.6rem;
-    text-align: center;
-    background-color: ${({ theme }) => theme.color.black};
 `;
 export const FooterInstagramIcon = styled(FaInstagram)`
     width: 30px;
@@ -23,9 +18,16 @@ export const FooterInstagramIcon = styled(FaInstagram)`
         color: ${({ theme }) => theme.color.social_icons};
     }
 `;
+export const FooterPrimary = styled(ContainerFlexRowWrap)`
+    background-color: ${({ theme }) => theme.color.dark_gray};
+`;
+export const FooterSecondary = styled(ContainerFlexRowWrap)`
+    justify-content: center;
+    padding: 0.6rem;
+    background-color: ${({ theme }) => theme.color.black};
+`;
 export const FooterWrapper = styled.footer`
     color: ${({ theme }) => theme.color.white};
-    background-color: ${({ theme }) => theme.color.dark_gray};
 `;
 export const Logo = styled(Link)`
     display: flex;
@@ -60,6 +62,9 @@ export const SiteMapItems = styled(ContainerFlexColumn)`
     ${media.between('medium', 'large')`
         flex-direction: row;
     `}
+`;
+export const Terms = styled.div`
+
 `;
 export const Title = styled.div`
     text-align: center;

@@ -19,6 +19,7 @@ export const FilterListButton = styled(Button)`
     text-transform: capitalize;
     border: 0;
     padding: 0;
+    height: 100%;
     ${(props) => {
         switch (props.selected) {
             case true:
