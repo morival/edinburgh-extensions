@@ -1,6 +1,5 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { Main } from '../components';
 import { ComponentTitle, TextLeft } from '../elements';
 
 export default function Terms({ data: { site: { siteMetadata: { contact, siteTitle, siteUrl } } } }) {
@@ -8,7 +7,7 @@ export default function Terms({ data: { site: { siteMetadata: { contact, siteTit
     const { city } = contact;
 
     return (
-        <Main>
+        <main>
             <section>
                 <ComponentTitle>
                     <h3>Terms and Conditions</h3>
@@ -28,7 +27,7 @@ export default function Terms({ data: { site: { siteMetadata: { contact, siteTit
                     <div>•	Your use of this website and any dispute arising out of such use of the website is subject to the laws of England, Northern Ireland, Scotland and Wales.</div>
                 </TextLeft>
             </section>
-        </Main>
+        </main>
     )
 };
 

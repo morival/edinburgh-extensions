@@ -1,15 +1,14 @@
 // import { graphql } from 'gatsby';
 // import React from 'react';
-// import { Main } from '../components';
 
 
 // export default function ServiceTemplate({params}) {
     
 
 //     return (
-//         <Main>
+//         <main>
 
-//         </Main>
+//         </main>
 //     )
 // };
 

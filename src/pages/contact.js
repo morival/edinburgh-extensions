@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { ContactDetails, ContactForm, Main } from '../components'
+import { ContactDetails, ContactForm } from '../components'
 import { ComponentInfo, ComponentTitle, FlexContainer, SectionBlue } from '../elements';
 
 
@@ -11,7 +11,7 @@ export default function Contact({ data: { site: { siteMetadata: {
   // const page = links.find(({ link }) => link === "contact")
 
   return (
-    <Main>
+    <main>
       <SectionBlue>
         <ComponentTitle>
           <h3>Got A Project In Mind?</h3>
@@ -24,7 +24,7 @@ export default function Contact({ data: { site: { siteMetadata: {
           <ContactForm />
         </FlexContainer>
       </SectionBlue>
-    </Main>
+    </main>
   )
 }
 

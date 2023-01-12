@@ -1,17 +1,7 @@
 import styled from 'styled-components';
 import media from "styled-media-query";
 
-export const LayoutWrapper = styled.div`
-    min-height: 100vh;
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-`;
-export const MarginAuto = styled.div`
-    margin: auto;
-`;
-export const Flex = styled.div`
-    display: flex;
-`;
+
 export const ContainerFlexColumn = styled.div`
     display: flex;
     flex-direction: column;
@@ -77,6 +67,24 @@ export const ComponentInfoBreak = styled(ComponentInfo)`
 `;
 export const ComponentTitle = styled.div`
     padding: clamp(15px, 4vw, 50px);
+`;
+export const Flex = styled.div`
+    display: flex;
+`;
+export const FlexContainer = styled.div`
+    display: flex;
+    /* justify-content: space-evenly; */
+    /* align-items: center; */
+    flex-wrap: wrap;
+    width: 100%;
+`;
+export const LayoutWrapper = styled.div`
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+`;
+export const MarginAuto = styled.div`
+    margin: auto;
 `;
 export const SectionBlue = styled.section`
     background: ${({ theme }) => theme.color.dark_blue};

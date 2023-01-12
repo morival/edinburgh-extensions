@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { graphql } from 'gatsby';
-import { Main, Modal } from '../components';
+import { Modal } from '../components';
 import { ComponentInfo, ContainerFlexColumn, Flex, ProjectImageContainer, ProjectList, ProjectServiceLink, ProjectServices, SectionBlue } from '../elements';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
@@ -39,7 +39,7 @@ export default function ProjectTemplate({ data: {
   )
 
   return (
-    <Main>
+    <main>
       <SectionBlue>
         <ProjectServices>{listOfServices()}</ProjectServices>
         <ComponentInfo dangerouslySetInnerHTML={{ __html: html }} />
@@ -56,7 +56,7 @@ export default function ProjectTemplate({ data: {
           onHide={handleClose}
           centered />
       </section>
-    </Main>
+    </main>
   )
 };
 

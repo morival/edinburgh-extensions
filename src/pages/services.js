@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby';
-import { Main, Service } from '../components';
+import { Service } from '../components';
 import { ComponentTitle, ContainerFlexColumn } from '../elements';
 
 
@@ -15,7 +15,7 @@ export default function Services({ data: {
     })
 
   return (
-    <Main>
+    <main>
       <section>
         <ComponentTitle>
           <h3>{quote_services}</h3>
@@ -32,7 +32,7 @@ export default function Services({ data: {
       <section>
         {serviceComponents()}
       </section>
-    </Main>
+    </main>
   )
 }
 

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { graphql } from 'gatsby';
-import { Main, Project } from '../components';
+import { Project } from '../components';
 import { ComponentTitle, ContainerFlexColumn, FilterList, FilterListButton, FilterListItem, FilterListItemSpan, ProjectList, SectionBlue } from '../elements';
 
 
@@ -46,7 +46,7 @@ export default function Projects({ location, data: {
   }, [location.state])
 
   return (
-    <Main>
+    <main>
       <SectionBlue>
         <ComponentTitle>
           <h3>{quote_projects}</h3>
@@ -67,7 +67,7 @@ export default function Projects({ location, data: {
           {projectComponents()}
         </ProjectList>
       </section>
-    </Main>
+    </main>
   )
 }
 
