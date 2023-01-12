@@ -15,10 +15,17 @@ export const Flex = styled.div`
 export const ContainerFlexColumn = styled.div`
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 80%;
+    margin: auto;
+    /* width: 100%; */
 `;
 export const ContainerFlexColWrap = styled(ContainerFlexColumn)`
     flex-wrap: wrap;
+`;
+export const ContainerHalfLarge = styled(ContainerFlexColumn)`
+    ${media.greaterThan('large')`
+        width: 50%;
+    `}
 `;
 export const ContainerHalfMedium = styled(ContainerFlexColumn)`
     align-items: center;
@@ -26,9 +33,9 @@ export const ContainerHalfMedium = styled(ContainerFlexColumn)`
         width: 50%;
     `}
 `;
-export const ContainerHalfLarge = styled(ContainerFlexColumn)`
-    
-    ${media.greaterThan('large')`
+export const ContainerHalfSmall = styled(ContainerFlexColumn)`
+    align-items: center;
+    ${media.greaterThan('small')`
         width: 50%;
     `}
 `;
@@ -40,13 +47,18 @@ export const ContainerFlexRow = styled.div`
 export const ContainerFlexRowWrap = styled(ContainerFlexRow)`
     flex-wrap: wrap;
 `;
+export const ContainerHalfLargeRow = styled(ContainerFlexRow)`
+    ${media.greaterThan('large')`
+        width: 50%;
+    `}
+`;
 export const ContainerHalfMediumRow = styled(ContainerFlexRow)`
     ${media.greaterThan('medium')`
         width: 50%;
     `}
 `;
-export const ContainerHalfLargeRow = styled(ContainerFlexRow)`
-    ${media.greaterThan('large')`
+export const ContainerHalfSmallRow = styled(ContainerFlexRow)`
+    ${media.greaterThan('small')`
         width: 50%;
     `}
 `;

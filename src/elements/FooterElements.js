@@ -2,12 +2,12 @@ import { Link } from "gatsby";
 import styled, { css } from "styled-components";
 import media from "styled-media-query";
 import { FaInstagram } from 'react-icons/fa';
-import { ContainerFlexColumn, ContainerFlexRowWrap, ContainerHalfLarge, ContainerHalfLargeRow } from "./LayoutElements";
+import { ContainerFlexColumn, ContainerFlexRowWrap, ContainerHalfSmallRow } from "./LayoutElements";
 
 
-export const Contact = styled(ContainerHalfLargeRow)`
+export const Contact = styled(ContainerHalfSmallRow)`
     flex-wrap: wrap;
-    padding-block: 30px;
+    /* padding-block: 30px; */
 `;
 export const FooterInstagramIcon = styled(FaInstagram)`
     width: 30px;
@@ -38,10 +38,6 @@ export const Logo = styled(Link)`
         justify-content: start;
     `}
 `;
-export const Menu = styled(ContainerHalfLarge)`
-    justify-content: space-between;
-    gap: 8px; 
-`;
 export const SiteLink = styled(Link)`
     text-transform: capitalize;
     ${(props) => {
@@ -60,9 +56,10 @@ export const SiteLink = styled(Link)`
 export const SiteMapItems = styled(ContainerFlexColumn)`
     text-align: center;
     gap: 0.4em 1em;
-    ${media.between('medium', 'large')`
+    width: 100%;
+    /* ${media.between('medium', 'large')`
         flex-direction: row;
-    `}
+    `} */
 `;
 export const Terms = styled.div`
 

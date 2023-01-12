@@ -15,6 +15,7 @@ export const ServiceImageCover = styled(ContainerFlexColumn)`
     opacity: 0.3;
     top: 0;
     height: 100%;
+    width: 100%;
     transition: .5s ease;
     :hover {
         opacity: 0.8;

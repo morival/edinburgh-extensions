@@ -1,5 +1,5 @@
 import React from 'react'
-import { Contact, ContainerHalfMedium, FooterInstagramIcon, FooterPrimary, FooterSecondary, FooterWrapper, Logo, MarginAuto, Menu, SiteLink, SiteMapItems, Title } from '../elements';
+import { Contact, ContainerHalfLarge, ContainerHalfSmall, FooterInstagramIcon, FooterPrimary, FooterSecondary, FooterWrapper, Logo, MarginAuto, SiteLink, SiteMapItems, Title } from '../elements';
 import { graphql, useStaticQuery } from 'gatsby';
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
@@ -46,24 +46,24 @@ export const Footer = ({ location }) => {
     <FooterWrapper>
       <FooterPrimary>
         <Contact>
-          <ContainerHalfMedium>
+          <ContainerHalfLarge>
             <Logo to='/'><GatsbyImage image={image} alt="logo" /></Logo>
-          </ContainerHalfMedium>
-          <ContainerHalfMedium>
+          </ContainerHalfLarge>
+          <ContainerHalfLarge>
             <MarginAuto>
               <div><a href={instagram} aria-label='Instagram' alt='Instagram'><FooterInstagramIcon /></a></div>
               <div>Bartek - {phone_1}</div>
               <div>Stan - {phone_2}</div>
               <div>{email}</div>
             </MarginAuto>
-          </ContainerHalfMedium>
+          </ContainerHalfLarge>
         </Contact>
-        <Menu>
+        <ContainerHalfSmall>
           <MarginAuto>
             <Title>menu</Title>
             <SiteMapItems>{siteMapItems}</SiteMapItems>
           </MarginAuto>
-        </Menu>
+        </ContainerHalfSmall>
       </FooterPrimary>
       <FooterSecondary>
         <div>© {new Date().getFullYear()} {siteTitle}. All Rights Reserved.&nbsp;</div>
