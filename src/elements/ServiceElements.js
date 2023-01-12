@@ -49,4 +49,8 @@ export const ServiceWrapper = styled(ContainerFlexRowWrap)`
             flex-direction: row-reverse;
         `}
     }
+    ${media.greaterThan('large')`
+        margin: auto;
+        width: 80%;
+    `}
 `;

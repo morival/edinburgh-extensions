@@ -57,6 +57,10 @@ export const FilterListItemSpan = styled.span`
         border-bottom-width: 10px;
     }
 `;
+export const ProjectImage = styled(ContainerFlexColumn)`
+    margin: unset;
+    width: 100%;
+`;
 export const ProjectImageContainer = styled.div`
     /* position: relative; */
     display: flex;
@@ -80,6 +84,7 @@ export const ProjectImageCover = styled(ContainerFlexColumn)`
     top: 0;
     padding: 0.4em 0.8em;
     height: 100%;
+    width: 100%;
     transition: .5s ease;
     :hover {
         opacity: 1;
@@ -98,10 +103,14 @@ export const ProjectList = styled.div`
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     justify-content: center;
+    margin: auto;
     gap: 1em;
     ${media.greaterThan('small')`
-        grid-template-columns: repeat(auto-fit, minmax(351px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(364px, 1fr));
         padding: 1em;
+    `}
+    ${media.greaterThan('large')`
+        width: 80%;
     `}
 `;
 export const ProjectServiceLink = styled(Link)`

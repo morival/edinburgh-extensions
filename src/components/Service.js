@@ -16,11 +16,6 @@ export function Service({ service: { title, description, types }, siteTitle, edg
             </Flex>
         )
 
-    // const servicesList = () =>
-    //     subServices.map((service, i) =>
-    //         <h6 key={i}>{service}</h6>
-    //     )
-
     return (
         <ServiceWrapper id={title}>
             <ContainerHalfLarge>

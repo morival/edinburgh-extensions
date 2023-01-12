@@ -1,7 +1,7 @@
 import React from 'react';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import { getImage } from 'gatsby-plugin-image';
-import { ContainerFlexColumn, ProjectImageCover, ProjectLink } from '../elements';
+import { ProjectImage, ProjectImageCover, ProjectLink } from '../elements';
 
 
 export function Project({ node, project: { frontmatter: { 
@@ -16,7 +16,7 @@ export function Project({ node, project: { frontmatter: {
     
     return (
         <ProjectLink to={'/projects/'+slug}>
-            <ContainerFlexColumn className='image'>{projectImage()}</ContainerFlexColumn>
+            <ProjectImage className='image'>{projectImage()}</ProjectImage>
             <ProjectImageCover className='cover'>
                 <div>{location}</div>
             </ProjectImageCover>
